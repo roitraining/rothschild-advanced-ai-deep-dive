@@ -17,6 +17,7 @@
   - Contact info
 - Let’s get started!
 
+![Welcome](images/welcome.png)
 ---
 
 # Course Objectives
@@ -47,6 +48,8 @@
 - Chapter 8: Agentic AI – Setup and Orchestration
 - Chapter 9: The Road Ahead – Trends, Vendors, and Tools
 - Chapter 10: Instructor Office Hours and Q and A
+
+![Agenda](images/agenda.png)
 
 ---
 
@@ -87,6 +90,9 @@
 > [!NOTE]
 > If you only want tip-and-trick prompting, this course will feel dense on purpose.
 
+![Who Should Attend](images/who-should-attend.png)
+
+
 ---
 
 <!-- layout: stacked -->
@@ -96,3 +102,5 @@
 - Familiarity with core finance workflows (research, deals, portfolio, or client communication)
 - No coding required—technical concepts are taught for informed decision-makers
 - Willingness to experiment with prompts, blueprints, and vendor evaluation criteria
+
+![Prerequisites](images/prerequisites.png)
