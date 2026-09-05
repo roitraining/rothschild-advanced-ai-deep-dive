@@ -58,6 +58,18 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Native vs Composed on an Earnings Call
+
+| Dimension | Native multimodal | Composed (ASR → LLM → TTS) |
+| :--- | :--- | :--- |
+| Control points | Fewer, opaque | Explicit per stage |
+| Swap components | Harder | Easy (better ASR later) |
+| Privacy review | One vendor surface | Multiple processors |
+| Latency / cost | Often simpler bill | Sum of stages |
+| Citation UX | Vendor-dependent | You own timestamps |
+
+---
+
 <!-- layout: navigation -->
 # Chapter 7
 
@@ -87,6 +99,35 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+<!-- layout: 3-column -->
+# Failure Cases by Modality
+
+### Speech fail
+- Analyst attributed as CEO
+- Bad ASR on ticker/numbers
+- Sentiment ≠ guidance change
+
+### Vision fail
+- OCR reads 3.0x as 8.0x
+- Chart axis mis-scaled
+- Table columns shifted
+
+### Video fail
+- Slide says X; speech says Y
+- Long call, lost middle
+- Rights/retention ignored
+
+---
+
+# The Real Analytic Prize: Misalignment
+
+- Slide claims “stable margins”; CEO hedges verbally for two minutes
+- Model should **surface the delta**, not average it into one vibe score
+- Output: claim ledger rows with timestamp + slide reference + filing cross-check
+- Human judges whether it is noise, messaging, or a real shift
+
+---
+
 # Rights, Privacy, and Retention
 
 - Multimodal artifacts often include personal data and third-party content
@@ -94,6 +135,15 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 > [!CAUTION]
 > Multimodal artifacts can contain personal data and third-party copyrighted content—confirm rights and retention.
+
+---
+
+# Hard Rules: What Not to Upload
+
+- Client-confidential recordings without clearance
+- Unlicensed third-party video/audio
+- Personal data not needed for the analytic goal
+- Anything your retention policy cannot store
 
 ---
 
@@ -127,6 +177,19 @@ Advanced AI Deep-Dive: Rothschild & Co
 | Claim ledger | Claim → quote → timestamp |
 | Risk flags | Guidance language, hedges |
 | Exec podcast | TTS summary for commute review |
+
+---
+
+# Sample Claim Ledger Row
+
+| Field | Example |
+| :--- | :--- |
+| Claim | “No change to leverage target” |
+| Quote | “We remain comfortable with our stated range” |
+| Timestamp | 00:24:12 (CEO) |
+| Slide ref | Deck p.7 “Leverage outlook” |
+| Filing cross-check | Matches Q2 release leverage range |
+| Status | Supported — monitor hedges in Q&A |
 
 ---
 

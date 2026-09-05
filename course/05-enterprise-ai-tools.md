@@ -55,6 +55,30 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+<!-- layout: stacked -->
+# Prompt Assembly (What Products Actually Do)
+
+1. **System / tenant policy** — what the assistant may say or do
+2. **Grounding hits** — files, mail, or search snippets the user is allowed to see
+3. **User prompt** — the visible request
+4. **Tool results** (optional) — calendar, CRM, plugins
+5. **Model inference** — possibly a reasoning pass
+6. **Filters + logs** — safety, DLP, audit
+
+> [!NOTE]
+> The chat box is the tip of the iceberg. Diligence questions target steps 1–2 and 4–6.
+
+---
+
+# Grounding Failure Modes (Office Suites)
+
+- **Wrong ACL**: summary includes a file the asker should not see—or omits the one that matters
+- **Stale content**: old OneDrive/SharePoint version treated as current
+- **Over-broad Graph scope**: “search my tenant” becomes accidental discovery
+- **Draft vs send confusion**: model proposes an email; product settings may allow send
+
+---
+
 # Questions to Ask Your Tooling Team
 
 - Which model(s) power which features?
@@ -99,6 +123,23 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+<!-- layout: 2-column -->
+# Weak vs Strong Prompt
+
+### Weak
+- “Summarize this target report and list the risks.”
+- No source rule
+- No output schema
+- No refusal criteria
+
+### Strong
+- ONLY the attached report
+- Table: Risk | Evidence quote | Page
+- Rank top 5 for Debt Advisory
+- List gaps; no invented figures
+
+---
+
 # Example: Risk Extraction Prompt
 
 ```text
@@ -111,6 +152,26 @@ Do not invent figures. If unknown, write "Not in source".
 
 > [!TIP]
 > Put evaluation criteria in the prompt when the task is high-stakes.
+
+---
+
+<!-- layout: 3-column -->
+# More Advanced Techniques
+
+### Structured outputs
+- Tables / JSON schemas
+- Force fields the reviewer needs
+- Easier automated checks
+
+### Critique-and-revise
+- Draft → attack as risk
+- Revise against the critique
+- Keeps optimism in check
+
+### Adversarial reviewer
+- Separate pass: “find missing risks”
+- Different role than the drafter
+- High value before client send
 
 ---
 
@@ -160,6 +221,20 @@ Do not invent figures. If unknown, write "Not in source".
 - Save winning prompts as team skills or templates
 - Pair office AI with corpus RAG for institutional knowledge
 - Measure time saved **and** error types introduced
+
+---
+
+# Lab Bridge: Technical Unpack Checklist
+
+During the 5-minute deal briefing, pause after each step and name:
+
+| Step | What happened technically? |
+| :--- | :--- |
+| Open / attach report | Grounding scope + ACL |
+| Extract risks | Prompt assembly + inference |
+| Rank for DA | Output contract / rubric in prompt |
+| Draft client email | Draft vs send; human edit required |
+| Verify figures | Tools/RAG or manual recompute—not vibes |
 
 ---
 

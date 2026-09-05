@@ -50,12 +50,42 @@
 
 ---
 
+<!-- layout: 2-column -->
+# How the 1.5 Days Run
+
+### Day 1
+- Landscape → models → tools/MCP
+- Data platform + RAG/security
+- Enterprise tools + advanced use cases
+- Labs emphasize blueprints & critique
+
+### Day 2
+- Multimodal + agent orchestration
+- Vendors, stack choices, scorecards
+- Office hours: your scenarios
+- Leave with specs you can reuse
+
+---
+
+# How We’ll Work
+
+- **Advanced deep-dive** — not beginner Copilot 101
+- Labs are **blueprints and disciplined experiments**, not production builds
+- Quizzes are discussion fuel; answers follow each question
+- No invented client data—use mocks / public examples in exercises
+- Challenge vendors with stack layers: model / data / tools / controls
+
+---
+
 # Who Should Attend
 
 - Bankers, advisors, and specialists who work with AI vendors and technical teams
 - Deal, research, and operations leaders evaluating agentic workflows
-- Practitioners who already use copilots and need deeper technical fluency
+- Practitioners who already use copilots and need **deeper technical fluency**
 - Anyone expected to challenge architecture, data, and security claims with confidence
+
+> [!NOTE]
+> If you only want tip-and-trick prompting, this course will feel dense on purpose.
 
 ---
 

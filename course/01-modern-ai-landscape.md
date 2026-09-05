@@ -57,6 +57,17 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Landscape Map (Roles, Not Brands)
+
+| Role | What you buy | Watch-outs |
+| :--- | :--- | :--- |
+| Frontier APIs | Highest reasoning cadence | Contract, DPA, data path |
+| Open-weight / self-host | Data-path control | You own ops; uneven catch-up |
+| Enterprise surfaces | Tenant grounding + ACL | Draft vs send; model SKU opacity |
+| Agent platforms | Tools, memory, HITL, evals | Autonomy without allow-lists |
+
+---
+
 <!-- layout: navigation -->
 # Chapter 1
 
@@ -133,6 +144,20 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# What to Automate First
+
+| Prefer first | Defer |
+| :--- | :--- |
+| High feedback (pass/fail checks) | Irreversible external sends |
+| Easily reversible drafts | Novel strategy calls |
+| Read-mostly tools | Broad write credentials |
+| Clear definition of done | Vague “be helpful” missions |
+
+> [!IMPORTANT]
+> Score candidates on **blast radius × reversibility**, not on demo wow-factor.
+
+---
+
 <!-- layout: navigation -->
 # Chapter 1
 
@@ -149,6 +174,38 @@ Advanced AI Deep-Dive: Rothschild & Co
 - **“Fully autonomous banking AI”** — missing failure modes and approval design
 - **“Trained on all market data”** — ask provenance, freshness, and licenses
 - **“Guaranteed accuracy”** — probabilistic systems need grounding and review
+
+---
+
+<!-- layout: stacked -->
+# Worked Teardown: Fake Vendor Pitch
+
+**Claim:** “Trained on all market data. Fully autonomous. Guarantees accuracy for Debt Advisory dossiers.”
+
+| Claim fragment | Stack layer to inspect | Better question |
+| :--- | :--- | :--- |
+| “Trained on all market data” | Data | Provenance, licenses, freshness, opt-out? |
+| “Fully autonomous” | Orchestration / controls | Tools allowed? Step limits? HITL gates? |
+| “Guarantees accuracy” | Model + grounding | Evals on *your* prompts? Cite-or-refuse? |
+| “Understands your firm” | Apps + RAG | What corpus + ACL is actually connected? |
+
+---
+
+<!-- layout: 2-column -->
+# Preview: Model Face-Off Discipline
+
+### Same prompt pack
+- One finance task
+- Same source constraints
+- Score citations & refusals
+
+### Compare systems—not vibes
+- Where did grounding come from?
+- Did it invent figures?
+- Latency / cost / audit trail?
+
+> [!TIP]
+> Lab 1 is not “which brand feels smarter.” It is which stack layers showed up in the answer.
 
 ---
 

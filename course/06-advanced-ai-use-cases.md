@@ -36,6 +36,19 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Claims vs Evidence (Filled Example)
+
+| Claim | Evidence | Source | Status |
+| :--- | :--- | :--- | :--- |
+| Margin compression in EU | “Gross margin −180 bps YoY” | FY24 10-K p.42 | Supported |
+| “Leading share in APAC” | Vendor blog only | Competitor site | Unsupported |
+| Refinancing wall 2027 | Maturity table sum | Bond prospectus | Supported |
+
+> [!TIP]
+> Lab and live research should leave this table behind—not only a narrative.
+
+---
+
 <!-- layout: 2-column -->
 # Competitor Tear-Sheet Workflow
 
@@ -90,6 +103,20 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# LLM-as-Analyst Hazards
+
+| Hazard | What it looks like | Rule |
+| :--- | :--- | :--- |
+| Unit errors | $m vs $bn swapped in prose | Recompute critical figures |
+| Join mistakes | Wrong entity mapped to ticker | Validate keys before charting |
+| Invented YoY | Smooth narrative, no series | Require the series or refuse |
+| Chart theater | Pretty plot, bad filter | Show filter + n + date range |
+
+> [!WARNING]
+> If you cannot recompute it, you do not have an insight—you have a story.
+
+---
+
 # Portfolio Trends Playbook
 
 1. Define the question and time window
@@ -121,6 +148,23 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+<!-- layout: 2-column -->
+# Prototype vs Production Gates
+
+### Prototype OK
+- Mock or scrubbed data
+- Local / disposable hosting
+- Single-user demo
+- Pin a version for the meeting
+
+### Production requires
+- AuthN/Z and tenancy
+- Data residency & logging
+- Change control / owners
+- Eval + monitoring
+
+---
+
 <!-- layout: stacked -->
 # From Prompt to Dashboard
 
@@ -148,6 +192,31 @@ Advanced AI Deep-Dive: Rothschild & Co
 - Drivers & trends
 - Risks & sensitivities
 - Recommended next steps
+
+---
+
+<!-- layout: 2-column -->
+# Bankable Language vs AI Hype
+
+### Weak AI draft
+- “Revolutionary outperformance”
+- “Guaranteed alpha potential”
+- “The data clearly proves…”
+
+### Bankable rewrite
+- “+210 bps vs benchmark (net)”
+- “Sample: n=42, 2019–2025”
+- “Driver: multiple expansion; risk: liquidity”
+
+---
+
+# Lab Bridge: Prompt → Pitch
+
+1. Lock the **metrics table** before any slide prose
+2. Generate dashboard from mock data only (Lab rule)
+3. Draft 5-slide spine from verified rows
+4. Run a critique pass: “attack unsupported claims”
+5. Human owns narrative, brand, and final numbers
 
 ---
 

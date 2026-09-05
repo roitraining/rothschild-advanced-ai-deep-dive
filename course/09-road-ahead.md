@@ -37,6 +37,18 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Decision-Relevant Shifts (Next 12–24 Months)
+
+| Shift | Why it changes your buying |
+| :--- | :--- |
+| Computer-use / deeper tools | Agents can click and act—blast radius rises |
+| Long-context economics | More “stuff in prompt” ≠ better tenancy design |
+| Open-weight revival | Sensitive workloads may leave pure API paths |
+| Governed agent platforms | HITL, audit, eval become product features |
+| MCP-like portability | Fewer one-off plugins; still need IAM |
+
+---
+
 <!-- layout: 2-column -->
 # Signals vs. Noise
 
@@ -82,6 +94,22 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+<!-- layout: 2-column -->
+# Must-Fluent vs Nice-to-Know
+
+### Must-fluent Monday
+- Token, context, RAG, tool call
+- MCP, skill, HITL, hallucination
+- Grounding vs training cutoff
+
+### Nice-to-know
+- LoRA / SFT flavors
+- Rerankers / hybrid search
+- Test-time compute dials
+- A2A protocol branding
+
+---
+
 # Phrases That Change Vendor Meetings
 
 - “Show me the **tool permission model** and audit log.”
@@ -116,6 +144,22 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Partial Scorecard Example (Dossier Drafting)
+
+| Criterion | Copilot-class surface | IDE / agent runtime (e.g. Cursor) |
+| :--- | :--- | :--- |
+| Task fit | Strong on docs/email | Strong on skills + tools |
+| Grounding | Tenant search / files | Explicit RAG/MCP you wire |
+| Agency | Often draft-first | Higher autonomy if configured |
+| Security | Enterprise tenant controls | Depends on your allow-lists |
+| Operability | IT-managed | Team-owned evals/versioning |
+| Economics | Seat-led | Seat + tokens + infra |
+
+> [!TIP]
+> Fill this for *one workflow*—not for “AI in general.”
+
+---
+
 <!-- layout: 3-column -->
 # Compare Deliberately
 
@@ -145,6 +189,48 @@ Advanced AI Deep-Dive: Rothschild & Co
 4. Demand MCP/API strategy for systems of record
 5. Pilot with eval harness + human gates
 6. Decide buy/build per layer—not as one monolith
+
+---
+
+<!-- layout: 2-column -->
+# Anti-Portfolio (What We Will Not Buy)
+
+### Good “not this year” examples
+- Fully autonomous client outreach
+- Unbounded production write tools
+- Mystery “proprietary brain” with no evals
+- One-demo architecture replacements
+
+### Why write an anti-portfolio
+- Stops maximalist shopping
+- Aligns risk and IT early
+- Makes Lab 9 recommendations sharper
+
+---
+
+# TCO Sketch (Finance-Friendly)
+
+| Cost leg | Questions |
+| :--- | :--- |
+| Seats / SKUs | Who needs which surface? |
+| Tokens / inference | Volume × reasoning mode |
+| Retrieval infra | Indexing, storage, rerank |
+| Integration | APIs, MCP servers, IAM |
+| Human review | Minutes per artifact × volume |
+| Incident / compliance | Logging, DLP, audit prep |
+
+> [!IMPORTANT]
+> Cheap tokens with expensive review (or expensive incidents) is not cheap.
+
+---
+
+# After This Course
+
+- Reuse the vocabulary cheat sheet in vendor meetings
+- Convert one workflow into a skill + tool allow-list draft
+- Stand up a tiny eval set for your top prompts
+- Schedule the human gates before the autonomy
+- Name an owner for each pilot
 
 ---
 

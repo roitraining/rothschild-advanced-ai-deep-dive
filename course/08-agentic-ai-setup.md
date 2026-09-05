@@ -82,6 +82,41 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# One-Page Agent Spec (Reuse Monday)
+
+| Field | Example fill |
+| :--- | :--- |
+| Mission | Monitor → score restructuring signals → draft dossier |
+| Inputs | News MCP, filings RAG, CRM read (deal-scoped) |
+| Outputs | Structured dossier + source list + confidence |
+| Tools allowed | search_news, get_filing_chunk, get_crm_account |
+| Tools forbidden | send_email, update_crm, any write |
+| Non-goals | No client outreach; no trading instructions |
+| Memory | Session only; no cross-deal durable memory |
+| HITL | Coverage banker before any distribution |
+| Evals | Citation present; no cross-deal IDs; step budget ≤ N |
+| Kill switch | Max steps / max spend / operator abort |
+
+---
+
+<!-- layout: 2-column -->
+# Memory: Useful and Dangerous
+
+### Use carefully
+- Session thread for the current task
+- Explicit “remember this preference” with scope
+- Deal-scoped scratchpads that expire
+
+### Hard risks
+- Durable memory leaking across clients/deals
+- Stale “facts” treated as policy
+- Hidden state reviewers cannot audit
+
+> [!CAUTION]
+> If memory can recall Client A while working Client B, you have a confidentiality incident waiting.
+
+---
+
 <!-- layout: navigation -->
 # Chapter 8
 
@@ -119,6 +154,32 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+<!-- layout: 2-column -->
+# When *Not* to Go Multi-Agent
+
+### Prefer single agent + tools when
+- One workflow, one artifact
+- Debugging must stay simple
+- Latency/cost budgets are tight
+- One owner can define policy
+
+### Split agents when
+- Clear specialist skills differ
+- Handoff artifacts are explicit
+- You can afford tracing + evals
+- Failure isolation matters
+
+---
+
+# A2A Interoperability vs Today’s Reality
+
+- **Supervisor patterns** (orchestrator + specialists) are what most firms can ship now
+- **Agent-to-agent protocols** aim for portable handoffs across vendors/runtimes—still maturing
+- Design for **explicit artifacts + trace IDs** regardless of protocol branding
+- Do not buy “A2A” as a substitute for allow-lists, HITL, and evals
+
+---
+
 # Handoff Contracts
 
 - Explicit artifacts between agents (JSON/markdown schemas)
@@ -149,6 +210,18 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Failure → Control Pairings
+
+| Failure mode | Control |
+| :--- | :--- |
+| Looping | Step budget, kill switch, “no new evidence → stop” |
+| Tool misuse | Narrow tools, typed IDs, dry-run / read-only defaults |
+| Prompt injection | Instruction hierarchy; treat docs as untrusted |
+| Silent omission | Required source checklist; coverage evals |
+| Overconfidence | Cite-or-refuse; human gate on thin evidence |
+
+---
+
 <!-- layout: 2-column -->
 # Human-in-the-Loop Patterns
 
@@ -171,6 +244,26 @@ Advanced AI Deep-Dive: Rothschild & Co
 - Dual control for anything client-visible
 - Immutable logs for model, tools, and retrieved chunks
 - Rollback: pin skill/model versions that misbehaved
+
+---
+
+<!-- layout: 3-column -->
+# Eval Agents—Not Just Answers
+
+### Final answer
+- Groundedness / citations
+- Policy compliance
+- Client-ready tone
+
+### Trajectory
+- Right tools called?
+- Wrong deal_id?
+- Steps within budget?
+
+### Regression pack
+- Golden dossiers
+- Injection docs
+- Cross-deal leakage cases
 
 ---
 

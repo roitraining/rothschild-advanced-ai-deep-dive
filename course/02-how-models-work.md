@@ -35,7 +35,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 ---
 
 <!-- layout: 2-column -->
-# Transformers in One Slide
+# Transformers: Strengths and Limits
 
 ### Strengths
 - Attention across tokens
@@ -49,6 +49,24 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 > [!NOTE]
 > “Transformer-based” describes architecture—not guaranteed finance accuracy.
+
+---
+
+<!-- layout: 2-column -->
+# Failure Demo: Invented Covenant
+
+### What the banker asked
+- “What leverage covenant applies if EBITDA dips 15%?”
+- Attached: wrong excerpt (fee schedule only)
+- No retrieval from the facility agreement
+
+### What the model did
+- Wrote a fluent “Net leverage ≤ 4.0x” answer
+- Sounded decisive; cited nothing real
+- Optimized to **continue helpfully**, not to abstain
+
+> [!WARNING]
+> Fluency under missing context is a feature of next-token prediction—not diligence.
 
 ---
 
@@ -100,6 +118,29 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+<!-- layout: 3-column -->
+# Fine-Tuning Flavors (Buyer Vocab)
+
+### SFT
+- Supervised examples
+- “Answer like our memos”
+- Still not live truth
+
+### Preference / RLHF-style
+- Rank better answers
+- Tone, safety, format
+- Does not add deal facts
+
+### LoRA / adapters
+- Smaller, swappable packs
+- Easier to rev / rollback
+- Same misuse risks apply
+
+> [!TIP]
+> If the fact must change next week, do not put it in weights—retrieve or tool-call it.
+
+---
+
 # Embeddings for Finance Search
 
 - Map text to vectors so “similar meaning” is measurable
@@ -123,6 +164,21 @@ Advanced AI Deep-Dive: Rothschild & Co
 # Context Window = Working Memory
 
 ![Context window](images/ch02-context-window.svg)
+
+---
+
+# Context Packing: Everyone Fights for Budget
+
+| Competing content | Why it burns tokens |
+| :--- | :--- |
+| System / policy | Firm rules, refusal behavior |
+| Retrieved chunks (RAG) | Grounding—if you over-retrieve, noise wins |
+| Tool results | API payloads can be huge |
+| Chat history | Prior turns crowd out the CIM |
+| Your question | Often the smallest piece |
+
+> [!IMPORTANT]
+> “We have a 128k context window” is not a strategy. **What you pack**—and in what order—decides quality.
 
 ---
 
@@ -179,6 +235,25 @@ Advanced AI Deep-Dive: Rothschild & Co
 - Ambiguous credit narratives
 - Multi-document synthesis
 - Not for every email rewrite
+
+---
+
+<!-- layout: 2-column -->
+# When “More Thinking” Still Fails
+
+### Thinking helps
+- Multi-step logic on **given** evidence
+- Planning tool use and self-checks
+- Careful comparison across passages
+
+### Thinking cannot fix
+- Wrong or missing retrieved docs
+- Poisoned context / prompt injection
+- No access to live system-of-record fields
+- A task that needed a calculator or query
+
+> [!WARNING]
+> Reasoning models amplify whatever is in context—including confident errors.
 
 ---
 

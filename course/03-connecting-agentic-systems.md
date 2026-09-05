@@ -58,6 +58,38 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Multi-Step Trace: Preliminary Dossier
+
+| Step | Tool / action | Result into context |
+| :--- | :--- | :--- |
+| 1 | `search_news` | Flagged restructuring headlines |
+| 2 | `get_filing_chunk` | Relevant 10-K / RNS excerpts |
+| 3 | `get_crm_account` | Coverage owner, prior touches |
+| 4 | Draft dossier | Model synthesizes with citations |
+| 5 | HITL gate | Banker approves before share |
+
+> [!IMPORTANT]
+> If any step lacks an allow-listed tool, the agent should stop—not improvise with prose.
+
+---
+
+<!-- layout: 2-column -->
+# Tool Design Anti-Patterns
+
+### Dangerous
+- God-query “run any SQL”
+- Silent writes to CRM
+- Tools that return secrets/PII raw
+- One tool that emails externally
+
+### Better
+- Narrow, intention-revealing APIs
+- Read vs write separated
+- Redact before prompt/logs
+- Explicit send tool + HITL
+
+---
+
 <!-- layout: navigation -->
 # Chapter 3
 
@@ -144,6 +176,22 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+<!-- layout: 2-column -->
+# MCP Gives You / Does Not Give You
+
+### Gives you
+- Portable discovery of tools & resources
+- Capability definitions near the data service
+- Less one-off plugin sprawl per host app
+
+### Does not give you
+- IAM / row-level security by magic
+- Tenancy across deal rooms
+- Safe defaults for write/send
+- Immunity to prompt injection
+
+---
+
 <!-- layout: navigation -->
 # Chapter 3
 
@@ -174,6 +222,24 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 <!-- TODO IMAGE: Screenshot of an enterprise API gateway policy for an AI tool identity -->
 ![API gateway policy placeholder](images/ch03-api-gateway-policy-screenshot.svg)
+
+---
+
+<!-- layout: 2-column -->
+# Identity Propagation Matters
+
+### User token
+- Acts as the banker
+- Inherits deal-room ACL
+- Auditable to a person
+
+### Service account
+- Shared bot identity
+- Easy to over-privilege
+- Cross-deal blast radius if mis-scoped
+
+> [!WARNING]
+> A CRM read as “ai-bot-prod” with firm-wide scope is how confidential coverage leaks.
 
 ---
 
@@ -209,6 +275,22 @@ Advanced AI Deep-Dive: Rothschild & Co
 - Allowed tools and forbidden actions
 - Escalation path to a human
 - Start with one high-value workflow first
+
+---
+
+# Mini Skill Skeleton (Preliminary Dossier)
+
+```text
+name: preliminary-dossier
+trigger: "draft dossier" / Debt Advisory intake
+tools: [search_news, get_filing_chunk, get_crm_account]
+forbidden: [send_email, crm_write]
+inputs: company, jurisdiction, asking_team
+output: dossier.md + sources[] + gaps[]
+non_goals: no client outreach; no investment recommendation
+done_when: citations present OR explicit "insufficient sources"
+escalate_to: coverage banker
+```
 
 ---
 
