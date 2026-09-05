@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <style>
+      .t { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1a2332; }
+      .h { font-size: 28px; font-weight: 700; }
+      .b { font-size: 18px; font-weight: 600; }
+      .s { font-size: 15px; fill: #3d4a5c; }
+      .w { fill: #f7f5f0; }
+      .card { fill: #ffffff; stroke: #c9c2b4; stroke-width: 2; }
+      .accent { fill: #0b3d2e; }
+      .accent2 { fill: #1e5a45; }
+      .muted { fill: #e8e4dc; }
+      .line { stroke: #0b3d2e; stroke-width: 2.5; fill: none; }
+      .arrow { fill: #0b3d2e; }
+    </style>
+  </defs>
+  <rect width="1200" height="675" class="w"/>
+  
+  <text x="60" y="58" class="t h">End-to-End Generative Workflow</text>
+  <rect x="70" y="150" width="190" height="140" rx="10" class="card"/>
+  <text x="95" y="210" class="t b">User goal</text>
+  <text x="95" y="245" class="t s">Deal briefing</text>
+  <rect x="290" y="150" width="190" height="140" rx="10" class="card"/>
+  <text x="315" y="200" class="t b">Agent +</text>
+  <text x="315" y="230" class="t b">Skills</text>
+  <rect x="510" y="150" width="190" height="140" rx="10" class="card"/>
+  <text x="535" y="200" class="t b">Tools /</text>
+  <text x="535" y="230" class="t b">MCP</text>
+  <rect x="730" y="150" width="190" height="140" rx="10" class="card"/>
+  <text x="755" y="200" class="t b">RAG /</text>
+  <text x="755" y="230" class="t b">Live data</text>
+  <rect x="950" y="150" width="180" height="140" rx="10" fill="#0b3d2e"/>
+  <text x="975" y="210" class="t b" fill="#f7f5f0">Verified</text>
+  <text x="975" y="245" class="t s" fill="#dce8e2">output</text>
+  <path d="M260 220 H290" class="line"/>
+  <path d="M480 220 H510" class="line"/>
+  <path d="M700 220 H730" class="line"/>
+  <path d="M920 220 H950" class="line"/>
+  <rect x="70" y="360" width="1060" height="220" rx="12" class="card"/>
+  <text x="100" y="420" class="t b">Controls wrap every hop</text>
+  <text x="100" y="470" class="t s">Identity • least privilege • DLP / redaction • audit logs • human approval gates</text>
+  <text x="100" y="520" class="t s">LLM reasons; tools act; RAG grounds; MCP standardizes access; humans own risk</text>
+
+</svg>

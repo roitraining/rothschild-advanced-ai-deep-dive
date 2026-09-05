@@ -1,0 +1,207 @@
+<!-- course-title: Advanced AI Deep-Dive: Rothschild & Co -->
+<!-- layout: title -->
+![ROI Logo](images/roi-logo-with-name.png)
+
+Advanced AI Deep-Dive: Rothschild & Co
+
+# Chapter 4: Managing a Data Platform for Generative AI Workflows
+
+---
+
+# Chapter 4: Objectives
+
+- Explain embeddings and RAG for grounding models in firm data
+- Identify data quality requirements for AI systems
+- Apply privacy and security practices in agentic workflows
+- Blueprint an end-to-end workflow combining LLMs, tools, MCP, and RAG
+
+---
+
+<!-- layout: navigation -->
+# Chapter 4
+
+- **Embeddings and RAG**
+- Ensuring Data Quality for AI Systems
+- Data Privacy and Security in Agentic Workflows
+- Building an End-to-End Workflow
+
+---
+
+<!-- layout: title-image -->
+# RAG: Grounding in Your Data
+
+![RAG pipeline](images/ch04-rag-pipeline.svg)
+
+---
+
+<!-- layout: 2-column -->
+# When RAG Is the Right Tool
+
+### Use RAG when
+- Facts are proprietary or recent
+- Citations are required
+- Questions vary across a corpus
+
+### Prefer other patterns when
+- Need live system fields → tools/APIs
+- Pure style/format → lighter prompts or fine-tune
+- No corpus exists yet → fix data first
+
+---
+
+# RAG Design Choices
+
+| Choice | Why it matters |
+| :--- | :--- |
+| Chunk size / overlap | Too big → noisy; too small → missing context |
+| Metadata filters | Deal, region, date, confidentiality |
+| Hybrid search | Keyword + vector for tickers, covenants, IDs |
+| Reranking | Improves precision before generation |
+| Citation UX | Makes verification practical for bankers |
+
+---
+
+<!-- layout: navigation -->
+# Chapter 4
+
+- Embeddings and RAG
+- **Ensuring Data Quality for AI Systems**
+- Data Privacy and Security in Agentic Workflows
+- Building an End-to-End Workflow
+
+---
+
+<!-- layout: stacked -->
+# Garbage In, Fluent Garbage Out
+
+- Duplicate, outdated, or conflicting memos confuse retrieval
+- OCR errors in scanned CIMs become “facts”
+- Missing metadata blocks safe filtering
+- Unowned corpora become unmaintainable
+
+> [!WARNING]
+> AI does not fix data governance debt—it advertises it in client-ready prose.
+
+---
+
+# Quality Checklist for AI Corpora
+
+- **Provenance**: where did this document come from?
+- **Freshness**: last validated date and owner
+- **Authority**: draft vs. final vs. superseded
+- **Structure**: titles, sections, tables preserved
+- **Access labels**: who is allowed to retrieve it?
+
+---
+
+<!-- layout: navigation -->
+# Chapter 4
+
+- Embeddings and RAG
+- Ensuring Data Quality for AI Systems
+- **Data Privacy and Security in Agentic Workflows**
+- Building an End-to-End Workflow
+
+---
+
+# Threat Model (Agent Edition)
+
+- Prompt injection via documents or web content
+- Over-privileged tools exfiltrating data
+- Cross-deal leakage through shared indexes
+- Sensitive content retained in logs and vendor stores
+
+---
+
+<!-- layout: 3-column -->
+# Controls That Travel with Data
+
+### Access
+- Identity-aware retrieval
+- Segregate deal rooms
+- Deny by default
+
+### Protection
+- DLP / redaction
+- Encryption in transit & at rest
+- Secret scanning
+
+### Assurance
+- Audit every tool call
+- Retention limits
+- Red-team prompts
+
+---
+
+<!-- layout: stacked -->
+# Privacy by Workflow Design
+
+- Minimize what enters the prompt—retrieve narrowly
+- Prefer on-tenant or approved enterprise endpoints
+- Separate training-data opt-out from production logging policy
+- Client-facing outputs: human accountability remains
+
+---
+
+<!-- layout: navigation -->
+# Chapter 4
+
+- Embeddings and RAG
+- Ensuring Data Quality for AI Systems
+- Data Privacy and Security in Agentic Workflows
+- **Building an End-to-End Workflow**
+
+---
+
+<!-- layout: title-image -->
+# Combining LLMs, Tools, MCP, and RAG
+
+![End-to-end workflow](images/ch04-e2e-workflow.svg)
+
+---
+
+<!-- layout: stacked -->
+# Reference Flow: Internal Research Brief
+
+1. User states goal and constraints
+2. Agent loads skill (brief template + policy)
+3. RAG retrieves approved corpus slices
+4. MCP/tools fetch live fields (e.g., positions, CRM)
+5. Model drafts; citations attached
+6. Human approves before distribution
+
+---
+
+<!-- layout: stacked -->
+# Maximize Value Without Maximizing Risk
+
+- Compose capabilities deliberately—don’t enable every tool “just in case”
+- Measure: groundedness, latency, cost, and escalation rate
+- Version prompts, indexes, and skills together
+- Treat the workflow as a product with owners
+
+> [!TIP]
+> The best architecture is the one a managing director can explain: goal → data → tools → review.
+
+---
+
+# Lab 4: Designing a Secure Data Strategy
+
+**Time:** 30 minutes
+
+**Lab guide:** [Lab 4 instructions](labs/lab-04-secure-data-strategy.md)
+
+---
+
+# What You Learned
+
+- Explained embeddings and RAG for grounding models in firm data
+- Identified data quality requirements for AI systems
+- Applied privacy and security practices in agentic workflows
+- Blueprinted an end-to-end workflow combining LLMs, tools, MCP, and RAG
+
+---
+
+# Q&A
+
+Questions?

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <style>
+      .t { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1a2332; }
+      .h { font-size: 28px; font-weight: 700; }
+      .b { font-size: 18px; font-weight: 600; }
+      .s { font-size: 15px; fill: #3d4a5c; }
+      .w { fill: #f7f5f0; }
+      .card { fill: #ffffff; stroke: #c9c2b4; stroke-width: 2; }
+      .accent { fill: #0b3d2e; }
+      .accent2 { fill: #1e5a45; }
+      .muted { fill: #e8e4dc; }
+      .line { stroke: #0b3d2e; stroke-width: 2.5; fill: none; }
+      .arrow { fill: #0b3d2e; }
+    </style>
+  </defs>
+  <rect width="1200" height="675" class="w"/>
+  
+  <text x="60" y="58" class="t h">From Text → Tokens → Embeddings</text>
+  <rect x="70" y="140" width="220" height="120" rx="10" class="card"/>
+  <text x="95" y="195" class="t b">Input text</text>
+  <text x="95" y="225" class="t s">"EBITDA margin"</text>
+  <text x="320" y="210" class="t h">→</text>
+  <rect x="370" y="140" width="280" height="120" rx="10" class="card"/>
+  <text x="395" y="185" class="t b">Tokens</text>
+  <text x="395" y="215" class="t s">["EBIT", "DA", " margin"]</text>
+  <text x="395" y="240" class="t s">Model's atomic units</text>
+  <text x="680" y="210" class="t h">→</text>
+  <rect x="730" y="140" width="400" height="120" rx="10" class="card"/>
+  <text x="755" y="185" class="t b">Embeddings</text>
+  <text x="755" y="215" class="t s">Dense vectors of meaning</text>
+  <text x="755" y="240" class="t s">Power search, RAG, clustering</text>
+  <rect x="70" y="320" width="1060" height="250" rx="12" class="card"/>
+  <text x="100" y="370" class="t b">Why bankers should care</text>
+  <text x="100" y="415" class="t s">• Token limits = how much of a CIM / 10-K fits in one pass</text>
+  <text x="100" y="455" class="t s">• Embeddings = how the system finds "similar" covenants or comps</text>
+  <text x="100" y="495" class="t s">• Transformers attend across tokens—great for language, not a spreadsheet engine</text>
+  <text x="100" y="535" class="t s">• Wrong chunking / retrieval → confident but ungrounded answers</text>
+
+</svg>
