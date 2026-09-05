@@ -360,4 +360,4 @@ You must make a proprietary dataset available to an internal research agent.
 
 # Questions and Answers
 
-Questions?
+![Questions and Answers](images/qa.png)

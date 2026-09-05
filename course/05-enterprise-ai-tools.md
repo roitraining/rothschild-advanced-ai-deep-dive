@@ -336,4 +336,4 @@ Walk through a 5-minute deal briefing workflow in Copilot (report → risks → 
 
 # Questions and Answers
 
-Questions?
+![Questions and Answers](images/qa.png)

@@ -119,4 +119,4 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 # Questions and Answers
 
-Questions?
+![Questions and Answers](images/qa.png)

@@ -365,4 +365,4 @@ Design a multi-agent system that monitors news, flags restructuring opportunitie
 
 # Questions and Answers
 
-Questions?
+![Questions and Answers](images/qa.png)

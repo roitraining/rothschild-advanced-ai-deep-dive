@@ -318,4 +318,4 @@ You will turn a mock portfolio into a dashboard and a 5-slide pitch spine with A
 
 # Questions and Answers
 
-Questions?
+![Questions and Answers](images/qa.png)

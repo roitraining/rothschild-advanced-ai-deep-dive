@@ -365,4 +365,4 @@ You asked a model for leverage capacity and it answered confidently with no sour
 
 # Questions and Answers
 
-Questions?
+![Questions and Answers](images/qa.png)

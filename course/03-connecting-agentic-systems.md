@@ -392,4 +392,4 @@ Blueprint an agent that drafts a preliminary dossier using CRM fields and a docu
 
 # Questions and Answers
 
-Questions?
+![Questions and Answers](images/qa.png)

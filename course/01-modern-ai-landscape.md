@@ -342,4 +342,4 @@ Pick one Rothschild workflow (for example: research brief, deal dossier, or clie
 
 # Questions and Answers
 
-Questions?
+![Questions and Answers](images/qa.png)
