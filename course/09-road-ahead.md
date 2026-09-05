@@ -244,6 +244,6 @@ Run a build-your-stack challenge: model providers vs work surfaces (e.g., OpenAI
 
 ---
 
-# Q&A
+# Questions and Answers
 
 Questions?

@@ -281,6 +281,6 @@ You must make a proprietary dataset available to an internal research agent.
 
 ---
 
-# Q&A
+# Questions and Answers
 
 Questions?

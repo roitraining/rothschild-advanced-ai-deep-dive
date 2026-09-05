@@ -270,6 +270,6 @@ Design a multi-agent system that monitors news, flags restructuring opportunitie
 
 ---
 
-# Q&A
+# Questions and Answers
 
 Questions?

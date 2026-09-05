@@ -120,6 +120,6 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
-# Q&A
+# Questions and Answers
 
 Questions?

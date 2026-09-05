@@ -283,6 +283,6 @@ Pick one Rothschild workflow (for example: research brief, deal dossier, or clie
 
 ---
 
-# Q&A
+# Questions and Answers
 
 Questions?

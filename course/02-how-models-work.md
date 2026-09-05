@@ -288,6 +288,6 @@ You asked a model for leverage capacity and it answered confidently with no sour
 
 ---
 
-# Q&A
+# Questions and Answers
 
 Questions?

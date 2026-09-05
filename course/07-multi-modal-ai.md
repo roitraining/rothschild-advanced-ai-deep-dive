@@ -241,6 +241,6 @@ Design an earnings-call autopsy for a coverage team.
 
 ---
 
-# Q&A
+# Questions and Answers
 
 Questions?
