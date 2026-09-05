@@ -168,6 +168,85 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Quiz 1 of 3
+
+**What is the strongest anti-pattern in AI-assisted market research?**
+
+- A. Separating collection from synthesis and keeping a claims-vs-evidence table
+- B. Preferring filings and transcripts as primary sources
+- C. Single-prompt “write a full industry report” with no source discipline
+- D. Using AI to draft slide outlines after evidence is gathered
+
+---
+
+# Quiz 1 — Answer
+
+**What is the strongest anti-pattern in AI-assisted market research?**
+
+**Correct: C.** Single-prompt “write a full industry report” with no source discipline
+
+- Speed without source discipline creates elegant misinformation
+- Distinguish retrieved facts from model recall; check contradictions
+- AI accelerates mapping and drafting; humans own trust and judgment
+- Primary sources beat vendor blogs for diligence
+
+---
+
+# Quiz 2 of 3
+
+**How should “vibe coding” be positioned for portfolio dashboards and prototypes?**
+
+- A. A bypass of engineering standards for production systems
+- B. Iterative natural-language building of internal prototypes with acceptance checks each loop
+- C. Automatic permission to use live confidential portfolios in demos
+- D. A replacement for verified metrics tables in pitch decks
+
+---
+
+# Quiz 2 — Answer
+
+**How should “vibe coding” be positioned for portfolio dashboards and prototypes?**
+
+**Correct: B.** Iterative natural-language building of internal prototypes with acceptance checks each loop
+
+- Ideal for demos and exploration—not a waiver for production controls
+- Separate mock data from confidential data; pin versions when sharing
+- Pitch decks still need a single source table of truth for numbers
+- Generate → run → critique → refine
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 of 3 — Discussion
+
+### Prompt
+You will turn a mock portfolio into a dashboard and a 5-slide pitch spine with AI.
+
+### Discuss
+- Which steps must stay tied to systems of record or recomputation?
+- What belongs on each of the five slides vs in speaker notes?
+- Where do humans own narrative and brand—even if AI drafts fast?
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 — Discussion Points
+
+**You will turn a mock portfolio into a dashboard and a 5-slide pitch spine with AI.**
+
+### Strong Answers Mention
+- Export/query → verify → narrate; recompute critical figures
+- Spine: situation/ask, snapshot, drivers, risks, next steps
+- One metrics table of truth; design/brand review still required
+- AI proposes hypotheses; demand evidence
+
+### Watch For
+- Letting the model invent portfolio numbers
+- Collapsing research into one uncited mega-prompt
+- Shipping prototypes as production analytics
+
+---
+
 # Q&A
 
 Questions?

@@ -162,6 +162,85 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Quiz 1 of 3
+
+**What is the core idea behind multimodal AI architectures?**
+
+- A. Only text models can participate in finance workflows
+- B. Multiple input types map into a shared representation for joint reasoning (native or composed pipelines)
+- C. Video models eliminate the need for transcripts and citations
+- D. Multimodal systems remove privacy and retention concerns
+
+---
+
+# Quiz 1 — Answer
+
+**What is the core idea behind multimodal AI architectures?**
+
+**Correct: B.** Multiple input types map into a shared representation for joint reasoning (native or composed pipelines)
+
+- Native multimodal vs composed (e.g., ASR → LLM → TTS) are both valid
+- Latency, cost, and privacy differ by modality
+- Transcripts and citations still matter for verifiable claims
+- Rights and retention must be confirmed for audio/video artifacts
+
+---
+
+# Quiz 2 of 3
+
+**In an earnings-call autopsy, which practice is mandatory for material claims?**
+
+- A. Treat sentiment scores as proof of a strategic pivot
+- B. Timestamped citations, observation vs inference separation, and cross-check of guidance figures
+- C. Discard the published release once video analysis finishes
+- D. Auto-send the TTS podcast to clients without review
+
+---
+
+# Quiz 2 — Answer
+
+**In an earnings-call autopsy, which practice is mandatory for material claims?**
+
+**Correct: B.** Timestamped citations, observation vs inference separation, and cross-check of guidance figures
+
+- Prosody/sentiment are signals—not proof of strategy
+- Claim ledgers and human sign-off precede client or investment use
+- Align transcript to slides/exhibits; ground with related filings
+- Retention and copyright/rights still apply
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 of 3 — Discussion
+
+### Prompt
+Design an earnings-call autopsy for a coverage team.
+
+### Discuss
+- Native multimodal vs composed pipeline—what would you choose and why?
+- Which outputs (theme map, claim ledger, podcast) need the strictest gates?
+- What personal-data or rights issues must Legal/Compliance clear first?
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 — Discussion Points
+
+**Design an earnings-call autopsy for a coverage team.**
+
+### Strong Answers Mention
+- Composed pipelines offer clearer control points; native may simplify joint reasoning
+- Claim ledger and client-facing podcast need strict review; internal theme maps less so
+- Confirm recording rights, retention, and sharing before ingest
+- Cross-check guidance with the published release
+
+### Watch For
+- Equating tone shifts with certain strategic pivots
+- Skipping timestamps/citations
+- Storing sensitive media without a retention policy
+
+---
+
 # Q&A
 
 Questions?

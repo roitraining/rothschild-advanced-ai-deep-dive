@@ -209,6 +209,85 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Quiz 1 of 3
+
+**Why should bankers care about tokens when reviewing a 50-page CIM with an LLM?**
+
+- A. Tokens only affect image generation quality
+- B. Token limits determine how much input and output fit in one pass
+- C. More tokens always guarantee factual accuracy
+- D. Tokens replace the need for embeddings and retrieval
+
+---
+
+# Quiz 1 — Answer
+
+**Why should bankers care about tokens when reviewing a 50-page CIM with an LLM?**
+
+**Correct: B.** Token limits determine how much input and output fit in one pass
+
+- Models read tokens, not pages; long CIMs compete with instructions and chat history
+- Large documents often need chunking/RAG rather than a single naive paste
+- Tokens do not guarantee correctness—grounding still matters
+- Embeddings help find relevant passages; they do not remove context limits
+
+---
+
+# Quiz 2 of 3
+
+**Your team wants up-to-date covenant language from internal memos. Which approach is usually best?**
+
+- A. Fine-tune the model weekly on every memo and skip retrieval
+- B. Rely on the model’s training cutoff for live deal facts
+- C. Retrieve approved documents (RAG) and/or call tools, then generate with citations
+- D. Increase temperature so the model “tries harder”
+
+---
+
+# Quiz 2 — Answer
+
+**Your team wants up-to-date covenant language from internal memos. Which approach is usually best?**
+
+**Correct: C.** Retrieve approved documents (RAG) and/or call tools, then generate with citations
+
+- Fine-tuning is for style/behavior specialization—not a live source of truth
+- Training cutoff cannot replace proprietary or changing deal data
+- Grounding patterns: retrieve-then-generate, tools, constrained outputs, human review
+- Temperature does not fix missing context
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 of 3 — Discussion
+
+### Prompt
+You asked a model for leverage capacity and it answered confidently with no sources.
+
+### Discuss
+- What likely went wrong in terms of context, retrieval, or incentives?
+- When would you spend extra test-time compute (reasoning) vs keep the task fast/cheap?
+- What verification steps would you require before the answer reaches a client?
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 — Discussion Points
+
+**You asked a model for leverage capacity and it answered confidently with no sources.**
+
+### Strong Answers Mention
+- Fluent completion ≠ evidence; missing/truncated context invites invention
+- Prefer citations, schema constraints, and “say unknown” rules
+- Reasoning/test-time compute helps hard multi-step analysis—not every rewrite
+- Material claims need grounding + human sign-off
+
+### Watch For
+- Trusting tone as proof
+- Fine-tuning as a fix for freshness
+- Unlimited context assumed to eliminate hallucination
+
+---
+
 # Q&A
 
 Questions?

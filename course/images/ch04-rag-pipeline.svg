@@ -1,43 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img">
   <defs>
-    <style>
-      .t { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1a2332; }
-      .h { font-size: 28px; font-weight: 700; }
-      .b { font-size: 18px; font-weight: 600; }
-      .s { font-size: 15px; fill: #3d4a5c; }
-      .w { fill: #f7f5f0; }
-      .card { fill: #ffffff; stroke: #c9c2b4; stroke-width: 2; }
-      .accent { fill: #0b3d2e; }
-      .accent2 { fill: #1e5a45; }
-      .muted { fill: #e8e4dc; }
-      .line { stroke: #0b3d2e; stroke-width: 2.5; fill: none; }
-      .arrow { fill: #0b3d2e; }
-    </style>
+    <filter id="elev1" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#202124" flood-opacity="0.16"/>
+    </filter>
+    <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
+    </filter>
+    <style type="text/css"><![CDATA[
+      .title { font-family: Roboto, 'Google Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 400; fill: #5F6368; }
+      .h2 { font-family: Roboto, 'Google Sans', Arial, sans-serif; font-size: 21px; font-weight: 700; fill: #202124; }
+      .h3 { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #202124; }
+      .label { font-family: Roboto, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #5F6368; letter-spacing: 1.2px; }
+      .chip { font-family: Roboto, Arial, sans-serif; font-size: 14px; font-weight: 600; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #202124; }
+      .on-dark { fill: #FFFFFF; }
+    ]]></style>
   </defs>
-  <rect width="1200" height="675" class="w"/>
-  
-  <text x="60" y="58" class="t h">RAG Pipeline (Retrieval-Augmented Generation)</text>
-  <rect x="60" y="140" width="200" height="100" rx="10" class="card"/>
-  <text x="85" y="185" class="t b">1. Ingest</text>
-  <text x="85" y="215" class="t s">Docs → chunks</text>
-  <text x="280" y="190" class="t h">→</text>
-  <rect x="320" y="140" width="200" height="100" rx="10" class="card"/>
-  <text x="345" y="185" class="t b">2. Embed</text>
-  <text x="345" y="215" class="t s">Vectors + metadata</text>
-  <text x="540" y="190" class="t h">→</text>
-  <rect x="580" y="140" width="200" height="100" rx="10" class="card"/>
-  <text x="605" y="185" class="t b">3. Retrieve</text>
-  <text x="605" y="215" class="t s">Top-k relevant</text>
-  <text x="800" y="190" class="t h">→</text>
-  <rect x="840" y="140" width="280" height="100" rx="10" fill="#0b3d2e"/>
-  <text x="865" y="185" class="t b" fill="#f7f5f0">4. Generate</text>
-  <text x="865" y="215" class="t s" fill="#dce8e2">Answer + citations</text>
-  <rect x="60" y="300" width="1060" height="280" rx="12" class="card"/>
-  <text x="90" y="355" class="t b">Finance example: internal credit memo Q&amp;A</text>
-  <text x="90" y="405" class="t s">Query: "What leverage covenants apply if EBITDA dips 15%?"</text>
-  <text x="90" y="450" class="t s">Retrieve: facility agreement sections + prior memos with matching metadata</text>
-  <text x="90" y="495" class="t s">Generate: answer grounded in retrieved clauses, with source pointers</text>
-  <text x="90" y="540" class="t s">Fail closed: if retrieval is weak, say so—do not invent covenant language</text>
+  <rect width="1200" height="675" fill="#F8F9FA"/>
+  <text x="48" y="48" class="title">RAG Pipeline</text>
+  <text x="48" y="78" class="sub">Retrieval-Augmented Generation — ground answers in your corpus</text>
+
+  <rect x="48" y="115" width="250" height="170" rx="20" fill="#E8F0FE" filter="url(#elev2)"/>
+  <circle cx="88" cy="160" r="22" fill="#4285F4"/>
+  <text x="88" y="166" text-anchor="middle" class="num">1</text>
+  <text x="126" y="167" class="h2">Ingest</text>
+  <text x="173" y="230" text-anchor="middle" class="body-ink" font-size="17">Docs to chunks</text>
+
+  <rect x="326" y="115" width="250" height="170" rx="20" fill="#FEF7E0" filter="url(#elev2)"/>
+  <circle cx="366" cy="160" r="22" fill="#FBBC04"/>
+  <text x="366" y="166" text-anchor="middle" class="num-dark">2</text>
+  <text x="404" y="167" class="h2">Embed</text>
+  <text x="451" y="230" text-anchor="middle" class="body-ink" font-size="17">Vectors + metadata</text>
+
+  <rect x="604" y="115" width="250" height="170" rx="20" fill="#E6F4EA" filter="url(#elev2)"/>
+  <circle cx="644" cy="160" r="22" fill="#34A853"/>
+  <text x="644" y="166" text-anchor="middle" class="num">3</text>
+  <text x="682" y="167" class="h2">Retrieve</text>
+  <text x="729" y="230" text-anchor="middle" class="body-ink" font-size="17">Top-k relevant</text>
+
+  <rect x="882" y="115" width="250" height="170" rx="20" fill="#FCE8E6" filter="url(#elev2)"/>
+  <circle cx="922" cy="160" r="22" fill="#EA4335"/>
+  <text x="922" y="166" text-anchor="middle" class="num">4</text>
+  <text x="960" y="167" class="h2">Generate</text>
+  <text x="1007" y="230" text-anchor="middle" class="body-ink" font-size="17">Answer + citations</text>
+<line x1="298" y1="200" x2="314" y2="200" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="326,200 310,192 310,208" fill="#4285F4"/><line x1="576" y1="200" x2="592" y2="200" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="604,200 588,192 588,208" fill="#4285F4"/><line x1="854" y1="200" x2="870" y2="200" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="882,200 866,192 866,208" fill="#4285F4"/>
+  <rect x="48" y="320" width="1104" height="310" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
+  <rect x="48" y="320" width="1104" height="10" fill="#4285F4"/>
+  <text x="80" y="375" class="h2">Finance example — internal credit memo Q&amp;A</text>
+  <rect x="80" y="400" width="1040" height="60" rx="14" fill="#E8F0FE"/>
+  <text x="104" y="438" class="body-ink" font-size="17"><tspan font-weight="700" fill="#4285F4">Query: </tspan>"What leverage covenants apply if EBITDA dips 15%?"</text>
+  <text x="80" y="505" class="body-ink" font-size="17">Retrieve facility agreement sections + prior memos with matching metadata</text>
+  <text x="80" y="545" class="body-ink" font-size="17">Generate an answer grounded in retrieved clauses, with source pointers</text>
+  <rect x="80" y="570" width="1040" height="42" rx="12" fill="#FCE8E6"/>
+  <text x="104" y="598" class="chip" fill="#EA4335">Fail closed: if retrieval is weak, say so — do not invent covenant language</text>
 
 </svg>

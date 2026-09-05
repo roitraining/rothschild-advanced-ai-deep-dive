@@ -204,6 +204,85 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Quiz 1 of 3
+
+**In the generative AI stack, which layer is where APIs, MCP, RAG, skills, and guardrails typically live?**
+
+- A. Foundation (identity and network only)
+- B. Model layer
+- C. Orchestration and tools
+- D. Applications and agents only
+
+---
+
+# Quiz 1 — Answer
+
+**In the generative AI stack, which layer is where APIs, MCP, RAG, skills, and guardrails typically live?**
+
+**Correct: C.** Orchestration and tools
+
+- Orchestration is where enterprise data and controls attach to the model
+- Applications are what users see; models are one capability choice among many
+- Foundation covers identity, network, audit, and trust boundaries—not tool wiring
+- Diligence must reach below the demo UI into this layer
+
+---
+
+# Quiz 2 of 3
+
+**A vendor says their “fully autonomous banking AI” needs no human review. What is the strongest technical response?**
+
+- A. Agree—frontier models eliminated hallucination
+- B. Autonomy is a spectrum; agentic systems amplify blast radius and still need gates
+- C. Open-weight models never require review
+- D. Autonomy only matters during the coding phase of a project
+
+---
+
+# Quiz 2 — Answer
+
+**A vendor says their “fully autonomous banking AI” needs no human review. What is the strongest technical response?**
+
+**Correct: B.** Autonomy is a spectrum; agentic systems amplify blast radius and still need gates
+
+- Chatbots answer one prompt; agents pursue goals with tools and permission to act
+- More autonomy without controls increases risk, not just productivity
+- Open vs closed is about control and ops—not a substitute for human gates
+- Buy for the autonomy level you can supervise
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 of 3 — Discussion
+
+### Prompt
+Pick one Rothschild workflow (for example: research brief, deal dossier, or client email draft).
+
+### Discuss
+- At which stack layer does most of the risk actually live for that workflow?
+- Would you prefer open-weight, closed/API, or hybrid—and why?
+- What hype claim would you challenge first in a vendor meeting?
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 — Discussion Points
+
+**Pick one Rothschild workflow (for example: research brief, deal dossier, or client email draft).**
+
+### Strong Answers Mention
+- Risk often sits in data access, tools, and controls—not the model brand
+- Hybrid is common: productivity suites vs sensitive workloads
+- Ask where prompts, docs, and logs live; demand architecture with trust boundaries
+- Match autonomy to supervision capacity
+
+### Watch For
+- Treating the chatbot UI as “the architecture”
+- “Open means automatically safer”
+- Accepting “fully autonomous” with no failure modes
+
+---
+
 # Q&A
 
 Questions?

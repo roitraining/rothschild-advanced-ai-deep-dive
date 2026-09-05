@@ -165,6 +165,85 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Quiz 1 of 3
+
+**Which diligence question best pressure-tests an AI vendor’s enterprise readiness?**
+
+- A. “Are you on the leaderboard this month?”
+- B. “Show the tool permission model, ACL-aware retrieval, and audit logs”
+- C. “Can you promise fully autonomous banking with zero errors?”
+- D. “Do you have a proprietary brain we cannot inspect?”
+
+---
+
+# Quiz 1 — Answer
+
+**Which diligence question best pressure-tests an AI vendor’s enterprise readiness?**
+
+**Correct: B.** “Show the tool permission model, ACL-aware retrieval, and audit logs”
+
+- Scorecard: task fit, grounding, agency, security, operability, economics
+- Prefer architecture with trust boundaries over feature lists
+- Leaderboards and vague autonomy claims are weak signals
+- Ask what happens on low-confidence retrieval
+
+---
+
+# Quiz 2 of 3
+
+**In the technical vocabulary cheat sheet, what does RAG mean?**
+
+- A. Replace all governance with generation
+- B. Retrieve firm data, then generate grounded answers
+- C. Run agents without tools
+- D. Randomly assign GPU capacity
+
+---
+
+# Quiz 2 — Answer
+
+**In the technical vocabulary cheat sheet, what does RAG mean?**
+
+**Correct: B.** Retrieve firm data, then generate grounded answers
+
+- Pair with tokens, embeddings, context window, MCP, skills, HITL in vendor conversations
+- Inference is running the model; fine-tune specializes weights—not live truth
+- Hallucination = fluent output without reliable grounding
+- Use the shared vocabulary to keep meetings precise
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 of 3 — Discussion
+
+### Prompt
+Run a build-your-stack challenge: model providers vs work surfaces (e.g., OpenAI/Anthropic/Google; Copilot/Claude Code/Cursor).
+
+### Discuss
+- Which workflows are high-value vs high-risk for your team?
+- Where would you invest first—and what autonomy level can you supervise?
+- How will you pilot with evals and human gates before scaling?
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 — Discussion Points
+
+**Run a build-your-stack challenge: model providers vs work surfaces (e.g., OpenAI/Anthropic/Google; Copilot/Claude Code/Cursor).**
+
+### Strong Answers Mention
+- Rank workflows by value/risk; separate productivity vs sensitive runtimes
+- Demand MCP/API strategy for systems of record
+- Pilot with eval harness + gates; decide buy/build per layer
+- Defend with criteria from the course—not brand preference alone
+
+### Watch For
+- One-demo architecture decisions
+- “Fully autonomous” without operability/security evidence
+- Ignoring total cost at expected volume
+
+---
+
 # Q&A
 
 Questions?

@@ -229,6 +229,85 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Quiz 1 of 3
+
+**In function calling, what does the model actually do versus the runtime?**
+
+- A. The model directly executes SQL on production with no intermediary
+- B. The model proposes a structured tool call; the runtime executes and returns results
+- C. The runtime invents tool arguments; the model only formats prose
+- D. Function calling removes the need for authentication
+
+---
+
+# Quiz 1 — Answer
+
+**In function calling, what does the model actually do versus the runtime?**
+
+**Correct: B.** The model proposes a structured tool call; the runtime executes and returns results
+
+- Tools turn language into action; execution stays in your controlled runtime
+- The model chooses *when*; the platform enforces *whether*
+- Every tool is a privilege—design allow-lists carefully
+- Auth still binds to user/service identity, not “the LLM”
+
+---
+
+# Quiz 2 of 3
+
+**What is the best characterization of MCP (Model Context Protocol) for enterprise use?**
+
+- A. A replacement for IAM and row-level security
+- B. A new frontier model trained on your CRM
+- C. A standard for hosts to discover tools/resources from servers near data systems
+- D. A guarantee that prompts cannot be injected
+
+---
+
+# Quiz 2 — Answer
+
+**What is the best characterization of MCP (Model Context Protocol) for enterprise use?**
+
+**Correct: C.** A standard for hosts to discover tools/resources from servers near data systems
+
+- MCP is plumbing/product strategy—portable tool and resource discovery
+- It does not replace IAM, DLP, or approval design
+- Value: fewer one-off plugins; permissions stay with the data service
+- Prompt injection remains a threat to design for
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 of 3 — Discussion
+
+### Prompt
+Blueprint an agent that drafts a preliminary dossier using CRM fields and a document store.
+
+### Discuss
+- Which capabilities should be tools/APIs vs packaged as a skill?
+- How should live database access be mediated (what must the agent *not* get)?
+- Where do human approval gates belong before anything is shared?
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 — Discussion Points
+
+**Blueprint an agent that drafts a preliminary dossier using CRM fields and a document store.**
+
+### Strong Answers Mention
+- Skills guide procedure; tools execute side effects
+- Agent → service layer → DB; no raw production SQL superpowers
+- Least privilege, redaction, audit of tool calls
+- Approve before client-visible distribution
+
+### Watch For
+- God-query tools with write access “for convenience”
+- Skills without non-goals or escalation paths
+- Assuming MCP alone makes the design secure
+
+---
+
 # Q&A
 
 Questions?

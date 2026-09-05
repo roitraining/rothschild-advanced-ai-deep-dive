@@ -202,6 +202,85 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Quiz 1 of 3
+
+**When is RAG usually the right pattern?**
+
+- A. Whenever you want faster inference with no corpus
+- B. When answers must reflect proprietary/recent documents and support citations
+- C. When you need to permanently bake secrets into model weights
+- D. When fine-tuning has already solved access control
+
+---
+
+# Quiz 1 — Answer
+
+**When is RAG usually the right pattern?**
+
+**Correct: B.** When answers must reflect proprietary/recent documents and support citations
+
+- RAG retrieves approved slices, then generates with source pointers
+- Fine-tuning is slow/risky for fact updates and does not replace permissions
+- Live system fields often still need tools/APIs
+- No corpus means fix data foundations first
+
+---
+
+# Quiz 2 of 3
+
+**Which control best addresses cross-deal leakage through a shared AI index?**
+
+- A. Raising model temperature
+- B. Identity-aware retrieval with deal-room segregation and deny-by-default access
+- C. Disabling citations so users trust the narrative
+- D. Training the base model on all deal rooms overnight
+
+---
+
+# Quiz 2 — Answer
+
+**Which control best addresses cross-deal leakage through a shared AI index?**
+
+**Correct: B.** Identity-aware retrieval with deal-room segregation and deny-by-default access
+
+- Access labels and ACL-aware retrieval are first-class for agentic workflows
+- Citations help verification; they do not replace authorization
+- Temperature and broad training increase risk or fail to solve tenancy
+- Threat model also includes prompt injection, over-privileged tools, and log retention
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 of 3 — Discussion
+
+### Prompt
+You must make a proprietary dataset available to an internal research agent.
+
+### Discuss
+- What quality checks (provenance, freshness, authority) are mandatory before indexing?
+- How would you combine RAG, MCP/tools, and human approval in one workflow?
+- What does “fail closed” look like when retrieval is weak?
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 — Discussion Points
+
+**You must make a proprietary dataset available to an internal research agent.**
+
+### Strong Answers Mention
+- Provenance, freshness, draft vs final, access labels
+- Narrow retrieval; least-privilege tools; audit logs
+- Goal → skill → RAG → tools → draft → human approve
+- If retrieval is weak, abstain—do not invent covenant language
+
+### Watch For
+- Indexing unowned/outdated corpora
+- Enabling every tool “just in case”
+- Treating fluent output as governed truth
+
+---
+
 # Q&A
 
 Questions?

@@ -1,45 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img">
   <defs>
-    <style>
-      .t { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1a2332; }
-      .h { font-size: 28px; font-weight: 700; }
-      .b { font-size: 18px; font-weight: 600; }
-      .s { font-size: 15px; fill: #3d4a5c; }
-      .w { fill: #f7f5f0; }
-      .card { fill: #ffffff; stroke: #c9c2b4; stroke-width: 2; }
-      .accent { fill: #0b3d2e; }
-      .accent2 { fill: #1e5a45; }
-      .muted { fill: #e8e4dc; }
-      .line { stroke: #0b3d2e; stroke-width: 2.5; fill: none; }
-      .arrow { fill: #0b3d2e; }
-    </style>
+    <filter id="elev1" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#202124" flood-opacity="0.16"/>
+    </filter>
+    <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
+    </filter>
+    <style type="text/css"><![CDATA[
+      .title { font-family: Roboto, 'Google Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 400; fill: #5F6368; }
+      .h2 { font-family: Roboto, 'Google Sans', Arial, sans-serif; font-size: 21px; font-weight: 700; fill: #202124; }
+      .h3 { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #202124; }
+      .label { font-family: Roboto, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #5F6368; letter-spacing: 1.2px; }
+      .chip { font-family: Roboto, Arial, sans-serif; font-size: 14px; font-weight: 600; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #202124; }
+      .on-dark { fill: #FFFFFF; }
+    ]]></style>
   </defs>
-  <rect width="1200" height="675" class="w"/>
-  
-  <text x="60" y="58" class="t h">End-to-End Generative Workflow</text>
-  <rect x="70" y="150" width="190" height="140" rx="10" class="card"/>
-  <text x="95" y="210" class="t b">User goal</text>
-  <text x="95" y="245" class="t s">Deal briefing</text>
-  <rect x="290" y="150" width="190" height="140" rx="10" class="card"/>
-  <text x="315" y="200" class="t b">Agent +</text>
-  <text x="315" y="230" class="t b">Skills</text>
-  <rect x="510" y="150" width="190" height="140" rx="10" class="card"/>
-  <text x="535" y="200" class="t b">Tools /</text>
-  <text x="535" y="230" class="t b">MCP</text>
-  <rect x="730" y="150" width="190" height="140" rx="10" class="card"/>
-  <text x="755" y="200" class="t b">RAG /</text>
-  <text x="755" y="230" class="t b">Live data</text>
-  <rect x="950" y="150" width="180" height="140" rx="10" fill="#0b3d2e"/>
-  <text x="975" y="210" class="t b" fill="#f7f5f0">Verified</text>
-  <text x="975" y="245" class="t s" fill="#dce8e2">output</text>
-  <path d="M260 220 H290" class="line"/>
-  <path d="M480 220 H510" class="line"/>
-  <path d="M700 220 H730" class="line"/>
-  <path d="M920 220 H950" class="line"/>
-  <rect x="70" y="360" width="1060" height="220" rx="12" class="card"/>
-  <text x="100" y="420" class="t b">Controls wrap every hop</text>
-  <text x="100" y="470" class="t s">Identity • least privilege • DLP / redaction • audit logs • human approval gates</text>
-  <text x="100" y="520" class="t s">LLM reasons; tools act; RAG grounds; MCP standardizes access; humans own risk</text>
+  <rect width="1200" height="675" fill="#F8F9FA"/>
+  <text x="48" y="48" class="title">End-to-End Generative Workflow</text>
+  <text x="48" y="78" class="sub">LLM reasons · tools act · RAG grounds · MCP standardizes · humans own risk</text>
+
+  <rect x="48" y="120" width="200" height="170" rx="20" fill="#E8F0FE" filter="url(#elev2)"/>
+  <circle cx="148" cy="165" r="22" fill="#4285F4"/>
+  <text x="148" y="171" text-anchor="middle" class="num">1</text>
+  <text x="148" y="220" text-anchor="middle" class="h3">User goal</text>
+  <text x="148" y="250" text-anchor="middle" class="body">Deal briefing</text>
+
+  <rect x="274" y="120" width="200" height="170" rx="20" fill="#FEF7E0" filter="url(#elev2)"/>
+  <circle cx="374" cy="165" r="22" fill="#FBBC04"/>
+  <text x="374" y="171" text-anchor="middle" class="num-dark">2</text>
+  <text x="374" y="220" text-anchor="middle" class="h3">Agent + Skills</text>
+  <text x="374" y="250" text-anchor="middle" class="body">Procedure + policy</text>
+
+  <rect x="500" y="120" width="200" height="170" rx="20" fill="#E6F4EA" filter="url(#elev2)"/>
+  <circle cx="600" cy="165" r="22" fill="#34A853"/>
+  <text x="600" y="171" text-anchor="middle" class="num">3</text>
+  <text x="600" y="220" text-anchor="middle" class="h3">Tools / MCP</text>
+  <text x="600" y="250" text-anchor="middle" class="body">Approved actions</text>
+
+  <rect x="726" y="120" width="200" height="170" rx="20" fill="#FCE8E6" filter="url(#elev2)"/>
+  <circle cx="826" cy="165" r="22" fill="#EA4335"/>
+  <text x="826" y="171" text-anchor="middle" class="num">4</text>
+  <text x="826" y="220" text-anchor="middle" class="h3">RAG / Live data</text>
+  <text x="826" y="250" text-anchor="middle" class="body">Grounded facts</text>
+
+  <rect x="952" y="120" width="200" height="170" rx="20" fill="#D2E3FC" filter="url(#elev2)"/>
+  <circle cx="1052" cy="165" r="22" fill="#4285F4"/>
+  <text x="1052" y="171" text-anchor="middle" class="num">5</text>
+  <text x="1052" y="220" text-anchor="middle" class="h3">Verified out</text>
+  <text x="1052" y="250" text-anchor="middle" class="body">Human-ready</text>
+<line x1="248" y1="205" x2="262" y2="205" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="274,205 258,197 258,213" fill="#4285F4"/><line x1="474" y1="205" x2="488" y2="205" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="500,205 484,197 484,213" fill="#4285F4"/><line x1="700" y1="205" x2="714" y2="205" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="726,205 710,197 710,213" fill="#4285F4"/><line x1="926" y1="205" x2="940" y2="205" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="952,205 936,197 936,213" fill="#4285F4"/>
+  <rect x="48" y="340" width="1104" height="280" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
+  <text x="80" y="395" class="h2">Controls wrap every hop</text>
+  <rect x="80" y="420" width="240" height="80" rx="16" fill="#E8F0FE"/>
+  <text x="200" y="468" text-anchor="middle" class="h3" fill="#4285F4">Identity</text>
+  <rect x="340" y="420" width="240" height="80" rx="16" fill="#E6F4EA"/>
+  <text x="460" y="468" text-anchor="middle" class="h3" fill="#34A853">Least privilege</text>
+  <rect x="600" y="420" width="240" height="80" rx="16" fill="#FEF7E0"/>
+  <text x="720" y="468" text-anchor="middle" class="h3" fill="#202124">DLP / redaction</text>
+  <rect x="860" y="420" width="240" height="80" rx="16" fill="#FCE8E6"/>
+  <text x="980" y="468" text-anchor="middle" class="h3" fill="#EA4335">Audit logs</text>
+  <rect x="80" y="530" width="1040" height="60" rx="16" fill="#F8F9FA"/>
+  <text x="600" y="568" text-anchor="middle" class="body-ink" font-size="17">Human approval gates sit in front of anything client-visible</text>
 
 </svg>

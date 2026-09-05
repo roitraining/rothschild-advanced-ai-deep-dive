@@ -191,6 +191,85 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Quiz 1 of 3
+
+**Which set best captures the anatomy of an agent?**
+
+- A. UI theme, font size, and color palette only
+- B. Goal/policy, reasoning loop, memory, tools/skills, and guardrails
+- C. A single prompt with no tools and no stop conditions
+- D. Unlimited credentials plus a larger context window
+
+---
+
+# Quiz 1 — Answer
+
+**Which set best captures the anatomy of an agent?**
+
+**Correct: B.** Goal/policy, reasoning loop, memory, tools/skills, and guardrails
+
+- Name all five parts or the system invents the missing ones
+- Configuration levers: model, decoding, allow-lists, knowledge, memory, step/spend limits
+- Write non-goals; agents expand to fill ambiguity
+- Guardrails include AuthZ, HITL, evals, and logging
+
+---
+
+# Quiz 2 of 3
+
+**For a multi-agent deal-sourcing system, which failure mode design is most important?**
+
+- A. Remove all human gates to maximize throughput
+- B. Ignore prompt injection because retrieval is internal
+- C. Plan for looping, tool misuse, injection, silent omission, and overconfidence—with HITL gates
+- D. Give every agent identical broad write permissions
+
+---
+
+# Quiz 2 — Answer
+
+**For a multi-agent deal-sourcing system, which failure mode design is most important?**
+
+**Correct: C.** Plan for looping, tool misuse, injection, silent omission, and overconfidence—with HITL gates
+
+- Supervisor topologies need handoff contracts and shared trace IDs
+- Approve high-risk tool classes and external publish
+- Step budgets, kill switches, immutable logs, version pin/rollback
+- No client outreach without coverage banker approval in the Debt Advisory example
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 of 3 — Discussion
+
+### Prompt
+Design a multi-agent system that monitors news, flags restructuring opportunities, and drafts dossiers.
+
+### Discuss
+- What is each agent’s role, tools, and MCP/data connections?
+- What artifact schema do you pass between agents?
+- Where must a human approve—and what are hard non-goals?
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 — Discussion Points
+
+**Design a multi-agent system that monitors news, flags restructuring opportunities, and drafts dossiers.**
+
+### Strong Answers Mention
+- Orchestrator + specialists (monitor, scout, compiler) with clear ownership
+- Explicit JSON/markdown handoffs; stop on low confidence/data quality
+- Read-mostly tools; no outreach/trading instructions as non-goals
+- Dual control for client-visible outputs; full audit trail
+
+### Watch For
+- Swarm designs with no audit story
+- Unbounded steps/spend
+- Polished dossiers with thin evidence and no gate
+
+---
+
 # Q&A
 
 Questions?

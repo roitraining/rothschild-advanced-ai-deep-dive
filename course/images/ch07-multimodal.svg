@@ -1,38 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img">
   <defs>
-    <style>
-      .t { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1a2332; }
-      .h { font-size: 28px; font-weight: 700; }
-      .b { font-size: 18px; font-weight: 600; }
-      .s { font-size: 15px; fill: #3d4a5c; }
-      .w { fill: #f7f5f0; }
-      .card { fill: #ffffff; stroke: #c9c2b4; stroke-width: 2; }
-      .accent { fill: #0b3d2e; }
-      .accent2 { fill: #1e5a45; }
-      .muted { fill: #e8e4dc; }
-      .line { stroke: #0b3d2e; stroke-width: 2.5; fill: none; }
-      .arrow { fill: #0b3d2e; }
-    </style>
+    <filter id="elev1" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#202124" flood-opacity="0.16"/>
+    </filter>
+    <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
+    </filter>
+    <style type="text/css"><![CDATA[
+      .title { font-family: Roboto, 'Google Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 400; fill: #5F6368; }
+      .h2 { font-family: Roboto, 'Google Sans', Arial, sans-serif; font-size: 21px; font-weight: 700; fill: #202124; }
+      .h3 { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #202124; }
+      .label { font-family: Roboto, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #5F6368; letter-spacing: 1.2px; }
+      .chip { font-family: Roboto, Arial, sans-serif; font-size: 14px; font-weight: 600; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #202124; }
+      .on-dark { fill: #FFFFFF; }
+    ]]></style>
   </defs>
-  <rect width="1200" height="675" class="w"/>
-  
-  <text x="60" y="58" class="t h">Multimodal Inputs → One Reasoning Surface</text>
-  <rect x="80" y="140" width="240" height="160" rx="12" class="card"/>
-  <text x="110" y="215" class="t b">Speech / Audio</text>
-  <text x="110" y="250" class="t s">Earnings calls</text>
-  <rect x="360" y="140" width="240" height="160" rx="12" class="card"/>
-  <text x="390" y="215" class="t b">Vision</text>
-  <text x="390" y="250" class="t s">Charts, decks</text>
-  <rect x="640" y="140" width="240" height="160" rx="12" class="card"/>
-  <text x="670" y="215" class="t b">Video</text>
-  <text x="670" y="250" class="t s">CEO delivery</text>
-  <rect x="920" y="140" width="200" height="160" rx="12" class="card"/>
-  <text x="945" y="215" class="t b">Text</text>
-  <text x="945" y="250" class="t s">Transcripts</text>
-  <rect x="300" y="360" width="600" height="120" rx="12" fill="#0b3d2e"/>
-  <text x="360" y="430" class="t b" fill="#f7f5f0">Unified model / pipeline → insights</text>
-  <rect x="200" y="520" width="800" height="90" rx="12" class="card"/>
-  <text x="240" y="575" class="t s">Sentiment • strategic shifts • exec podcast summary</text>
+  <rect width="1200" height="675" fill="#F8F9FA"/>
+  <text x="48" y="48" class="title">Multimodal Inputs to One Reasoning Surface</text>
+  <text x="48" y="78" class="sub">Native multimodal models or composed pipelines (ASR to LLM to TTS)</text>
+
+  <rect x="48" y="115" width="228" height="210" rx="20" fill="#E8F0FE" filter="url(#elev2)"/>
+  <circle cx="162" cy="175" r="32" fill="#4285F4"/>
+  <g transform="translate(152,163)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round">
+    <rect x="6" y="2" width="8" height="12" rx="4" fill="#FFFFFF" stroke="none"/>
+    <path d="M3 11a7 7 0 0 0 14 0"/><line x1="10" y1="18" x2="10" y2="22"/><line x1="6" y1="22" x2="14" y2="22"/></g>
+  <text x="162" y="240" text-anchor="middle" class="h3">Speech / Audio</text>
+  <text x="162" y="272" text-anchor="middle" class="body-ink">Earnings calls</text>
+  <text x="162" y="298" text-anchor="middle" class="body">ASR + diarization</text>
+
+  <rect x="340" y="115" width="228" height="210" rx="20" fill="#E6F4EA" filter="url(#elev2)"/>
+  <circle cx="454" cy="175" r="32" fill="#34A853"/>
+  <g transform="translate(443,164)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <rect x="2" y="4" width="18" height="14" rx="2"/><circle cx="8" cy="9" r="1.8" fill="#FFFFFF" stroke="none"/>
+    <path d="M3 16l5-5 4 4 3-3 4 4" stroke-linejoin="round"/></g>
+  <text x="454" y="240" text-anchor="middle" class="h3">Vision</text>
+  <text x="454" y="272" text-anchor="middle" class="body-ink">Charts and decks</text>
+  <text x="454" y="298" text-anchor="middle" class="body">Tables from PDFs</text>
+
+  <rect x="632" y="115" width="228" height="210" rx="20" fill="#FEF7E0" filter="url(#elev2)"/>
+  <circle cx="746" cy="175" r="32" fill="#FBBC04"/>
+  <g transform="translate(735,164)">
+    <circle cx="11" cy="11" r="9" fill="none" stroke="#202124" stroke-width="2"/>
+    <polygon points="9,7 16,11 9,15" fill="#202124"/></g>
+  <text x="746" y="240" text-anchor="middle" class="h3">Video</text>
+  <text x="746" y="272" text-anchor="middle" class="body-ink">CEO delivery</text>
+  <text x="746" y="298" text-anchor="middle" class="body">Slide + speech align</text>
+
+  <rect x="924" y="115" width="228" height="210" rx="20" fill="#FCE8E6" filter="url(#elev2)"/>
+  <circle cx="1038" cy="175" r="32" fill="#EA4335"/>
+  <g transform="translate(1027,164)" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round">
+    <line x1="4" y1="6" x2="18" y2="6"/><line x1="4" y1="11" x2="18" y2="11"/><line x1="4" y1="16" x2="14" y2="16"/></g>
+  <text x="1038" y="240" text-anchor="middle" class="h3">Text</text>
+  <text x="1038" y="272" text-anchor="middle" class="body-ink">Transcripts</text>
+  <text x="1038" y="298" text-anchor="middle" class="body">Filings and notes</text>
+
+  <path d="M162 325 V355 H600 V385" fill="none" stroke="#DADCE0" stroke-width="3"/>
+  <path d="M454 325 V355" fill="none" stroke="#DADCE0" stroke-width="3"/>
+  <path d="M746 325 V355" fill="none" stroke="#DADCE0" stroke-width="3"/>
+  <path d="M1038 325 V355 H600" fill="none" stroke="#DADCE0" stroke-width="3"/>
+  <line x1="600" y1="355" x2="600" y2="388" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="600,400 592,384 608,384" fill="#4285F4"/>
+
+  <rect x="260" y="400" width="680" height="100" rx="20" fill="#4285F4" filter="url(#elev2)"/>
+  <text x="600" y="445" text-anchor="middle" class="h2 on-dark" font-size="22">Unified model / pipeline</text>
+  <text x="600" y="478" text-anchor="middle" class="body on-dark">Joint reasoning across modalities</text>
+
+  <rect x="180" y="535" width="840" height="100" rx="20" fill="#FFFFFF" filter="url(#elev1)"/>
+  <text x="600" y="580" text-anchor="middle" class="h3">Sentiment · strategic shifts · executive podcast summary</text>
+  <text x="600" y="610" text-anchor="middle" class="body">Always cite timestamps and cross-check published figures</text>
 
 </svg>

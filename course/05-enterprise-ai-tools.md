@@ -180,6 +180,85 @@ Do not invent figures. If unknown, write "Not in source".
 
 ---
 
+# Quiz 1 of 3
+
+**What does an enterprise “Copilot” usually include under the hood?**
+
+- A. Only a standalone model with no identity or policy
+- B. A host app with identity/policy, model(s), grounding to permitted content, optional tools
+- C. Guaranteed training of the foundation model on your prompts
+- D. Unrestricted write actions across email and files by default
+
+---
+
+# Quiz 1 — Answer
+
+**What does an enterprise “Copilot” usually include under the hood?**
+
+**Correct: B.** A host app with identity/policy, model(s), grounding to permitted content, optional tools
+
+- Product names change; the pattern is host + model + grounding + tools + controls
+- Ask which data can be retrieved, how ACLs work, log retention, and action vs draft
+- Training-on-prompts is a contract/config question—not assumed
+- Permissions for send/write/delete must be explicit
+
+---
+
+# Quiz 2 of 3
+
+**Which prompting pattern best fits extracting key risks from a target company report for Debt Advisory?**
+
+- A. “Summarize this” with no source constraints
+- B. Extract evidence-quoted risks as a table, rank for the use case, and list data gaps; forbid invented figures
+- C. Ask for a bullish narrative only
+- D. Raise creativity and omit refusal criteria
+
+---
+
+# Quiz 2 — Answer
+
+**Which prompting pattern best fits extracting key risks from a target company report for Debt Advisory?**
+
+**Correct: B.** Extract evidence-quoted risks as a table, rank for the use case, and list data gaps; forbid invented figures
+
+- Advanced prompting: role/audience, source constraints, output contract, verification asks
+- Extract-then-synthesize beats a single vague summary for high-stakes work
+- Put evaluation criteria in the prompt when stakes are high
+- Figures and client language remain verify-always
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 of 3 — Discussion
+
+### Prompt
+Walk through a 5-minute deal briefing workflow in Copilot (report → risks → client email).
+
+### Discuss
+- At each step, what is the tool doing technically (prompt assembly, retrieval, inference)?
+- Which outputs are “high assist” vs “verify always”?
+- How would you turn a winning prompt into a team playbook or skill?
+
+---
+
+<!-- layout: 2-column -->
+# Quiz 3 — Discussion Points
+
+**Walk through a 5-minute deal briefing workflow in Copilot (report → risks → client email).**
+
+### Strong Answers Mention
+- Host assembles prompt + policy; may ground on allowed files; model infers; filters/logs apply
+- Formatting/tone = high assist; figures, legal, client email = verify always
+- Save prompts as templates/skills; measure time saved and error types
+- Pair office AI with corpus RAG for institutional knowledge
+
+### Watch For
+- Treating the chat pane as magic with no ACL questions
+- Sending client email without human edit
+- One-off prompts that never become repeatable
+
+---
+
 # Q&A
 
 Questions?

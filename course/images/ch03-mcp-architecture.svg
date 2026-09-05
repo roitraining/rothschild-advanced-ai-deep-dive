@@ -1,42 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img">
   <defs>
-    <style>
-      .t { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1a2332; }
-      .h { font-size: 28px; font-weight: 700; }
-      .b { font-size: 18px; font-weight: 600; }
-      .s { font-size: 15px; fill: #3d4a5c; }
-      .w { fill: #f7f5f0; }
-      .card { fill: #ffffff; stroke: #c9c2b4; stroke-width: 2; }
-      .accent { fill: #0b3d2e; }
-      .accent2 { fill: #1e5a45; }
-      .muted { fill: #e8e4dc; }
-      .line { stroke: #0b3d2e; stroke-width: 2.5; fill: none; }
-      .arrow { fill: #0b3d2e; }
-    </style>
+    <filter id="elev1" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#202124" flood-opacity="0.16"/>
+    </filter>
+    <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
+    </filter>
+    <style type="text/css"><![CDATA[
+      .title { font-family: Roboto, 'Google Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 400; fill: #5F6368; }
+      .h2 { font-family: Roboto, 'Google Sans', Arial, sans-serif; font-size: 21px; font-weight: 700; fill: #202124; }
+      .h3 { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #202124; }
+      .label { font-family: Roboto, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #5F6368; letter-spacing: 1.2px; }
+      .chip { font-family: Roboto, Arial, sans-serif; font-size: 14px; font-weight: 600; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #202124; }
+      .on-dark { fill: #FFFFFF; }
+    ]]></style>
   </defs>
-  <rect width="1200" height="675" class="w"/>
-  
-  <text x="60" y="58" class="t h">MCP: Model Context Protocol</text>
-  <rect x="80" y="130" width="280" height="160" rx="12" class="card"/>
-  <text x="110" y="195" class="t b">AI Host / Agent</text>
-  <text x="110" y="230" class="t s">Copilot, Cursor, custom</text>
-  <text x="400" y="210" class="t h">⟷</text>
-  <rect x="460" y="130" width="280" height="160" rx="12" fill="#0b3d2e"/>
-  <text x="490" y="195" class="t b" fill="#f7f5f0">MCP Server</text>
-  <text x="490" y="230" class="t s" fill="#dce8e2">Standardized tools,</text>
-  <text x="490" y="255" class="t s" fill="#dce8e2">resources, prompts</text>
-  <text x="780" y="210" class="t h">⟷</text>
-  <rect x="840" y="100" width="280" height="90" rx="10" class="card"/>
-  <text x="865" y="155" class="t b">CRM / Deal DB</text>
-  <rect x="840" y="210" width="280" height="90" rx="10" class="card"/>
-  <text x="865" y="265" class="t b">Document store</text>
-  <rect x="840" y="320" width="280" height="90" rx="10" class="card"/>
-  <text x="865" y="375" class="t b">Market data API</text>
-  <rect x="80" y="360" width="660" height="220" rx="12" class="card"/>
-  <text x="110" y="410" class="t b">Enterprise value</text>
-  <text x="110" y="455" class="t s">• One protocol instead of one-off tool integrations per app</text>
-  <text x="110" y="495" class="t s">• Permissions stay with the data service, not the prompt</text>
-  <text x="110" y="535" class="t s">• Agents discover capabilities dynamically (tools + resources)</text>
+  <rect width="1200" height="675" fill="#F8F9FA"/>
+  <text x="48" y="48" class="title">MCP: Model Context Protocol</text>
+  <text x="48" y="78" class="sub">A standard way for agent hosts to discover tools and resources</text>
+
+  <rect x="48" y="120" width="280" height="220" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
+  <circle cx="188" cy="190" r="40" fill="#E8F0FE"/>
+  <circle cx="188" cy="190" r="26" fill="#4285F4"/>
+  <g transform="translate(178,180)">
+    <rect x="1" y="1" width="7" height="7" rx="1.5" fill="#fff"/>
+    <rect x="12" y="1" width="7" height="7" rx="1.5" fill="#fff"/>
+    <rect x="1" y="12" width="7" height="7" rx="1.5" fill="#fff"/>
+    <rect x="12" y="12" width="7" height="7" rx="1.5" fill="#fff"/></g>
+  <text x="188" y="270" text-anchor="middle" class="h2">AI Host / Agent</text>
+  <text x="188" y="300" text-anchor="middle" class="body">Copilot, Cursor, custom</text>
+
+  <line x1="344" y1="220" x2="388" y2="220" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="400,220 384,212 384,228" fill="#4285F4"/>
+
+  <rect x="410" y="110" width="340" height="240" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
+  <rect x="410" y="110" width="340" height="72" rx="20" fill="#4285F4"/>
+  <rect x="410" y="162" width="340" height="20" fill="#4285F4"/>
+  <text x="580" y="155" text-anchor="middle" class="h2 on-dark">MCP Server</text>
+  <text x="580" y="230" text-anchor="middle" class="body-ink" font-size="17">Standardized tools,</text>
+  <text x="580" y="258" text-anchor="middle" class="body-ink" font-size="17">resources, and prompts</text>
+  <rect x="470" y="285" width="220" height="40" rx="20" fill="#E8F0FE"/>
+  <text x="580" y="311" text-anchor="middle" class="chip" fill="#4285F4">Protocol boundary</text>
+
+  <line x1="766" y1="220" x2="810" y2="220" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="822,220 806,212 806,228" fill="#4285F4"/>
+
+  <rect x="832" y="110" width="320" height="72" rx="20" fill="#E6F4EA" filter="url(#elev1)"/>
+  <circle cx="868" cy="146" r="14" fill="#34A853"/>
+  <text x="898" y="152" class="h3">CRM / Deal DB</text>
+
+  <rect x="832" y="198" width="320" height="72" rx="20" fill="#FEF7E0" filter="url(#elev1)"/>
+  <circle cx="868" cy="234" r="14" fill="#FBBC04"/>
+  <text x="898" y="240" class="h3">Document store</text>
+
+  <rect x="832" y="286" width="320" height="72" rx="20" fill="#FCE8E6" filter="url(#elev1)"/>
+  <circle cx="868" cy="322" r="14" fill="#EA4335"/>
+  <text x="898" y="328" class="h3">Market data API</text>
+
+  <rect x="48" y="390" width="1104" height="240" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
+  <rect x="48" y="390" width="10" height="240" fill="#34A853"/>
+  <text x="90" y="445" class="h2">Enterprise value</text>
+  <circle cx="104" cy="495" r="9" fill="#4285F4"/>
+  <text x="128" y="501" class="body-ink" font-size="17">One protocol instead of one-off tool integrations per app</text>
+  <circle cx="104" cy="545" r="9" fill="#34A853"/>
+  <text x="128" y="551" class="body-ink" font-size="17">Permissions stay with the data service — not the prompt</text>
+  <circle cx="104" cy="595" r="9" fill="#FBBC04"/>
+  <text x="128" y="601" class="body-ink" font-size="17">Agents discover capabilities dynamically (tools + resources)</text>
 
 </svg>
