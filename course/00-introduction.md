@@ -49,8 +49,6 @@
 - Chapter 9: The Road Ahead – Trends, Vendors, and Tools
 - Chapter 10: Instructor Office Hours and Q and A
 
-![Agenda](images/agenda.png)
-
 ---
 
 <!-- layout: 2-column -->
@@ -95,7 +93,6 @@
 
 ---
 
-<!-- layout: stacked -->
 # Prerequisites
 
 - Comfortable using an enterprise AI assistant or copilot in daily work
