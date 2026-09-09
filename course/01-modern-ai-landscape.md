@@ -34,8 +34,10 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+<!-- layout: 2-column -->
 # Name the Layer, Not Just the Brand
 
+### Stack Diligence
 - A deal-briefing copilot is an **application**, not "the model"
 - Quality depends on **data retrieved** and **tools allowed**
 - Model choice is one decision among latency, residency, cost, and evals
@@ -46,6 +48,8 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 > [!IMPORTANT]
 > Vendor demos start at the app layer. Diligence must reach data and controls.
+
+![Enterprise AI Stack Layers and Diligence](images/ch01-stack-layers-diligence.png)
 
 ---
 
@@ -163,6 +167,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+<!-- layout: stacked -->
 # Autonomy Spectrum (Finance)
 
 | Mode | Example | Human role |
@@ -172,19 +177,25 @@ Advanced AI Deep-Dive: Rothschild and Co
 | Agent | Monitor news → flag → draft client briefing | Approve gates |
 | Multi-agent | Specialists + orchestrator | Own policy and outcomes |
 
+![Spectrum of AI Autonomy in Finance](images/ch01-autonomy-spectrum.jpg)
+
 > [!TIP]
 > Buy for the autonomy you can supervise — not the autonomy in the pitch deck.
 
 ---
 
+<!-- layout: 2-column -->
 # What to Automate First
 
+### Prioritization Rules
 - Prefer high-feedback, reversible work
   - Drafts, triage, structured extracts
 - Defer irreversible or novel judgment
   - External client send, strategy calls
 - Score candidates on **blast radius × reversibility**
 - Start read-mostly; expand writes only with gates
+
+![Blast Radius vs Reversibility Matrix](images/ch01-blast-radius-matrix.jpg)
 
 ---
 
@@ -198,13 +209,17 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+<!-- layout: 2-column -->
 # Hype Patterns to Spot
 
+### Red-Flag Marketing Claims
 - **"Understands your firm"** / **"trained on all market data"** — ask corpus, ACL, provenance
 - **"Fully autonomous"** / **"guaranteed accuracy"** — ask gates, failure modes, cite-or-refuse
 
 > [!TIP]
 > Use the teardown table next—same claims, inspected by stack layer.
+
+![Vendor Marketing Hype vs Technical Diligence Verification](images/ch01-hype-vs-reality.jpg)
 
 ---
 
