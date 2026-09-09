@@ -242,7 +242,6 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-<!-- layout: stacked -->
 # Face-Off Rubric (What You Will Score)
 
 - **Task fit** — Does it actually do deal-memo triage / client-briefing steps you care about?
