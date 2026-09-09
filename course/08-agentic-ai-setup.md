@@ -53,13 +53,13 @@ Advanced AI Deep-Dive: Rothschild and Co
 ### Tools = capabilities
 - APIs and actions the runtime can call
 - Often exposed via MCP / function calls
-- Examples: CRM read, filings search, calendar
+- Examples: CRM read, public filings search, calendar
 - Scope with allow-lists and schemas
 
 ### Skills = packaged playbooks
 - Named procedures with triggers and steps
 - Explicit **non-goals** and stop conditions
-- Example: "Draft Debt Advisory dossier"
+- Example: "Draft Debt Advisor client briefing"
 - Version, eval, and roll back like code
 
 > [!TIP]
@@ -90,19 +90,19 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-# One-Page Agent Spec (Debt Advisory)
+# One-Page Agent Spec (Debt Advisor)
 
-| Spec field | Debt Advisory example |
+| Spec field | Debt Advisor example |
 | :--- | :--- |
-| Mission | Monitor → flag restructuring signals → draft dossier |
-| Inputs | News MCP, filings RAG, CRM read tool |
-| Outputs | Structured dossier + source list |
+| Mission | Monitor → flag debt restructuring signals → draft client briefing |
+| Inputs | News MCP, public filings RAG, CRM read tool |
+| Outputs | Structured client briefing + source list |
 | Tools (via MCP) | Read-mostly MCP servers; no send/trade |
-| Facts (via RAG) | ACL-aware deal room + approved filings corpus |
+| Facts (via RAG) | ACL-aware secure deal folder + approved public filings corpus |
 | Non-goals | No client outreach; no trading instructions |
 | Memory | Session only; no cross-deal durable notes |
 | Evals | Citation rate; tool-call correctness; false-flag rate |
-| HITL | Coverage banker approves before distribution |
+| HITL | Client-team advisor approves before distribution |
 
 > [!IMPORTANT]
 > Write non-goals. Agents expand to fill ambiguity.
@@ -120,7 +120,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ### Facts via RAG
 - Material claims come from retrieved chunks — not memory fluff
-- Enforce ACL at retrieval time (deal room / mandate)
+- Enforce ACL at retrieval time (secure deal folder / engagement)
 - Cite-or-refuse on thin or conflicting sources
 - Ask vendors: freshness, filters, low-confidence path
 
@@ -132,9 +132,9 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Memory Risks
 
 - Durable memory can **leak context across deals or clients**
-- "Helpful" recall may surface the wrong mandate or counterparty
+- "Helpful" recall may surface the wrong engagement or counterparty
 - Prefer session memory plus explicit RAG with ACL
-- If durable memory exists: tenant, deal-room, and purge rules are mandatory
+- If durable memory exists: tenant, secure-deal-folder, and purge rules are mandatory
 
 > [!CAUTION]
 > Institutional memory without ACL is a confidentiality incident waiting to happen.
@@ -158,16 +158,16 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-# Walkthrough: Debt Advisory Roles
+# Walkthrough: Debt Advisor Roles
 
-Map the diagram boxes to dossier jobs — same workflow, named ownership.
+Map the diagram boxes to client briefing jobs — same workflow, named ownership.
 
-| Diagram box | Dossier job | What it owns |
+| Diagram box | Briefing job | What it owns |
 | :--- | :--- | :--- |
-| News Monitor + Restructuring Scout | **Research** | Signals, sources, flags |
-| Dossier Compiler | **Draft** | Structured brief + citations |
+| News Monitor + Debt Restructuring Scout | **Research** | Signals, sources, flags |
+| Briefing Compiler | **Draft** | Structured brief + citations |
 | Critic hop (add if multi-agent) | **Critic** | Challenge thin claims; cite-or-refuse |
-| Human approval bar | **Compliance HITL** | Banker gate before distribution |
+| Human approval bar | **Compliance HITL** | Advisor gate before distribution |
 | Orchestrator | Routes stages; owns stop conditions | Trace IDs and handoff contracts |
 
 > [!TIP]
@@ -217,7 +217,7 @@ Map the diagram boxes to dossier jobs — same workflow, named ownership.
 
 ### A2A reality
 - Interoperability ambition; products still evolving
-- Most banks ship supervisor + specialists today
+- Most firms ship supervisor + specialists today
 - Ask: standardized vs proprietary messaging?
 - Buy the topology you can operate this year
 
@@ -250,7 +250,7 @@ Map the diagram boxes to dossier jobs — same workflow, named ownership.
 | Tool misuse (wrong API / deal_id) | Allow-list + schema validation |
 | Prompt injection via retrieved docs | Instruction hierarchy + retrieval filters |
 | Silent omission of key sources | Required source checklist / cite-or-refuse |
-| Overconfident thin dossiers | HITL gate + evidence-density eval |
+| Overconfident thin client briefings | HITL gate + evidence-density eval |
 
 ---
 
@@ -309,7 +309,7 @@ Map the diagram boxes to dossier jobs — same workflow, named ownership.
 - Lab 8 blueprint (non-goals first)
 - Cut deep multi-agent / A2A variants first
 
-### Killer vendor questions (bank)
+### Killer vendor questions (firm)
 - Show tool permission model and audit log
 - How is ACL-aware retrieval enforced?
 - What happens on low-confidence retrieval?
@@ -354,9 +354,9 @@ Before you list tools in Lab 8, lock the guardrails:
 
 # Quiz 1 of 3
 
-**Your Debt Advisory dossier is one artifact, a small read-mostly tool set, and a simple audit story. When should you *not* go multi-agent?**
+**Your Debt Advisor client briefing is one artifact, a small read-mostly tool set, and a simple audit story. When should you *not* go multi-agent?**
 
-- A. Never — multi-agent is always better for banking
+- A. Never — multi-agent is always better for finance
 - B. Prefer single-agent until specialization or overload is proven
 - C. Immediately add a peer swarm for "flexibility"
 - D. Split only to avoid writing non-goals and HITL gates
@@ -365,7 +365,7 @@ Before you list tools in Lab 8, lock the guardrails:
 
 # Quiz 1 — Answer
 
-**Your Debt Advisory dossier is one artifact, a small read-mostly tool set, and a simple audit story. When should you *not* go multi-agent?**
+**Your Debt Advisor client briefing is one artifact, a small read-mostly tool set, and a simple audit story. When should you *not* go multi-agent?**
 
 **Correct: B.** Prefer single-agent until specialization or overload is proven
 
@@ -378,7 +378,7 @@ Before you list tools in Lab 8, lock the guardrails:
 
 # Quiz 2 of 3
 
-**A dossier agent starts looping on thin news, then mis-calls CRM with the wrong deal_id. Which failure mode do you fix *first* before expanding tools?**
+**A client briefing agent starts looping on thin news, then mis-calls CRM with the wrong deal_id. Which failure mode do you fix *first* before expanding tools?**
 
 - A. Remove HITL so the loop can "finish faster"
 - B. Step budget / kill switch and tool schema validation — then reassess
@@ -389,7 +389,7 @@ Before you list tools in Lab 8, lock the guardrails:
 
 # Quiz 2 — Answer
 
-**A dossier agent starts looping on thin news, then mis-calls CRM with the wrong deal_id. Which failure mode do you fix *first* before expanding tools?**
+**A client briefing agent starts looping on thin news, then mis-calls CRM with the wrong deal_id. Which failure mode do you fix *first* before expanding tools?**
 
 **Correct: B.** Step budget / kill switch and tool schema validation — then reassess
 
@@ -404,7 +404,7 @@ Before you list tools in Lab 8, lock the guardrails:
 # Quiz 3 of 3 — Discussion
 
 ### Prompt
-Design a system that monitors news, flags restructuring opportunities, and drafts dossiers.
+Design a system that monitors news, flags debt restructuring opportunities, and drafts client briefings.
 
 ### Discuss
 - Single agent vs multi-agent — which and why?
@@ -416,7 +416,7 @@ Design a system that monitors news, flags restructuring opportunities, and draft
 <!-- layout: 2-column -->
 # Quiz 3 — Discussion Points
 
-**Design a system that monitors news, flags restructuring opportunities, and drafts dossiers.**
+**Design a system that monitors news, flags debt restructuring opportunities, and drafts client briefings.**
 
 ### Strong Answers Mention
 - Start single-agent unless specialization is proven; supervisor + specialists if split
@@ -428,7 +428,7 @@ Design a system that monitors news, flags restructuring opportunities, and draft
 - Swarm designs with no audit story
 - Tools list before non-goals and HITL
 - Durable memory leaking across deals
-- Polished dossiers with thin evidence and no gate
+- Polished client briefings with thin evidence and no gate
 
 ---
 

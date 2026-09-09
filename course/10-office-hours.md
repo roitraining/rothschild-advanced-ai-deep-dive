@@ -85,7 +85,7 @@ Keep one row ready all day — fill it early so office hours are not cold-start.
 - "Where does this claim fail: model, data, or controls?"
 
 ### Weaker
-- "Is AI good for banking?"
+- "Is AI good for finance?"
 - "Which model is best forever?"
 - "Can we automate everything next quarter?"
 
@@ -93,13 +93,13 @@ Keep one row ready all day — fill it early so office hours are not cold-start.
 
 # Seeded Fallback Scenarios
 
-If the room brings nothing, facilitate from these (Debt Advisory dossier spine):
+If the room brings nothing, facilitate from these (Debt Advisor client briefing spine):
 
 | Scenario | Focus |
 | :--- | :--- |
-| **Dossier agent overreach** | Agent drafts *and* wants to email clients — non-goals, HITL, tool allow-list |
-| **RAG wrong-deal** | Retrieved chunks from Mandate B into Mandate A brief — ACL, cite-or-refuse, memory |
-| **Vendor pitch teardown** | "Fully autonomous dossier" claim through scorecard + claim → source → check → human gate |
+| **Client briefing agent overreach** | Agent drafts *and* wants to email clients — non-goals, HITL, tool allow-list |
+| **RAG wrong-deal** | Retrieved chunks from Engagement B into Engagement A brief — ACL, cite-or-refuse, memory |
+| **Vendor pitch teardown** | "Fully autonomous client briefing" claim through scorecard + claim → source → check → human gate |
 
 > [!NOTE]
 > Use fallbacks after a real intake pass — not instead of asking for participant scenarios.
@@ -138,8 +138,8 @@ If the room brings nothing, facilitate from these (Debt Advisory dossier spine):
 # Popular Deep-Dive Themes
 
 - MCP vs custom APIs for internal systems
-- RAG design for deal rooms and research corpora
-- Multi-agent blueprints for coverage teams
+- RAG design for secure deal folders and research corpora
+- Multi-agent blueprints for client teams
 - Eval strategies for hallucination and policy breaches
 - Copilot / IDE / agent runtime boundaries
 

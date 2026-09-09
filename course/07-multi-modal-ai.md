@@ -57,7 +57,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 ---
 
 <!-- layout: 3-column -->
-# Speech, Vision, Video in IB Artifacts
+# Speech, Vision, Video in Finance Artifacts
 
 ### Speech
 - Earnings calls, investor days
@@ -66,8 +66,8 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Sentiment = signal, not proof
 
 ### Vision
-- Pitch-book / IC charts and axes
-- Scanned CIM tables (OCR)
+- Pitch slides / investment memo charts and axes
+- Scanned deal-memo tables (OCR)
 - Competitive imagery sets
 - Verify numbers in source text
 
@@ -80,7 +80,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 ---
 
 <!-- layout: 3-column -->
-# Modality Failure Cases (IB)
+# Modality Failure Cases (Finance)
 
 ### Speech
 - Bad ASR on accents/tickers
@@ -88,8 +88,8 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Sentiment treated as strategy
 
 ### Vision
-- OCR "1.8" → "18" on CIM leverage
-- Pitch-book axis/unit misread
+- OCR "1.8" → "18" on deal-memo debt limits
+- Pitch-slide axis/unit misread
 - Table merge mistakes across pages
 
 ### Video
@@ -98,7 +98,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Retention / rights risk
 
 > [!WARNING]
-> Scanned CIM unit traps and misread pitch-book axes become “facts” in fluent briefs—recompute from the filing or source PDF.
+> Scanned deal-memo unit traps and misread pitch-slide axes become “facts” in fluent briefs—recompute from the company report or source PDF.
 
 ---
 
@@ -119,17 +119,17 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Separate **observation** from **inference** in the brief
 
 > [!IMPORTANT]
-> Sentiment theater is cheap. Claim-level alignment with filings is bankable.
+> Sentiment theater is cheap. Claim-level alignment with company reports is bankable.
 
 ---
 
 # Timeline Alignment Sketch
 
-| Slide claim (deck) | Transcript (who / time) | Filing check | Status |
+| Slide claim (deck) | Transcript (who / time) | Report check | Status |
 | :--- | :--- | :--- | :--- |
-| “Net leverage below 3.0x through FY” | CEO 00:42:18: “comfortable below three turns” | Q2 release: 2.7x; no formal guidance | Soft language — not hard guidance |
-| “Europe +12% organic” | CFO 00:18:05 cites reported growth | 10-Q: reported includes FX and deals | Reframe — not organic |
-| Chart: margin expansion | No verbal mention | Footnote: one-time credit | Flag slide–speech–filing gap |
+| “Debt below 3.0× earnings through FY” | CEO 00:42:18: “comfortable below three turns” | Q2 release: 2.7×; no formal guidance | Soft language — not hard guidance |
+| “Europe +12% organic” | CFO 00:18:05 cites reported growth | Quarterly report: reported includes FX and deals | Reframe — not organic |
+| Chart: margin expansion | No verbal mention | Footnote: one-time credit | Flag slide–speech–report gap |
 
 ---
 
@@ -137,10 +137,10 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 | Field | Example |
 | :--- | :--- |
-| Claim | "Net leverage will stay below 3.0x through FY" |
+| Claim | "Debt will stay below 3.0× earnings through FY" |
 | Quote | "…comfortable below three turns…" |
 | Timestamp | 00:42:18 (CEO) |
-| Filing cross-check | Q2 release: net leverage 2.7x; no formal guidance |
+| Report cross-check | Q2 release: debt 2.7× earnings; no formal guidance |
 | Status | Soft language — do not treat as hard guidance |
 
 ---
@@ -151,7 +151,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 | :--- | :--- | :--- |
 | Theme map | Strategy shifts vs prior call | Internal OK with review |
 | Alignment deltas | Slide vs speech conflicts | Human confirm material deltas |
-| Claim ledger | Claim → quote → timestamp → filing | **Required** before client use |
+| Claim ledger | Claim → quote → timestamp → company report | **Required** before client use |
 | Risk flags | Guidance language, hedges | Legal/compliance as needed |
 | Exec podcast | TTS commute summary | **Last**: rights + ledger first |
 
@@ -166,7 +166,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 ### What not to upload
 - Client recordings without rights/retention approval
 - Unlicensed or paywalled audio/video
-- Deal-room materials into consumer apps
+- Secure deal-folder materials into consumer apps
 - PII-rich media without Legal clearance
 
 ### Quality bars
@@ -181,7 +181,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 - Rights and retention for media before ingest — show the policy
 - How do you enforce claim → source → check → human gate on transcripts?
-- Can the system refuse a fluent claim that fails filing cross-check?
+- Can the system refuse a fluent claim that fails company-report cross-check?
 
 ---
 
@@ -189,7 +189,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 1. **Ingest** media only after rights / retention clearance
 2. Transcribe / extract; fill one **claim ledger** row for a material claim
-3. **Human verify** quote, timestamp, and filing cross-check
+3. **Human verify** quote, timestamp, and company-report cross-check
 4. Only then draft the brief (and optional podcast)—never reverse the order
 
 > [!TIP]
@@ -216,7 +216,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 1 of 3
 
-**A coverage team must autopsy earnings calls with audit gates after ASR, before synthesis, and before any TTS summary. When does a composed pipeline beat native multimodal?**
+**A client team must autopsy earnings calls with audit gates after ASR, before synthesis, and before any TTS summary. When does a composed pipeline beat native multimodal?**
 
 - A. Never—native always wins on control
 - B. When intermediate control points, per-stage vendor isolation, or tunable cost/latency matter more than single-pass joint reasoning
@@ -227,7 +227,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 1 — Answer
 
-**A coverage team must autopsy earnings calls with audit gates after ASR, before synthesis, and before any TTS summary. When does a composed pipeline beat native multimodal?**
+**A client team must autopsy earnings calls with audit gates after ASR, before synthesis, and before any TTS summary. When does a composed pipeline beat native multimodal?**
 
 **Correct: B.** When intermediate control points, per-stage vendor isolation, or tunable cost/latency matter more than single-pass joint reasoning
 
@@ -266,7 +266,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Quiz 3 of 3 — Discussion
 
 ### Prompt
-Design an earnings-call autopsy for a coverage team.
+Design an earnings-call autopsy for a client team.
 
 ### Discuss
 - Native multimodal vs composed pipeline — what would you choose and why?
@@ -278,7 +278,7 @@ Design an earnings-call autopsy for a coverage team.
 <!-- layout: 2-column -->
 # Quiz 3 — Discussion Points
 
-**Design an earnings-call autopsy for a coverage team.**
+**Design an earnings-call autopsy for a client team.**
 
 ### Strong Answers Mention
 - Composed pipelines offer clearer control points; native may simplify joint reasoning

@@ -45,10 +45,10 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ```json
 {
-  "name": "get_facility_terms",
+  "name": "get_loan_terms",
   "arguments": {
     "deal_id": "DA-2026-0142",
-    "fields": ["covenants", "maturity", "agent_bank"]
+    "fields": ["loan_conditions", "maturity", "agent_bank"]
   }
 }
 ```
@@ -81,15 +81,15 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-# Multi-Step Trace: Preliminary Dossier
+# Multi-Step Trace: Preliminary Client Briefing
 
 | Step | Tool / action | Result into context |
 | :--- | :--- | :--- |
 | 1 | `search_news` | Flagged restructuring headlines |
-| 2 | `get_filing_chunk` | Relevant 10-K / RNS excerpts |
-| 3 | `get_crm_account` | Coverage owner, prior touches |
-| 4 | Draft dossier | Model synthesizes with citations |
-| 5 | HITL gate | Banker approves before share |
+| 2 | `get_filing_chunk` | Relevant annual-report / RNS excerpts |
+| 3 | `get_crm_account` | Client-team owner, prior touches |
+| 4 | Draft client briefing | Model synthesizes with citations |
+| 5 | HITL gate | Advisor approves before share |
 
 > [!IMPORTANT]
 > If any step lacks an allow-listed tool, the agent should stop—not improvise with prose.
@@ -149,14 +149,14 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Finance-Concrete API Patterns
 
 ### Sync lookup (watch latency)
-- Covenant field or CRM owner in the agent turn
+- Loan-condition field or CRM owner in the agent turn
 - Market-data spikes can **kill the turn**—budget timeouts
 - Prefer cached/approved snapshots when live feed is slow
 
 ### Async research pack
-- Long dossier packs: queue job, poll or webhook
-- Needs **status UX** (“gathering filings…”) and timeouts
-- Do not block the banker on a 10-minute silent wait
+- Long client-briefing packs: queue job, poll or webhook
+- Needs **status UX** (“gathering company reports…”) and timeouts
+- Do not block the advisor on a 10-minute silent wait
 
 ---
 
@@ -221,7 +221,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ### Does not give you
 - IAM / row-level security by magic
-- Tenancy across deal rooms
+- Tenancy across secure deal folders
 - Safe defaults for write/send
 - Immunity to prompt injection
 
@@ -264,8 +264,8 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Identity Propagation Matters
 
 ### User token
-- Acts as the banker
-- Inherits deal-room ACL
+- Acts as the advisor
+- Inherits secure deal-folder ACL
 - Auditable to a person
 
 ### Service account
@@ -274,7 +274,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Cross-deal blast radius if mis-scoped
 
 > [!WARNING]
-> A CRM read as “ai-bot-prod” with firm-wide scope is how confidential coverage leaks.
+> A CRM read as “ai-bot-prod” with firm-wide scope is how confidential client-team data leaks.
 
 ---
 
@@ -313,18 +313,18 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-# Mini Skill Skeleton (Preliminary Dossier)
+# Mini Skill Skeleton (Preliminary Client Briefing)
 
 ```text
-name: preliminary-dossier
-trigger: "draft dossier" / Debt Advisory intake
+name: preliminary-client-briefing
+trigger: "draft client briefing" / Debt Advisor intake
 tools: [search_news, get_filing_chunk, get_crm_account]
 forbidden: [send_email, crm_write]
 inputs: company, jurisdiction, asking_team
-output: dossier.md + sources[] + gaps[]
+output: briefing.md + sources[] + gaps[]
 non_goals: no client outreach; no investment recommendation
 done_when: citations present OR explicit "insufficient sources"
-escalate_to: coverage banker
+escalate_to: client-team advisor
 ```
 
 ---
@@ -357,7 +357,7 @@ escalate_to: coverage banker
 - Peer-review each other’s blueprints for vague triggers and missing gates
 
 > [!TIP]
-> Copy the preliminary-dossier skeleton shape—swap in your team’s workflow.
+> Copy the preliminary-client-briefing skeleton shape—swap in your team’s workflow.
 
 ---
 
@@ -453,7 +453,7 @@ A peer team’s blueprint allows `crm_read_all`, `crm_write`, and `send_email`, 
 ### Watch For
 - “MCP / host plugin will fix permissions” without IAM
 - Vague triggers that load the skill on every chat
-- Cloning the lab dossier scenario without critiquing privilege
+- Cloning the lab client-briefing scenario without critiquing privilege
 
 ---
 

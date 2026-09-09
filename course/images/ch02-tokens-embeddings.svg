@@ -18,7 +18,7 @@
   <rect width="1200" height="675" fill="#F8F9FA"/>
 <text x="48" y="48" class="title">Text to Tokens to Embeddings</text>
 <rect x="48" y="120" width="300" height="180" rx="16" fill="#E8F0FE" filter="url(#elev2)"/><circle cx="88" cy="165" r="20" fill="#4285F4"/><text x="88" y="171" text-anchor="middle" class="num">1</text><text x="120" y="172" class="h2">Input text</text>
-<rect x="80" y="200" width="236" height="60" rx="12" fill="#FFFFFF"/><text x="198" y="238" text-anchor="middle" class="body-ink">"EBITDA margin"</text>
+<rect x="80" y="200" width="236" height="60" rx="12" fill="#FFFFFF"/><text x="198" y="238" text-anchor="middle" class="body-ink">"profit margin"</text>
 <line x1="368" y1="210" x2="408" y2="210" stroke="#4285F4" stroke-width="3"/><polygon points="420,210 406,203 406,217" fill="#4285F4"/>
 <rect x="440" y="120" width="300" height="180" rx="16" fill="#FEF7E0" filter="url(#elev2)"/><circle cx="480" cy="165" r="20" fill="#FBBC04"/><text x="480" y="171" text-anchor="middle" class="num-dark">2</text><text x="512" y="172" class="h2">Tokens</text>
 <text x="590" y="240" text-anchor="middle" class="body-ink">Atomic units the model reads</text>
@@ -27,8 +27,8 @@
 <text x="992" y="240" text-anchor="middle" class="body-ink">Vectors for search and RAG</text>
 <rect x="48" y="350" width="1104" height="260" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
 <rect x="48" y="350" width="1104" height="8" fill="#EA4335"/>
-<text x="80" y="400" class="h2">Why bankers should care</text>
-<text x="80" y="450" class="body-ink">Token limits decide how much of a CIM fits in one pass</text>
-<text x="80" y="495" class="body-ink">Embeddings power "similar covenant" retrieval</text>
+<text x="80" y="400" class="h2">Why advisors should care</text>
+<text x="80" y="450" class="body-ink">Token limits decide how much of a deal memo fits in one pass</text>
+<text x="80" y="495" class="body-ink">Embeddings power "similar loan condition" retrieval</text>
 <text x="80" y="540" class="body-ink">Wrong retrieval yields fluent answers about the wrong document</text>
 </svg>

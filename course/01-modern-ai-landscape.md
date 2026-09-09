@@ -86,18 +86,18 @@ Advanced AI Deep-Dive: Rothschild and Co
 <!-- layout: 2-column -->
 # Buy Decision: Named Workflows
 
-### CIM triage (read-mostly)
+### Deal-memo triage (read-mostly)
 - Prefer **enterprise surface** or Frontier API + RAG
 - Need citations, ACL, draft-not-send
 - Agent platform is overkill until tools are required
 
-### Dossier agent (multi-step)
+### Client-briefing agent (multi-step)
 - Prefer **agent platform** with allow-lists and HITL
-- Tools for news, filings, CRM—not chat alone
+- Tools for news, company reports, CRM—not chat alone
 - Frontier API as the brain; platform owns the loop
 
 > [!IMPORTANT]
-> Match the **workflow shape** to the buy: triage ≠ autonomous dossier.
+> Match the **workflow shape** to the buy: triage ≠ autonomous client briefing.
 
 ---
 
@@ -168,8 +168,8 @@ Advanced AI Deep-Dive: Rothschild and Co
 | Mode | Example | Human role |
 | :--- | :--- | :--- |
 | Assist | Draft client email from notes | Edit every word |
-| Copilot | Summarize CIM sections on demand | Steer each request |
-| Agent | Monitor news → flag → draft dossier | Approve gates |
+| Copilot | Summarize deal-memo sections on demand | Steer each request |
+| Agent | Monitor news → flag → draft client briefing | Approve gates |
 | Multi-agent | Specialists + orchestrator | Own policy and outcomes |
 
 > [!TIP]
@@ -211,7 +211,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 <!-- layout: stacked -->
 # Worked Teardown: Fake Vendor Pitch
 
-**Claim:** "Trained on all market data. Fully autonomous. Guarantees accuracy for Debt Advisory dossiers."
+**Claim:** "Trained on all market data. Fully autonomous. Guarantees accuracy for Debt Advisor client briefings."
 
 | Claim fragment | Inspect this layer | Better question |
 | :--- | :--- | :--- |
@@ -245,7 +245,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 <!-- layout: stacked -->
 # Face-Off Rubric (What You Will Score)
 
-- **Task fit** — Does it actually do CIM triage / dossier steps you care about?
+- **Task fit** — Does it actually do deal-memo triage / client-briefing steps you care about?
 - **Grounding / citations** — Sources present, or fluent invention under missing docs?
 - **Data path** — Where do prompts, uploads, and logs live?
 - **Latency / cost** — Usable in a live deal rhythm, or demo-only depth?
@@ -283,7 +283,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 1 of 3
 
-**A vendor demos a polished deal copilot that drafts dossier sections from a sample CIM. Where should diligence start?**
+**A vendor demos a polished deal copilot that drafts client-briefing sections from a sample deal memo. Where should diligence start?**
 
 - A. Accept the UI—application quality proves the architecture
 - B. Ask only which frontier model brand is behind the chat box
@@ -294,7 +294,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 1 — Answer
 
-**A vendor demos a polished deal copilot that drafts dossier sections from a sample CIM. Where should diligence start?**
+**A vendor demos a polished deal copilot that drafts client-briefing sections from a sample deal memo. Where should diligence start?**
 
 **Correct: C.** Name the stack layers in play—especially data retrieved, tools allowed, and controls
 
@@ -334,7 +334,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Quiz 3 of 3 — Discussion
 
 ### Prompt
-Pick one Rothschild workflow (research brief, deal dossier, or client email draft).
+Pick one Rothschild workflow (research brief, client briefing, or client email draft).
 
 ### Discuss
 - At which stack layer does most of the risk live?
@@ -346,7 +346,7 @@ Pick one Rothschild workflow (research brief, deal dossier, or client email draf
 <!-- layout: 2-column -->
 # Quiz 3 — Discussion Points
 
-**Pick one Rothschild workflow (research brief, deal dossier, or client email draft).**
+**Pick one Rothschild workflow (research brief, client briefing, or client email draft).**
 
 ### Strong Answers Mention
 - Risk often sits in data access, tools, and controls — not the model brand

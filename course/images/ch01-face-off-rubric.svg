@@ -18,8 +18,8 @@
   <rect x="48" y="110" width="340" height="150" rx="16" fill="#E8F0FE" filter="url(#elev2)"/>
   <circle cx="88" cy="150" r="18" fill="#4285F4"/><text x="88" y="156" text-anchor="middle" class="num">1</text>
   <text x="120" y="148" class="h2">Task fit</text>
-  <text x="120" y="176" class="body">Does it do your CIM /</text>
-  <text x="120" y="196" class="body">dossier steps?</text>
+  <text x="120" y="176" class="body">Does it do your deal-memo /</text>
+  <text x="120" y="196" class="body">briefing steps?</text>
   <rect x="430" y="110" width="340" height="150" rx="16" fill="#E6F4EA" filter="url(#elev2)"/>
   <circle cx="470" cy="150" r="18" fill="#34A853"/><text x="470" y="156" text-anchor="middle" class="num">2</text>
   <text x="502" y="148" class="h2">Grounding / citations</text>

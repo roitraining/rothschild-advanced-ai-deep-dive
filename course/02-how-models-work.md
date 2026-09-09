@@ -55,7 +55,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Attention: Weighted Focus (Not a Ledger)
 
 - The model packs your prompt into a context and **attends**—weights which tokens matter for the next one
-- Analogy: a banker skimming a CIM binder with sticky notes—focus moves, nothing is “posted”
+- Analogy: an advisor skimming a deal-memo binder with sticky notes—focus moves, nothing is “posted”
 - Strong at relating distant phrases in the window; weak at guaranteed arithmetic or audit trails
 - Attention explains fluency under incomplete docs—it does **not** verify facts
 
@@ -65,15 +65,15 @@ Advanced AI Deep-Dive: Rothschild and Co
 ---
 
 <!-- layout: 2-column -->
-# Failure Demo: Invented Covenant
+# Failure Demo: Invented Loan Condition
 
-### What the banker asked
-- “What leverage covenant applies if EBITDA dips 15%?”
+### What the advisor asked
+- “What debt limit applies if earnings fall 15%?”
 - Attached: wrong excerpt (fee schedule only)
-- No retrieval from the facility agreement
+- No retrieval from the loan agreement
 
 ### What the model did
-- Wrote a fluent “Net leverage ≤ 4.0x” answer
+- Wrote a fluent “debt must stay under 4× earnings” answer
 - Sounded decisive; cited nothing real
 - Optimized to **continue helpfully**, not to abstain
 
@@ -85,16 +85,16 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Tokens: The Real Meter
 
 - Models read **tokens**, not pages or words exactly
-- Tokenization splits text oddly (`EBITDA` may become multiple tokens)
+- Tokenization splits text oddly (`earnings` or ticker codes may become multiple tokens)
 - Limits apply to **input + output + tool results** in many systems
-- Long CIMs, filings, and chat history compete for the same budget
+- Long deal memos, company reports, and chat history compete for the same budget
 
 ---
 
 <!-- layout: stacked -->
-# Context Budget: Rough CIM Math
+# Context Budget: Rough Deal-Memo Math
 
-- A long CIM can be **tens of thousands of tokens**—before your question
+- A long deal memo can be **tens of thousands of tokens**—before your question
 - **Instructions + RAG chunks + chat history** eat the same budget as the document
 - Naive “paste the whole PDF” often truncates the middle/end—or crowds out citations
 - Result: fluent answers about the wrong slice, or silent drops of key schedules
@@ -103,7 +103,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 | :--- | :--- |
 | System + skill instructions | Always present; shrinks room for evidence |
 | Top-k retrieved chunks | Grounding—or noise if over-retrieved |
-| Prior chat turns | Old digressions push out the CIM |
+| Prior chat turns | Old digressions push out the deal memo |
 | Full PDF paste | Hits the ceiling; model never “saw” later pages |
 
 > [!WARNING]
@@ -168,7 +168,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 - How do you rev, eval, and roll back a tune?
 
 ### What not to expect
-- Live deal facts or covenant language “baked in”
+- Live deal facts or loan-condition language “baked in”
 - A substitute for RAG, tools, or ACLs
 - Freshness without a retrieval or tool path
 
@@ -201,7 +201,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 | System / policy | Firm rules, refusal behavior |
 | Retrieved chunks (RAG) | Grounding—if you over-retrieve, noise wins |
 | Tool results | API payloads can be huge |
-| Chat history | Prior turns crowd out the CIM |
+| Chat history | Prior turns crowd out the deal memo |
 | Your question | Often the smallest piece |
 
 > [!IMPORTANT]
@@ -297,9 +297,9 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Lab Bridge: Cite-or-Refuse Under Pressure
 
 - Force **cite-or-refuse**: material claims need a source—or an explicit gap
-- Spot **missing context**: wrong excerpt, truncated CIM, or empty retrieval still yields fluent prose
+- Spot **missing context**: wrong excerpt, truncated deal memo, or empty retrieval still yields fluent prose
 - Score answers on evidence, not confidence tone
-- Same failure mode as the invented-covenant demo—now you practice catching it
+- Same failure mode as the invented-loan-condition demo—now you practice catching it
 
 > [!TIP]
 > If you cannot point to a chunk or tool result, the lab answer should refuse—not invent.
@@ -325,10 +325,10 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 1 of 3
 
-**A banker pastes a long CIM into chat that already has system instructions, RAG chunks, and a long history. The window overflows. What is the most likely risk?**
+**An advisor pastes a long deal memo into chat that already has system instructions, RAG chunks, and a long history. The window overflows. What is the most likely risk?**
 
 - A. The model automatically upgrades to unlimited context with no quality loss
-- B. Earlier history or later CIM pages get dropped or truncated—answers may miss key schedules
+- B. Earlier history or later deal-memo pages get dropped or truncated—answers may miss key schedules
 - C. Overflow deletes the system instructions permanently from the vendor’s model weights
 - D. Embeddings expand the window so nothing is ever dropped
 
@@ -336,9 +336,9 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 1 — Answer
 
-**A banker pastes a long CIM into chat that already has system instructions, RAG chunks, and a long history. The window overflows. What is the most likely risk?**
+**An advisor pastes a long deal memo into chat that already has system instructions, RAG chunks, and a long history. The window overflows. What is the most likely risk?**
 
-**Correct: B.** Earlier history or later CIM pages get dropped or truncated—answers may miss key schedules
+**Correct: B.** Earlier history or later deal-memo pages get dropped or truncated—answers may miss key schedules
 
 - Instructions, RAG, history, and the document compete for one budget
 - Paste-PDF often fails silently: fluent answers about the wrong slice
@@ -349,7 +349,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 2 of 3
 
-**Your team wants up-to-date covenant language from internal memos. Which approach is usually best?**
+**Your team wants up-to-date loan-condition language from internal memos. Which approach is usually best?**
 
 - A. Fine-tune the model weekly on every memo and skip retrieval
 - B. Rely on the model’s training cutoff for live deal facts
@@ -360,7 +360,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 2 — Answer
 
-**Your team wants up-to-date covenant language from internal memos. Which approach is usually best?**
+**Your team wants up-to-date loan-condition language from internal memos. Which approach is usually best?**
 
 **Correct: C.** Retrieve approved documents (RAG) and/or call tools, then generate with citations
 
@@ -375,7 +375,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Quiz 3 of 3 — Discussion
 
 ### Prompt
-You asked a model for leverage capacity and it answered confidently with no sources.
+You asked a model for borrowing capacity and it answered confidently with no sources.
 
 ### Discuss
 - What likely went wrong in terms of context, retrieval, or incentives?
@@ -387,7 +387,7 @@ You asked a model for leverage capacity and it answered confidently with no sour
 <!-- layout: 2-column -->
 # Quiz 3 — Discussion Points
 
-**You asked a model for leverage capacity and it answered confidently with no sources.**
+**You asked a model for borrowing capacity and it answered confidently with no sources.**
 
 ### Strong Answers Mention
 - Fluent completion ≠ evidence; missing/truncated context invites invention

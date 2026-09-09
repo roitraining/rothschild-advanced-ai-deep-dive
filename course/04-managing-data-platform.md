@@ -35,7 +35,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 - RAG is one pattern among tools/APIs, lighter prompts, and (rarely) fine-tuning
 
 > [!NOTE]
-> If bankers cannot name the source, the platform failed—even if the prose sounds right.
+> If advisors cannot name the source, the platform failed—even if the prose sounds right.
 
 ---
 
@@ -67,9 +67,9 @@ Advanced AI Deep-Dive: Rothschild and Co
 | :--- | :--- |
 | Chunk size / overlap | Too big → noisy; too small → missing context |
 | Metadata filters | Deal, region, date, confidentiality |
-| Hybrid search | Keyword + vector for tickers, covenants, IDs |
+| Hybrid search | Keyword + vector for tickers, loan conditions, IDs |
 | Reranking | Improves precision before generation |
-| Citation UX | Makes verification practical for bankers |
+| Citation UX | Makes verification practical for advisors |
 
 ---
 
@@ -78,27 +78,27 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ### Weak retrieval
 - Huge chunks; no deal_id filter
-- Vector-only search for “4.0x covenant”
-- Top hit: old draft memo, wrong facility
+- Vector-only search for “debt under 4× earnings”
+- Top hit: old draft memo, wrong loan
 - Model answers fluently from the wrong doc
 
 ### Tightened retrieval
 - Section-sized chunks + overlap
 - Filter: deal_id + final + ACL
-- Hybrid: keyword for “leverage covenant”
-- Rerank → cite clause_id + page
+- Hybrid: keyword for “debt limit”
+- Rerank → cite page/section reference
 
 > [!TIP]
-> If bankers cannot verify the citation in 10 seconds, the RAG UX has failed.
+> If advisors cannot verify the citation in 10 seconds, the RAG UX has failed.
 
 ---
 
 <!-- layout: stacked -->
 # Hybrid Search + Rerank (Finance IDs)
 
-- **Vectors** catch paraphrase (“debt capacity test” ≈ leverage covenant language)
-- **Keywords** catch tickers, facility names, section numbers, defined terms
-- **Metadata** enforces tenancy: deal room, region, confidentiality
+- **Vectors** catch paraphrase (“debt capacity test” ≈ debt-limit language)
+- **Keywords** catch tickers, loan names, section numbers, defined terms
+- **Metadata** enforces tenancy: secure deal folder, region, confidentiality
 - **Rerankers** reorder the shortlist before generation—fewer wrong-but-nearby chunks
 
 ---
@@ -107,13 +107,13 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Bad Citations (Reject These)
 
 ### Looks polished
-- “Per the credit agreement, p. 12…”
-- Quote in the answer sounds covenant-like
-- Banker trusts the footnote and moves on
+- “Per the loan agreement, p. 12…”
+- Quote in the answer sounds like a loan condition
+- Advisor trusts the footnote and moves on
 
 ### Failures to catch
 - Page is wrong (clause lives on p. 47)
-- No `clause_id` / section pointer
+- No page/section reference
 - Quoted sentence **does not appear** in the retrieved source
 
 > [!WARNING]
@@ -136,7 +136,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ### Thin retrieval
 - Few or low-relevance hits → **refuse**, do not invent
-- Surface “insufficient sources” to the banker
+- Surface “insufficient sources” to the advisor
 - Escalation path when the corpus is silent
 
 ---
@@ -155,7 +155,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Garbage In, Fluent Garbage Out
 
 - Duplicate, outdated, or conflicting memos confuse retrieval
-- OCR errors in scanned CIMs become “facts”
+- OCR errors in scanned deal memos become “facts”
 - Missing metadata blocks safe filtering
 - Unowned corpora become unmaintainable
 
@@ -178,13 +178,13 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Worked Failure: Conflicting Memos
 
 ### What was indexed
-- Deal Alpha: draft IC memo (v0.3) — leverage “up to 5.5x”
-- Deal Alpha: final IC memo (v1.0) — leverage “capped at 4.0x”
+- Deal Alpha: draft investment committee memo (v0.3) — debt “up to 5.5× earnings”
+- Deal Alpha: final investment memo (v1.0) — debt “capped at 4.0× earnings”
 - Both chunks ranked high; no authority filter
 
 ### What the agent returned
-- Answer cited “the IC memo” at 5.5x
-- Banker used draft figure in a client update
+- Answer cited “the investment memo” at 5.5×
+- Advisor used draft figure in a client update
 - Root cause: missing **draft vs final** metadata + no refuse on conflict
 
 > [!IMPORTANT]
@@ -222,7 +222,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 ---
 
 <!-- layout: 2-column -->
-# Indirect Prompt Injection (CIM)
+# Indirect Prompt Injection (Deal Memo)
 
 ### Planted text in a PDF
 - Hidden or footnote instruction:
@@ -245,7 +245,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ### Access
 - Identity-aware retrieval
-- Segregate deal rooms
+- Segregate secure deal folders
 - Deny by default
 
 ### Protection
@@ -308,7 +308,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Human approves distribution
 
 ### Unhappy paths (design these)
-- **Weak RAG** → refuse / “insufficient sources”; do not invent covenants
+- **Weak RAG** → refuse / “insufficient sources”; do not invent loan conditions
 - **Tool / MCP error** → escalate to human; no silent fallback to recall
 - Conflicting docs → surface both; block client-ready send
 
@@ -351,7 +351,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Treat the workflow as a product with owners
 
 > [!TIP]
-> The best architecture is the one a managing director can explain: goal → data → tools → review.
+> The best architecture is the one a senior leader can explain: goal → data → tools → review.
 
 ---
 
@@ -359,7 +359,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 Before you design, force these into the one-pager:
 
-- **Sources** — which corpora and systems are in-scope for Debt Advisory dossiers?
+- **Sources** — which corpora and systems are in-scope for Debt Advisor client briefings?
 - **ACL / residency** — who may retrieve what; where do chunks and logs live?
 - **Cite-or-refuse** — thin retrieval → abstain; wrong-deal leakage is a fail
 - **Unhappy paths** — weak RAG refuse; tool/MCP error escalate (no silent recall)
@@ -388,11 +388,11 @@ Before you design, force these into the one-pager:
 
 # Quiz 1 of 3
 
-**A coverage banker needs three answers. Which pattern fits each best?**
+**A client-team advisor needs three answers. Which pattern fits each best?**
 
 1. Live CRM “last contact date” for a named contact
-2. Covenant language from the executed credit agreement corpus
-3. Tone and section order matching the firm’s IC memo style
+2. Loan-condition language from the executed loan agreement corpus
+3. Tone and section order matching the firm’s investment memo style
 
 - A. RAG for all three—indexes beat live systems and style guides
 - B. Tools/API for (1); RAG for (2); lighter prompt or template/skill for (3)
@@ -403,7 +403,7 @@ Before you design, force these into the one-pager:
 
 # Quiz 1 — Answer
 
-**A coverage banker needs three answers. Which pattern fits each best?**
+**A client-team advisor needs three answers. Which pattern fits each best?**
 
 **Correct: B.** Tools/API for (1); RAG for (2); lighter prompt or template/skill for (3)
 
@@ -419,9 +419,9 @@ Before you design, force these into the one-pager:
 **Which control best addresses cross-deal leakage through a shared AI index?**
 
 - A. Raising model temperature
-- B. Identity-aware retrieval with deal-room segregation and deny-by-default access
+- B. Identity-aware retrieval with secure-deal-folder segregation and deny-by-default access
 - C. Disabling citations so users trust the narrative
-- D. Training the base model on all deal rooms overnight
+- D. Training the base model on all secure deal folders overnight
 
 ---
 
@@ -429,7 +429,7 @@ Before you design, force these into the one-pager:
 
 **Which control best addresses cross-deal leakage through a shared AI index?**
 
-**Correct: B.** Identity-aware retrieval with deal-room segregation and deny-by-default access
+**Correct: B.** Identity-aware retrieval with secure-deal-folder segregation and deny-by-default access
 
 - Access labels and ACL-aware retrieval are first-class for agentic workflows
 - Citations help verification; they do not replace authorization
@@ -460,7 +460,7 @@ You must make a proprietary dataset available to an internal research agent.
 - Provenance, freshness, draft vs final, access labels
 - Narrow retrieval; least-privilege tools; audit logs
 - Goal → skill → RAG → tools → draft → human approve
-- If retrieval is weak, abstain—do not invent covenant language
+- If retrieval is weak, abstain—do not invent loan-condition language
 
 ### Watch For
 - Indexing unowned/outdated corpora

@@ -21,7 +21,7 @@
 
 # Our Running Example
 
-- We will keep returning to one Rothschild-shaped workflow: a **Debt Advisory preliminary dossier**
+- We will keep returning to one Rothschild-shaped workflow: a **Debt Advisor preliminary client briefing**
 - Same job, rising sophistication across the course
   - Ch1–2: what the stack and model can and cannot do
   - Ch3–4: tools, MCP, RAG, and controls
@@ -37,7 +37,7 @@ For multimodal outputs and agent buying (Ch7–10), keep one chain visible:
 
 **claim → source → check → human gate**
 
-- **Claim** — what assertion enters a dossier, pitch, or buy decision
+- **Claim** — what assertion enters a client briefing, pitch, or buy decision
 - **Source** — which doc, chunk, tool result, or transcript backs it
 - **Check** — verification of freshness, ACL, and fit
 - **Human gate** — who may release, buy, or act
@@ -100,7 +100,7 @@ For multimodal outputs and agent buying (Ch7–10), keep one chain visible:
 # How We'll Work
 
 - **Advanced deep-dive** — not beginner Copilot tip sheets
-- Success: teardown a vendor pitch and blueprint a safer dossier agent
+- Success: teardown a vendor pitch and blueprint a safer client-briefing agent
 - Labs are blueprints and disciplined experiments, not production builds
 - Quizzes are discussion fuel; answers follow each question
 - No invented client data — use mocks or public examples
@@ -110,7 +110,7 @@ For multimodal outputs and agent buying (Ch7–10), keep one chain visible:
 
 # Who Should Attend
 
-- Bankers and advisors who work with AI vendors and technical teams
+- Advisors and colleagues who work with AI vendors and technical teams
 - Leaders evaluating agentic workflows for deal, research, or ops
 - Practitioners who already use copilots and need deeper fluency
 - Anyone expected to challenge architecture and security claims

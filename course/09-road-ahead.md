@@ -34,7 +34,7 @@ For multimodal outputs and agent buying decisions, keep one chain visible:
 
 | Step | Question |
 | :--- | :--- |
-| Claim | What assertion enters a dossier, pitch, or buy decision? |
+| Claim | What assertion enters a client briefing, pitch, or buy decision? |
 | Source | Which doc, chunk, tool result, or transcript backs it? |
 | Check | Did a human or eval verify freshness, ACL, and fit? |
 | Human gate | Who may release, buy, or act — and under what policy? |
@@ -60,13 +60,13 @@ For multimodal outputs and agent buying decisions, keep one chain visible:
 
 ### What expands
 - Credentials in the session (SSO, saved logins, API keys)
-- Screens and pages the agent can see (PII, deal rooms)
+- Screens and pages the agent can see (PII, secure deal folders)
 - Irreversible clicks: send, approve, wire, delete, publish
 - Audit gaps if actions are not logged like API tools
 
 ### Hard requirements
 - Allow-list domains and actions; default deny
-- Separate identities — never personal banker SSO
+- Separate identities — never personal advisor SSO
 - HITL before irreversible or client-visible steps
 - Immutable audit of screens/actions or do not buy
 
@@ -86,7 +86,7 @@ For multimodal outputs and agent buying decisions, keep one chain visible:
 
 ### Discount
 - Leaderboard-only claims
-- "Fully autonomous" banking
+- "Fully autonomous" finance AI
 - Vague "proprietary brain"
 - One-demo architecture
 
@@ -121,7 +121,7 @@ Terms you need in diligence meetings — not a glossary dump.
 # Phrases That Change Vendor Meetings
 
 - "Show me the **tool permission model** and audit log."
-- "How is **ACL-aware retrieval** enforced across deal rooms?"
+- "How is **ACL-aware retrieval** enforced across secure deal folders?"
 - "What happens on **low-confidence** retrieval?"
 - "Which parts are **model, orchestration, and data platform**?"
 - "Where is the **HITL gate** — and can operators bypass it?"
@@ -153,20 +153,20 @@ Terms you need in diligence meetings — not a glossary dump.
 
 ---
 
-# Scorecard: Two Offerings vs Dossier Workflow
+# Scorecard: Two Offerings vs Client Briefing Workflow
 
-**Workflow:** Draft an internal Debt Advisory dossier from approved sources — then banker gate before any wider share.
+**Workflow:** Draft an internal Debt Advisor client briefing from approved sources — then advisor gate before any wider share.
 
 | Criterion | Offering A: Enterprise document copilot | Offering B: IDE / agent coding surface |
 | :--- | :--- | :--- |
-| Task fit | Strong for banker docs and M365-shaped drafts | Strong for prototype / vibe-coding loops |
-| Grounding | Tenant Graph / ACL when configured — verify deal rooms | Repo + connected docs; firm ACL often weaker |
+| Task fit | Strong for advisor docs and M365-shaped drafts | Strong for prototype / vibe-coding loops |
+| Grounding | Tenant Graph / ACL when configured — verify secure deal folders | Repo + connected docs; firm ACL often weaker |
 | Agency | Studio/agents — demand HITL and step limits | Agent mode — local blast radius; gate exports |
 | Security | Enterprise tenant, residency, retention levers | Org policy + whatever you connect |
-| Fit call | Prefer for dossier drafting near banker workflow | Prefer for building internal tools — not client dossier path |
+| Fit call | Prefer for client briefing drafts near advisor workflow | Prefer for building internal tools — not client briefing path |
 
 > [!NOTE]
-> Re-score on *your* prompts, corpora, and policy. Names matter less than dossier criteria.
+> Re-score on *your* prompts, corpora, and policy. Names matter less than client briefing criteria.
 
 ---
 
@@ -195,7 +195,7 @@ Terms you need in diligence meetings — not a glossary dump.
 
 ### Will not buy this year
 - Ungated "fully autonomous" client send
-- Consumer multimodal for deal-room media
+- Consumer multimodal for secure-deal-folder media
 - Leaderboard wins with no audit story
 - Duplicate copilots that fragment identity
 
@@ -230,7 +230,7 @@ Facilitator walks **one** vendor pitch claim live (2–4 minutes) before Lab 9:
 3. Force **claim → source → check → human gate**
 4. Decide: pilot, park, or anti-portfolio
 
-**Example claim to critique:** "Our agent drafts and sends client-ready dossiers with full autonomy."
+**Example claim to critique:** "Our agent drafts and sends client-ready briefings with full autonomy."
 
 > [!TIP]
 > Participants should steal this ritual for every RFP and renewal.
@@ -291,7 +291,7 @@ Carry these into **Chapter 10** (write on the intake slide before or during the 
 
 - A. "Are you on the leaderboard this month?"
 - B. "Show the tool permission model, ACL-aware retrieval, and audit logs"
-- C. "Can you promise fully autonomous banking with zero errors?"
+- C. "Can you promise fully autonomous finance AI with zero errors?"
 - D. "Do you have a proprietary brain we cannot inspect?"
 
 ---
@@ -311,7 +311,7 @@ Carry these into **Chapter 10** (write on the intake slide before or during the 
 
 # Quiz 2 of 3
 
-**A vendor demos a computer-use agent that opens the browser, reads a deal room, and can click "Send." For Debt Advisory dossiers, which scorecard weight should dominate your buy decision?**
+**A vendor demos a computer-use agent that opens the browser, reads a secure deal folder, and can click "Send." For Debt Advisor client briefings, which scorecard weight should dominate your buy decision?**
 
 - A. Leaderboard rank of the underlying model
 - B. Agency + security: allow-lists, identity separation, irreversible-click HITL, and audit of actions
@@ -322,13 +322,13 @@ Carry these into **Chapter 10** (write on the intake slide before or during the 
 
 # Quiz 2 — Answer
 
-**A vendor demos a computer-use agent that opens the browser, reads a deal room, and can click "Send." For Debt Advisory dossiers, which scorecard weight should dominate your buy decision?**
+**A vendor demos a computer-use agent that opens the browser, reads a secure deal folder, and can click "Send." For Debt Advisor client briefings, which scorecard weight should dominate your buy decision?**
 
 **Correct: B.** Agency + security: allow-lists, identity separation, irreversible-click HITL, and audit of actions
 
 - Computer-use expands credentials, screens, and irreversible clicks
-- Task fit alone does not justify ungated send from a deal room
-- Prefer document copilots with banker gates for dossier share paths
+- Task fit alone does not justify ungated send from a secure deal folder
+- Prefer document copilots with advisor gates for client briefing share paths
 - Put ungated browser send on the anti-portfolio until controls exist
 
 ---
@@ -337,7 +337,7 @@ Carry these into **Chapter 10** (write on the intake slide before or during the 
 # Quiz 3 of 3 — Discussion
 
 ### Prompt
-Run a build-your-stack challenge for your team (model providers vs work surfaces). Pair two offerings against the dossier workflow scorecard.
+Run a build-your-stack challenge for your team (model providers vs work surfaces). Pair two offerings against the client briefing workflow scorecard.
 
 ### Discuss
 - Which workflows are high-value vs high-risk?
@@ -349,12 +349,12 @@ Run a build-your-stack challenge for your team (model providers vs work surfaces
 <!-- layout: 2-column -->
 # Quiz 3 — Discussion Points
 
-**Run a build-your-stack challenge for your team (model providers vs work surfaces). Pair two offerings against the dossier workflow scorecard.**
+**Run a build-your-stack challenge for your team (model providers vs work surfaces). Pair two offerings against the client briefing workflow scorecard.**
 
 ### Strong Answers Mention
 - Rank workflows by value/risk; separate productivity vs sensitive runtimes
 - Demand MCP/API strategy for systems of record; scorecard in action
-- Anti-portfolio: no ungated autonomous client send; no consumer multimodal for deal rooms
+- Anti-portfolio: no ungated autonomous client send; no consumer multimodal for secure deal folders
 - Pilot with eval harness + gates; count seats, tokens, retrieval, and review time
 
 ### Watch For

@@ -23,6 +23,6 @@
 <line x1="190" y1="250" x2="1010" y2="250" stroke="#4285F4" stroke-width="3"/>
 <rect x="48" y="270" width="300" height="200" rx="16" fill="#E6F4EA" filter="url(#elev2)"/><circle cx="90" cy="315" r="20" fill="#34A853"/><text x="90" y="321" text-anchor="middle" class="num">1</text><text x="120" y="322" class="h2">News Monitor</text>
 <rect x="450" y="270" width="300" height="200" rx="16" fill="#FEF7E0" filter="url(#elev2)"/><circle cx="492" cy="315" r="20" fill="#FBBC04"/><text x="492" y="321" text-anchor="middle" class="num-dark">2</text><text x="522" y="322" class="h2">Restructuring Scout</text>
-<rect x="852" y="270" width="300" height="200" rx="16" fill="#FCE8E6" filter="url(#elev2)"/><circle cx="894" cy="315" r="20" fill="#EA4335"/><text x="894" y="321" text-anchor="middle" class="num">3</text><text x="924" y="322" class="h2">Dossier Compiler</text>
+<rect x="852" y="270" width="300" height="200" rx="16" fill="#FCE8E6" filter="url(#elev2)"/><circle cx="894" cy="315" r="20" fill="#EA4335"/><text x="894" y="321" text-anchor="middle" class="num">3</text><text x="924" y="322" class="h2">Briefing Compiler</text>
 <rect x="48" y="520" width="1104" height="110" rx="16" fill="#FFFFFF" filter="url(#elev2)"/><text x="80" y="585" class="body-ink">Shared MCP tools · human approval before outreach · clear ownership per hop</text>
 </svg>

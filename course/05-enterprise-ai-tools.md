@@ -142,7 +142,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 | Critique pass | “Attack this memo as risk” |
 | Compare modes | Bull / base / bear cases |
 | Extract then synthesize | Facts table → narrative |
-| Refusal criteria | “If covenants unclear, say so” |
+| Refusal criteria | “If loan conditions unclear, say so” |
 
 ---
 
@@ -158,7 +158,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 ### Strong
 - ONLY the attached report
 - Table: Risk | Evidence quote | Page
-- Rank top 5 for Debt Advisory
+- Rank top 5 for Debt Advisor
 - List gaps; no invented figures
 
 ---
@@ -168,8 +168,8 @@ Advanced AI Deep-Dive: Rothschild and Co
 ```text
 Using ONLY the attached target report:
 1) Extract key risk factors as a table: Risk | Evidence quote | Page
-2) Rank top 5 for a Debt Advisory first look
-3) List data gaps that block a view on leverage capacity
+2) Rank top 5 for a Debt Advisor first look
+3) List data gaps that block a view on debt capacity
 Do not invent figures. If unknown, write "Not in source".
 ```
 
@@ -207,7 +207,7 @@ Do not invent figures. If unknown, write "Not in source".
 - Office AI + firm skills + corpus RAG beats reinventing the prompt each Monday
 
 > [!TIP]
-> If two bankers need the same risk table, it belongs in a shared skill—not two chat histories.
+> If two advisors need the same risk table, it belongs in a shared skill—not two chat histories.
 
 ---
 
@@ -278,7 +278,7 @@ Do not invent figures. If unknown, write "Not in source".
 - Agenda drafts
 
 ### Verify always
-- Figures and covenants
+- Figures and loan conditions
 - Legal language
 - Client emails
 
@@ -301,7 +301,7 @@ Do not invent figures. If unknown, write "Not in source".
 
 # Deal Briefing: What You Will Watch
 
-- Short path: attach report → extract risks → rank for DA → draft client email
+- Short path: attach report → extract risks → rank for Debt Advisor → draft client email
 - Pause after each step and name the technical layer firing
 - Goal: leave with a checklist you can reuse on any office AI feature
 - Lab runs the workflow; this section names the machinery
@@ -314,7 +314,7 @@ Do not invent figures. If unknown, write "Not in source".
 | :--- | :--- |
 | Open / attach report | Grounding scope + ACL |
 | Extract risks | Prompt assembly + inference |
-| Rank for DA | Output contract / rubric in prompt |
+| Rank for Debt Advisor | Output contract / rubric in prompt |
 | Draft client email | Draft vs send; human edit required |
 | Verify figures | Tools/RAG or manual recompute—not vibes |
 
@@ -389,7 +389,7 @@ Run Lab 5 as a timed briefing—but after each step, say aloud:
 
 # Quiz 2 of 3
 
-**Which prompting pattern best fits extracting key risks from a target company report for Debt Advisory?**
+**Which prompting pattern best fits extracting key risks from a target company report for Debt Advisor?**
 
 - A. “Summarize this” with no source constraints
 - B. Extract evidence-quoted risks as a table, rank for the use case, and list data gaps; forbid invented figures
@@ -400,7 +400,7 @@ Run Lab 5 as a timed briefing—but after each step, say aloud:
 
 # Quiz 2 — Answer
 
-**Which prompting pattern best fits extracting key risks from a target company report for Debt Advisory?**
+**Which prompting pattern best fits extracting key risks from a target company report for Debt Advisor?**
 
 **Correct: B.** Extract evidence-quoted risks as a table, rank for the use case, and list data gaps; forbid invented figures
 
@@ -415,7 +415,7 @@ Run Lab 5 as a timed briefing—but after each step, say aloud:
 # Quiz 3 of 3 — Discussion
 
 ### Prompt
-Office AI proposes a spreadsheet “insight”: YoY EBITDA margin rose 180 bps. The figure must go into a client email.
+Office AI proposes a spreadsheet “insight”: year-over-year earnings margin rose 180 bps. The figure must go into a client email.
 
 ### Discuss
 - What do you recompute or re-query before trusting the number?
@@ -427,7 +427,7 @@ Office AI proposes a spreadsheet “insight”: YoY EBITDA margin rose 180 bps. 
 <!-- layout: 2-column -->
 # Quiz 3 — Discussion Points
 
-**Office AI proposes a spreadsheet “insight”: YoY EBITDA margin rose 180 bps. The figure must go into a client email.**
+**Office AI proposes a spreadsheet “insight”: year-over-year earnings margin rose 180 bps. The figure must go into a client email.**
 
 ### Strong Answers Mention
 - Recompute from source cells or approved tools; check units and periods

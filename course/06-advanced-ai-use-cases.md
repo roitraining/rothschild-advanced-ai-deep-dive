@@ -31,11 +31,11 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-# Research Agent Pattern (IB)
+# Research Agent Pattern (Advisory)
 
-- Break the question into **sources, angles, and deliverable** (coverage note, MA teaser, restructuring update)
+- Break the question into **sources, angles, and deliverable** (client note, deal teaser, debt restructuring update)
 - Separate **collection** from **synthesis** to reduce mixed-up citations
-- Prefer IB primary sources: filings, earnings transcripts, deal announcements, approved vendor feeds
+- Prefer primary sources: public filings, earnings transcripts, deal announcements, approved vendor feeds
 - Maintain a running **claims vs evidence** table until sign-off
 
 > [!IMPORTANT]
@@ -47,7 +47,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Collection vs Synthesis on the Day 1 Stack
 
 ### Collection (approved paths)
-- Firm RAG over deal rooms / research corpora
+- Firm RAG over secure deal folders / research corpora
 - MCP/tools for CRM, positions, vendor APIs
 - Download or query—then log what you retrieved
 
@@ -62,17 +62,17 @@ Advanced AI Deep-Dive: Rothschild and Co
 ---
 
 <!-- layout: 2-column -->
-# IB Primary Sources by Desk
+# Primary Sources by Desk
 
-### Coverage / MA
-- 10-K / 10-Q / 20-F; proxy / circular
+### Client team / mergers
+- Annual report / quarterly report / foreign issuer report; proxy / circular
 - Earnings transcripts; investor decks
 - Announced deal terms; press from parties
 
-### Restructuring / special sits
+### Debt restructuring / special situations
 - Court dockets; restructuring support agreements
 - Creditor presentations; liquidity updates
-- Facility docs and amendment history (ACL-bound)
+- Loan docs and amendment history (ACL-bound)
 
 ---
 
@@ -97,7 +97,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 | Claim | Evidence | Status |
 | :--- | :--- | :--- |
-| Peer X gained share in EU mid-market | Peer 10-K, p. 42 segment revenue YoY | Verified |
+| A peer gained share in EU mid-sized deals | Peer annual report, p. 42: segment revenue vs last year | Verified |
 | Peer Y "dominates" restructuring fees | Trade press ranking; no fee disclosure | Weak — reframe |
 | Market consolidating via bolt-ons | 3 announced deals in window; deal DB count | Partial — size TBD |
 
@@ -110,7 +110,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Contradiction Drill
 
 ### What went wrong
-- Same metric in presentation vs 10-Q footnote
+- Same metric in presentation vs quarterly-report footnote
 - Model merged both into one fluent paragraph
 - Conflict never surfaced to the reader
 
@@ -127,7 +127,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Anti-Patterns in AI Research
 
 - Single-prompt "write a full industry report"
-- Treating vendor blogs as peers to filings
+- Treating vendor blogs as peers to company reports / public filings
 - No distinction between **retrieved** and **recalled** facts
 - Skipping contradiction checks across sources
 
@@ -165,7 +165,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Silent row drops
 
 ### Invented math
-- Fluent YoY with no series
+- Fluent year-over-year with no series
 - Chart titles as "facts"
 - **Recompute or it did not happen**
 
@@ -271,12 +271,12 @@ Advanced AI Deep-Dive: Rothschild and Co
 ### Reject (hype)
 - "AI proves the sector is pivoting to software"
 - "Guaranteed alpha from this screen"
-- "The model understands our book better than coverage"
+- "The model understands our book better than the client team"
 
 ### Prefer (bankable)
-- "Based on verified filings through 30 Jun: Peer X EU mid-market rev +8% YoY (10-K p.42)"
-- "Hypothesis: share gain. Evidence: segment table. Caveat: FX and deal mix not isolated"
-- "Draft for banker review — not client-ready"
+- "Based on verified company reports through 30 Jun: peer EU mid-sized segment rev +8% vs last year (annual report p.42)"
+- "Hypothesis: share gain. Evidence: peer comparison table. Caveat: FX and deal mix not isolated"
+- "Draft for advisor review — not client-ready"
 
 ---
 
@@ -361,18 +361,18 @@ Carry these forward into Ch8–9 (add your own):
 
 # Quiz 2 of 3
 
-**Sandbox analysis fails mid-run (timeout / join error) while drafting portfolio commentary for an IC update. What is the right next move?**
+**Sandbox analysis fails mid-run (timeout / join error) while drafting portfolio commentary for an investment committee update. What is the right next move?**
 
 - A. Paste the portfolio into consumer chat and ask for the same commentary
 - B. Escalate: fix or re-run the sandbox / approved tool path; do not ship commentary on unverified aggregates
-- C. Accept the last partial chart title as the YoY figure
+- C. Accept the last partial chart title as the year-over-year figure
 - D. Skip verification because the narrative already sounds right
 
 ---
 
 # Quiz 2 — Answer
 
-**Sandbox analysis fails mid-run (timeout / join error) while drafting portfolio commentary for an IC update. What is the right next move?**
+**Sandbox analysis fails mid-run (timeout / join error) while drafting portfolio commentary for an investment committee update. What is the right next move?**
 
 **Correct: B.** Escalate: fix or re-run the sandbox / approved tool path; do not ship commentary on unverified aggregates
 
