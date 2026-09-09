@@ -52,6 +52,18 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+# Attention: Weighted Focus (Not a Ledger)
+
+- The model packs your prompt into a context and **attends**—weights which tokens matter for the next one
+- Analogy: a banker skimming a CIM binder with sticky notes—focus moves, nothing is “posted”
+- Strong at relating distant phrases in the window; weak at guaranteed arithmetic or audit trails
+- Attention explains fluency under incomplete docs—it does **not** verify facts
+
+> [!IMPORTANT]
+> Attention is focus over packed text. Diligence still needs retrieval, tools, or a human.
+
+---
+
 <!-- layout: 2-column -->
 # Failure Demo: Invented Covenant
 
@@ -76,6 +88,35 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Tokenization splits text oddly (`EBITDA` may become multiple tokens)
 - Limits apply to **input + output + tool results** in many systems
 - Long CIMs, filings, and chat history compete for the same budget
+
+---
+
+<!-- layout: stacked -->
+# Context Budget: Rough CIM Math
+
+- A long CIM can be **tens of thousands of tokens**—before your question
+- **Instructions + RAG chunks + chat history** eat the same budget as the document
+- Naive “paste the whole PDF” often truncates the middle/end—or crowds out citations
+- Result: fluent answers about the wrong slice, or silent drops of key schedules
+
+| Packed into one turn | Typical effect |
+| :--- | :--- |
+| System + skill instructions | Always present; shrinks room for evidence |
+| Top-k retrieved chunks | Grounding—or noise if over-retrieved |
+| Prior chat turns | Old digressions push out the CIM |
+| Full PDF paste | Hits the ceiling; model never “saw” later pages |
+
+> [!WARNING]
+> Paste-PDF fails because the window is a budget, not a filing cabinet.
+
+---
+
+# Embeddings for Finance Search
+
+- Map text to vectors so “similar meaning” is measurable
+- Power semantic search over memos, transcripts, and policies
+- Quality depends on chunking, metadata, and embedding model choice
+- Bad retrieval → fluent answers about the **wrong** document
 
 ---
 
@@ -118,35 +159,21 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-<!-- layout: 3-column -->
-# Fine-Tuning Flavors (Buyer Vocab)
+<!-- layout: 2-column -->
+# Ask Vendors About Fine-Tuning
 
-### SFT
-- Supervised examples
-- “Answer like our memos”
-- Still not live truth
+### What to clarify
+- Is it style/format (SFT) or preference tuning for tone/safety?
+- What examples were used—and can confidential deals leak into weights?
+- How do you rev, eval, and roll back a tune?
 
-### Preference / RLHF-style
-- Rank better answers
-- Tone, safety, format
-- Does not add deal facts
-
-### LoRA / adapters
-- Smaller, swappable packs
-- Easier to rev / rollback
-- Same misuse risks apply
+### What not to expect
+- Live deal facts or covenant language “baked in”
+- A substitute for RAG, tools, or ACLs
+- Freshness without a retrieval or tool path
 
 > [!TIP]
 > If the fact must change next week, do not put it in weights—retrieve or tool-call it.
-
----
-
-# Embeddings for Finance Search
-
-- Map text to vectors so “similar meaning” is measurable
-- Power semantic search over memos, transcripts, and policies
-- Quality depends on chunking, metadata, and embedding model choice
-- Bad retrieval → fluent answers about the **wrong** document
 
 ---
 
@@ -267,6 +294,18 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+# Lab Bridge: Cite-or-Refuse Under Pressure
+
+- Force **cite-or-refuse**: material claims need a source—or an explicit gap
+- Spot **missing context**: wrong excerpt, truncated CIM, or empty retrieval still yields fluent prose
+- Score answers on evidence, not confidence tone
+- Same failure mode as the invented-covenant demo—now you practice catching it
+
+> [!TIP]
+> If you cannot point to a chunk or tool result, the lab answer should refuse—not invent.
+
+---
+
 # Lab 2: Grounding AI Answers in Real Data
 
 **Time:** 25 minutes
@@ -286,25 +325,25 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 1 of 3
 
-**Why should bankers care about tokens when reviewing a 50-page CIM with an LLM?**
+**A banker pastes a long CIM into chat that already has system instructions, RAG chunks, and a long history. The window overflows. What is the most likely risk?**
 
-- A. Tokens only affect image generation quality
-- B. Token limits determine how much input and output fit in one pass
-- C. More tokens always guarantee factual accuracy
-- D. Tokens replace the need for embeddings and retrieval
+- A. The model automatically upgrades to unlimited context with no quality loss
+- B. Earlier history or later CIM pages get dropped or truncated—answers may miss key schedules
+- C. Overflow deletes the system instructions permanently from the vendor’s model weights
+- D. Embeddings expand the window so nothing is ever dropped
 
 ---
 
 # Quiz 1 — Answer
 
-**Why should bankers care about tokens when reviewing a 50-page CIM with an LLM?**
+**A banker pastes a long CIM into chat that already has system instructions, RAG chunks, and a long history. The window overflows. What is the most likely risk?**
 
-**Correct: B.** Token limits determine how much input and output fit in one pass
+**Correct: B.** Earlier history or later CIM pages get dropped or truncated—answers may miss key schedules
 
-- Models read tokens, not pages; long CIMs compete with instructions and chat history
-- Large documents often need chunking/RAG rather than a single naive paste
-- Tokens do not guarantee correctness—grounding still matters
-- Embeddings help find relevant passages; they do not remove context limits
+- Instructions, RAG, history, and the document compete for one budget
+- Paste-PDF often fails silently: fluent answers about the wrong slice
+- Embeddings help retrieve relevant chunks—they do not remove context limits
+- Mitigate with chunking/RAG, trim history, and cite-or-refuse when evidence is missing
 
 ---
 

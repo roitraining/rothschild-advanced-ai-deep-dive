@@ -33,15 +33,6 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-# Core Idea
-
-- Multiple input types map into a shared representation space
-- The model can attend across text, audio cues, and visual structure
-- Pipelines may be **native multimodal** or **composed** (ASR → LLM → TTS)
-- Latency, cost, and privacy differ sharply by modality
-
----
-
 # Native vs Composed (Earnings-Call Path)
 
 | Dimension | Native multimodal | Composed (ASR → LLM → …) |
@@ -52,22 +43,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 | Privacy | Full media to one vendor | Can isolate ASR or keep audio on-prem |
 
 > [!NOTE]
-> Choose for control and audit needs — not only demo elegance.
-
----
-
-<!-- layout: 2-column -->
-# Architecture Choices
-
-### Native multimodal
-- One model accepts mixed inputs
-- Strong joint reasoning
-- Vendor capability varies by task
-
-### Composed pipeline
-- Best-of-breed per step
-- Clearer control points
-- More integration work
+> Choose for control and audit needs — not only demo elegance. Pipelines may be native or composed; latency, cost, and privacy differ sharply by modality.
 
 ---
 
@@ -81,7 +57,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 ---
 
 <!-- layout: 3-column -->
-# Speech, Vision, Video in Finance
+# Speech, Vision, Video in IB Artifacts
 
 ### Speech
 - Earnings calls, investor days
@@ -90,8 +66,8 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Sentiment = signal, not proof
 
 ### Vision
-- Charts from decks and filings
-- Tables from scanned PDFs
+- Pitch-book / IC charts and axes
+- Scanned CIM tables (OCR)
 - Competitive imagery sets
 - Verify numbers in source text
 
@@ -104,7 +80,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 ---
 
 <!-- layout: 3-column -->
-# Modality Failure Cases
+# Modality Failure Cases (IB)
 
 ### Speech
 - Bad ASR on accents/tickers
@@ -112,14 +88,17 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Sentiment treated as strategy
 
 ### Vision
-- OCR "1.8" → "18" on leverage
-- Axis/unit misread
-- Table merge mistakes
+- OCR "1.8" → "18" on CIM leverage
+- Pitch-book axis/unit misread
+- Table merge mistakes across pages
 
 ### Video
 - Slide says X, CEO says Y missed
 - Selective clip bias
 - Retention / rights risk
+
+> [!WARNING]
+> Scanned CIM unit traps and misread pitch-book axes become “facts” in fluent briefs—recompute from the filing or source PDF.
 
 ---
 
@@ -144,17 +123,13 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-<!-- layout: stacked -->
-# Fusion Workflow
+# Timeline Alignment Sketch
 
-1. Ingest media under access policy
-2. Transcribe / extract with timestamps
-3. Align transcript to slides or exhibits
-4. Retrieve related filings for grounding
-5. Synthesize: themes, deltas, risks, quotes
-6. Produce text brief + optional audio summary
-
-![Multimodal architecture](images/ch07-multimodal.svg)
+| Slide claim (deck) | Transcript (who / time) | Filing check | Status |
+| :--- | :--- | :--- | :--- |
+| “Net leverage below 3.0x through FY” | CEO 00:42:18: “comfortable below three turns” | Q2 release: 2.7x; no formal guidance | Soft language — not hard guidance |
+| “Europe +12% organic” | CFO 00:18:05 cites reported growth | 10-Q: reported includes FX and M&A | Reframe — not organic |
+| Chart: margin expansion | No verbal mention | Footnote: one-time credit | Flag slide–speech–filing gap |
 
 ---
 
@@ -172,13 +147,16 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Earnings Call Autopsy — Outputs
 
-| Artifact | Purpose |
-| :--- | :--- |
-| Theme map | Strategy shifts vs prior call |
-| Alignment deltas | Slide vs speech conflicts |
-| Claim ledger | Claim → quote → timestamp → filing check |
-| Risk flags | Guidance language, hedges |
-| Exec podcast | TTS summary for commute review (gated) |
+| Artifact | Purpose | Gate |
+| :--- | :--- | :--- |
+| Theme map | Strategy shifts vs prior call | Internal OK with review |
+| Alignment deltas | Slide vs speech conflicts | Human confirm material deltas |
+| Claim ledger | Claim → quote → timestamp → filing | **Required** before client use |
+| Risk flags | Guidance language, hedges | Legal/compliance as needed |
+| Exec podcast | TTS commute summary | **Last**: rights + ledger first |
+
+> [!CAUTION]
+> Exec podcast is an artifact of a cleared claim ledger—not a substitute for it. Confirm rights and retention before any TTS packaging.
 
 ---
 
@@ -197,8 +175,17 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Cross-check guidance with the release
 - Human sign-off before client use
 
-> [!CAUTION]
-> Confirm rights and retention before ingest.
+---
+
+# Lab Bridge: Autopsy Path
+
+1. **Ingest** media only after rights / retention clearance
+2. Transcribe / extract; fill one **claim ledger** row for a material claim
+3. **Human verify** quote, timestamp, and filing cross-check
+4. Only then draft the brief (and optional podcast)—never reverse the order
+
+> [!TIP]
+> If the ledger row cannot be verified, the claim does not leave the room—podcast or not.
 
 ---
 
@@ -221,25 +208,25 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 1 of 3
 
-**What is the core idea behind multimodal AI architectures?**
+**A coverage team must autopsy earnings calls with audit gates after ASR, before synthesis, and before any TTS summary. When does a composed pipeline beat native multimodal?**
 
-- A. Only text models can participate in finance workflows
-- B. Multiple input types map into a shared representation for joint reasoning (native or composed pipelines)
-- C. Video models eliminate the need for transcripts and citations
-- D. Multimodal systems remove privacy and retention concerns
+- A. Never—native always wins on control
+- B. When intermediate control points, per-stage vendor isolation, or tunable cost/latency matter more than single-pass joint reasoning
+- C. Only when the team wants to skip claim ledgers
+- D. When uploading client audio to consumer apps is allowed
 
 ---
 
 # Quiz 1 — Answer
 
-**What is the core idea behind multimodal AI architectures?**
+**A coverage team must autopsy earnings calls with audit gates after ASR, before synthesis, and before any TTS summary. When does a composed pipeline beat native multimodal?**
 
-**Correct: B.** Multiple input types map into a shared representation for joint reasoning (native or composed pipelines)
+**Correct: B.** When intermediate control points, per-stage vendor isolation, or tunable cost/latency matter more than single-pass joint reasoning
 
-- Native multimodal vs composed (e.g., ASR → LLM → TTS) are both valid
-- Latency, cost, and privacy differ by modality and architecture choice
-- Transcripts and citations still matter for verifiable claims
-- Rights and retention must be confirmed for audio/video artifacts
+- Composed (ASR → LLM → …) exposes clear gates after each stage
+- Native may be stronger at joint reasoning but fewer audit hooks
+- Claim ledgers and rights still apply either way
+- Architecture choice is about control and privacy—not skipping diligence
 
 ---
 
@@ -263,7 +250,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Prosody/sentiment are signals — not proof of strategy
 - Claim ledgers and human sign-off precede client or investment use
 - Alignment deltas (slide vs speech) are often the real analytic prize
-- Retention and rights still apply
+- Retention and rights still apply; podcast comes after the ledger
 
 ---
 
@@ -287,14 +274,14 @@ Design an earnings-call autopsy for a coverage team.
 
 ### Strong Answers Mention
 - Composed pipelines offer clearer control points; native may simplify joint reasoning
-- Claim ledger and client-facing podcast need strict review; internal theme maps less so
+- Rights and claim ledger first; exec podcast last and optional
 - Confirm recording rights, retention, and sharing before ingest
 - Cross-check guidance with the published release; chase misalignment deltas
 
 ### Watch For
 - Equating tone shifts with certain strategic pivots
 - Skipping timestamps/citations
-- Uploading client or unlicensed media without clearance
+- Packaging TTS before ledger verification or rights clearance
 
 ---
 

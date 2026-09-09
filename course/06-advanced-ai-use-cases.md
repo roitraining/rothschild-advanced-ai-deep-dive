@@ -26,15 +26,53 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-# Research Agent Pattern
+> [!TIP]
+> **Instructor — Day 1 fatigue:** If short on time, keep research + analysis + vibe-coding gates; treat the pitch-spine table and lab bridge as **lab-only** (skip lecture slides; run them inside Lab 6). Bankable language fragment stays—short and high value.
 
-- Break the question into **sources, angles, and deliverable**
-- Separate collection from synthesis to reduce mixed-up citations
-- Prefer primary sources: filings, transcripts, reputable data vendors
+---
+
+# Research Agent Pattern (IB)
+
+- Break the question into **sources, angles, and deliverable** (coverage note, M&A teaser, restructuring update)
+- Separate **collection** from **synthesis** to reduce mixed-up citations
+- Prefer IB primary sources: filings, earnings transcripts, deal announcements, approved vendor feeds
 - Maintain a running **claims vs evidence** table until sign-off
 
 > [!IMPORTANT]
 > AI accelerates mapping and drafting. Source trust and client framing stay human.
+
+---
+
+<!-- layout: 2-column -->
+# Collection vs Synthesis on the Day 1 Stack
+
+### Collection (approved paths)
+- Firm RAG over deal rooms / research corpora
+- MCP/tools for CRM, positions, vendor APIs
+- Download or query—then log what you retrieved
+
+### Synthesis (chat / draft)
+- Claims table → narrative → slide outline
+- No new “facts” that were never collected
+- Contradictions named explicitly before polish
+
+> [!NOTE]
+> Same architecture as Ch3–4: retrieve and tool first; chat second. Do not paste the open web into a client memo and call it diligence.
+
+---
+
+<!-- layout: 2-column -->
+# IB Primary Sources by Desk
+
+### Coverage / M&A
+- 10-K / 10-Q / 20-F; proxy / circular
+- Earnings transcripts; investor decks
+- Announced deal terms; press from parties
+
+### Restructuring / special sits
+- Court dockets; restructuring support agreements
+- Creditor presentations; liquidity updates
+- Facility docs and amendment history (ACL-bound)
 
 ---
 
@@ -182,6 +220,21 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+<!-- layout: 2-column -->
+# If the IDE Is Unavailable
+
+### Still teach the gate
+- Critique a **mock** dashboard screenshot or stub
+- Score: mock data only? units labeled? version pin?
+- Rewrite hype titles into bankable captions
+
+### Do not require generate
+- Generating code is optional when tooling is blocked
+- Judgment on prototype vs production still counts
+- Lab can use provided mock UI instead of live codegen
+
+---
+
 <!-- layout: stacked -->
 # From Prompt to Dashboard
 
@@ -213,16 +266,16 @@ Advanced AI Deep-Dive: Rothschild and Co
 ---
 
 <!-- layout: 2-column -->
-# Bankable Language vs Hype
+# Worked Fragment: Hype → Bankable
 
-### Hype (reject)
-- "AI proves the sector is pivoting"
+### Reject (hype)
+- "AI proves the sector is pivoting to software"
 - "Guaranteed alpha from this screen"
-- "The model understands our book"
+- "The model understands our book better than coverage"
 
-### Bankable (prefer)
-- "Based on verified filings through [date]…"
-- "Hypothesis: … Evidence: … Caveat: …"
+### Prefer (bankable)
+- "Based on verified filings through 30 Jun: Peer X EU mid-market rev +8% YoY (10-K p.42)"
+- "Hypothesis: share gain. Evidence: segment table. Caveat: FX and M&A mix not isolated"
 - "Draft for banker review — not client-ready"
 
 ---
@@ -245,7 +298,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Lab Bridge: From Prompt to Pitch
 
 - Use a **mock** portfolio only — no live client books
-- Dashboard first, then compress into the 5-slide spine
+- Dashboard first (or critique mock UI), then compress into the 5-slide spine
 - Every slide number must trace to your evidence table
 - Instructor checks: mock data, recompute rule, bankable wording
 
@@ -270,49 +323,49 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 1 of 3
 
-**What is the strongest anti-pattern in AI-assisted market research?**
+**A claims table marks Peer Y "dominates restructuring fees" as Weak (trade press only; no fee disclosure). The associate wants that line on tomorrow’s client slide.**
 
-- A. Separating collection from synthesis and keeping a claims-vs-evidence table
-- B. Preferring filings and transcripts as primary sources
-- C. Single-prompt "write a full industry report" with no source discipline
-- D. Using AI to draft slide outlines after evidence is gathered
+- A. Keep the wording—trade press is good enough for a headline
+- B. Block the client slide until the claim is verified, reframed, or dropped; Weak status is a hard gate
+- C. Ask the model to rewrite it more confidently so it sounds bankable
+- D. Move it to speaker notes so it never needs evidence
 
 ---
 
 # Quiz 1 — Answer
 
-**What is the strongest anti-pattern in AI-assisted market research?**
+**A claims table marks Peer Y "dominates restructuring fees" as Weak (trade press only; no fee disclosure). The associate wants that line on tomorrow’s client slide.**
 
-**Correct: C.** Single-prompt "write a full industry report" with no source discipline
+**Correct: B.** Block the client slide until the claim is verified, reframed, or dropped; Weak status is a hard gate
 
-- Speed without source discipline creates elegant misinformation
-- Distinguish retrieved facts from model recall; check contradictions
-- AI accelerates mapping and drafting; humans own trust and judgment
-- Primary sources beat vendor blogs for diligence
+- Material claims need Verified (or explicit Partial with caveats)—not fluent Weak
+- Reframe to what the source supports, or remove the line
+- Confidence polish without evidence is the anti-pattern
+- Collection via RAG/tools first; synthesis never invents fee dominance
 
 ---
 
 # Quiz 2 of 3
 
-**How should "vibe coding" be positioned for portfolio dashboards and prototypes?**
+**Sandbox analysis fails mid-run (timeout / join error) while drafting portfolio commentary for an IC update. What is the right next move?**
 
-- A. A bypass of engineering standards for production systems
-- B. Iterative natural-language building of internal prototypes with acceptance checks each loop
-- C. Automatic permission to use live confidential portfolios in demos
-- D. A replacement for verified metrics tables in pitch decks
+- A. Paste the portfolio into consumer chat and ask for the same commentary
+- B. Escalate: fix or re-run the sandbox / approved tool path; do not ship commentary on unverified aggregates
+- C. Accept the last partial chart title as the YoY figure
+- D. Skip verification because the narrative already sounds right
 
 ---
 
 # Quiz 2 — Answer
 
-**How should "vibe coding" be positioned for portfolio dashboards and prototypes?**
+**Sandbox analysis fails mid-run (timeout / join error) while drafting portfolio commentary for an IC update. What is the right next move?**
 
-**Correct: B.** Iterative natural-language building of internal prototypes with acceptance checks each loop
+**Correct: B.** Escalate: fix or re-run the sandbox / approved tool path; do not ship commentary on unverified aggregates
 
-- Ideal for demos and exploration — not a waiver for production controls
-- Separate mock data from confidential data; pin versions when sharing
-- Pitch decks still need a single source table of truth for numbers
-- Generate → run → critique → refine
+- Systems of record and logged transforms remain authoritative
+- Freeform consumer chat and chart-title “facts” fail the recompute rule
+- Partial failure → refuse or escalate, same spirit as weak RAG
+- Vibe-coding prototypes still need mock data and acceptance checks—not silent fallbacks
 
 ---
 

@@ -23,6 +23,19 @@ Advanced AI Deep-Dive: Rothschild and Co
 - **The Enterprise AI Toolset Under the Hood**
 - Advanced Prompting Techniques
 - AI Inside Daily Office Applications
+- Deal Briefing: Technical Unpack
+
+---
+
+# Apply Chapters 1–4 to the Suite You Already Use
+
+- Same stack vocabulary: host app, model, grounding/RAG, tools/MCP, controls
+- Today: map those ideas onto Copilot / Workspace / firm AI—not a new product tour
+- Ask: what is grounded, what can act, what is logged, what a human must still own
+- Lab later: watch those layers fire during a 5-minute deal briefing
+
+> [!NOTE]
+> Product names change; the diligence questions stay: identity, ACL, action vs draft, retention.
 
 ---
 
@@ -32,9 +45,6 @@ Advanced AI Deep-Dive: Rothschild and Co
 - One or more **models** selected by task/SKU
 - **Grounding** to files, email, chat, or tenant search
 - Optional **plugins/tools** for actions beyond text
-
-> [!NOTE]
-> Product names change; the architecture pattern stays: host + model + grounding + tools + controls.
 
 ---
 
@@ -79,6 +89,18 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+# Enterprise Tool Selection Criteria
+
+| Criterion | What to demand |
+| :--- | :--- |
+| Tenant grounding | Retrieval scoped to permitted tenant content—not the open web by default |
+| ACL fidelity | Same permissions as the source system; no “helpful” over-share |
+| Action vs draft | Explicit: send / write / delete vs draft-only |
+| Log retention | Where prompts and outputs live; how long; who can access |
+| Model by SKU | Which model powers which feature; reasoning vs fast tier |
+
+---
+
 # Questions to Ask Your Tooling Team
 
 - Which model(s) power which features?
@@ -95,6 +117,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 - The Enterprise AI Toolset Under the Hood
 - **Advanced Prompting Techniques**
 - AI Inside Daily Office Applications
+- Deal Briefing: Technical Unpack
 
 ---
 
@@ -175,22 +198,74 @@ Do not invent figures. If unknown, write "Not in source".
 
 ---
 
+<!-- layout: stacked -->
+# Winning Prompts Become Chapter 3 Skills
+
+- A strong one-off prompt is a prototype—not a team capability
+- Promote winners into **skills / templates**: role, output contract, refusal rules, non-goals
+- Version them with the workflow (same idea as pinning prompts + indexes in Ch4)
+- Office AI + firm skills + corpus RAG beats reinventing the prompt each Monday
+
+> [!TIP]
+> If two bankers need the same risk table, it belongs in a shared skill—not two chat histories.
+
+---
+
 <!-- layout: navigation -->
 # Chapter 5
 
 - The Enterprise AI Toolset Under the Hood
 - Advanced Prompting Techniques
 - **AI Inside Daily Office Applications**
+- Deal Briefing: Technical Unpack
 
 ---
 
-# Where AI Shows Up in the Workday
+<!-- layout: 2-column -->
+# Workflow Deep-Dive: Email Draft vs Send
 
-- **Documents**: summarize, rewrite, structure decks
-- **Email/calendar**: draft, triage, meeting prep
-- **Spreadsheets**: explain formulas, draft analyses (verify math)
-- **Meetings**: transcripts, actions, follow-ups
-- **Teams chat**: catch-up summaries with permission boundaries
+### Assist well
+- Triage and outline from permitted thread
+- Tone polish; agenda bullets
+- Flag missing attachments or unclear asks
+
+### Gate hard
+- Confirm draft-only vs auto-send settings
+- Client-facing language = human edit required
+- Never let “helpful send” bypass review
+
+> [!WARNING]
+> Draft and send are different products. Know which SKU you are in before the model finishes the sentence.
+
+---
+
+<!-- layout: 2-column -->
+# Workflow Deep-Dive: Spreadsheet Verify-Math
+
+### Assist well
+- Explain a formula in plain language
+- Propose structure for a sensitivity table
+- Spot unit or period mismatches in labels
+
+### Gate hard
+- Recompute material figures yourself or via tools
+- Do not treat chart titles as verified metrics
+- Export intermediate tables when stakes are high
+
+---
+
+<!-- layout: 2-column -->
+# Workflow Deep-Dive: Meeting Notes and ACL
+
+### Assist well
+- Summarize for attendees who already had access
+- Extract actions with owners and dates
+- Draft follow-ups from the transcript
+
+### Gate hard
+- Recap must not invent attendees or leak other rooms
+- Same ACL as the meeting artifact—no “tenant search” stretch
+- Sensitive deals: confirm retention before long-term storage
 
 ---
 
@@ -214,19 +289,26 @@ Do not invent figures. If unknown, write "Not in source".
 
 ---
 
-<!-- layout: stacked -->
-# From Feature to Workflow
+<!-- layout: navigation -->
+# Chapter 5
 
-- One-off prompts help; **repeatable playbooks** scale
-- Save winning prompts as team skills or templates
-- Pair office AI with corpus RAG for institutional knowledge
-- Measure time saved **and** error types introduced
+- The Enterprise AI Toolset Under the Hood
+- Advanced Prompting Techniques
+- AI Inside Daily Office Applications
+- **Deal Briefing: Technical Unpack**
 
 ---
 
-# Lab Bridge: Technical Unpack Checklist
+# Deal Briefing: What You Will Watch
 
-During the 5-minute deal briefing, pause after each step and name:
+- Short path: attach report → extract risks → rank for DA → draft client email
+- Pause after each step and name the technical layer firing
+- Goal: leave with a checklist you can reuse on any office AI feature
+- Lab runs the workflow; this section names the machinery
+
+---
+
+# Technical Unpack Checklist
 
 | Step | What happened technically? |
 | :--- | :--- |
@@ -235,6 +317,16 @@ During the 5-minute deal briefing, pause after each step and name:
 | Rank for DA | Output contract / rubric in prompt |
 | Draft client email | Draft vs send; human edit required |
 | Verify figures | Tools/RAG or manual recompute—not vibes |
+
+---
+
+<!-- layout: stacked -->
+# After the Unpack: Make It Repeatable
+
+- Save the winning risk-extraction prompt as a team skill (Ch3 pattern)
+- Pair office grounding with firm RAG when institutional memos matter
+- Measure time saved **and** error types introduced
+- Escalate when grounding is thin—same refuse rule as Ch4
 
 ---
 
@@ -307,30 +399,30 @@ During the 5-minute deal briefing, pause after each step and name:
 # Quiz 3 of 3 — Discussion
 
 ### Prompt
-Walk through a 5-minute deal briefing workflow in Copilot (report → risks → client email).
+Office AI proposes a spreadsheet “insight”: YoY EBITDA margin rose 180 bps. The figure must go into a client email.
 
 ### Discuss
-- At each step, what is the tool doing technically (prompt assembly, retrieval, inference)?
-- Which outputs are “high assist” vs “verify always”?
-- How would you turn a winning prompt into a team playbook or skill?
+- What do you recompute or re-query before trusting the number?
+- Draft vs send: who owns the last click, and why?
+- When would you refuse the insight and escalate instead of polishing the email?
 
 ---
 
 <!-- layout: 2-column -->
 # Quiz 3 — Discussion Points
 
-**Walk through a 5-minute deal briefing workflow in Copilot (report → risks → client email).**
+**Office AI proposes a spreadsheet “insight”: YoY EBITDA margin rose 180 bps. The figure must go into a client email.**
 
 ### Strong Answers Mention
-- Host assembles prompt + policy; may ground on allowed files; model infers; filters/logs apply
-- Formatting/tone = high assist; figures, legal, client email = verify always
-- Save prompts as templates/skills; measure time saved and error types
-- Pair office AI with corpus RAG for institutional knowledge
+- Recompute from source cells or approved tools; check units and periods
+- Client email = verify always; draft-only until a human sends
+- Thin or conflicting inputs → refuse / escalate; do not invent polish
+- Promote a verified calc checklist into a team skill for next time
 
 ### Watch For
-- Treating the chat pane as magic with no ACL questions
-- Sending client email without human edit
-- One-off prompts that never become repeatable
+- Accepting chart titles or chat prose as the metric
+- Auto-send or “helpful” send without review
+- Treating the deal-briefing lab walkthrough as the only diligence pattern
 
 ---
 

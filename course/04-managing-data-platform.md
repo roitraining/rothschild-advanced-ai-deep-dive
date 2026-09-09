@@ -27,6 +27,18 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+# From Chapter 2 to Platform Choices
+
+- Chapter 2 covered embeddings and context as **concepts**—how meaning and windows work
+- This chapter: **platform choices**—what to retrieve, filter, cite, and refuse before generation
+- Same vocabulary (chunks, relevance, context packing); now with tenancy, ACL, and eval bars
+- RAG is one pattern among tools/APIs, lighter prompts, and (rarely) fine-tuning
+
+> [!NOTE]
+> If bankers cannot name the source, the platform failed—even if the prose sounds right.
+
+---
+
 <!-- layout: title-image -->
 # RAG: Grounding in Your Data
 
@@ -91,6 +103,44 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+<!-- layout: 2-column -->
+# Bad Citations (Reject These)
+
+### Looks polished
+- “Per the credit agreement, p. 12…”
+- Quote in the answer sounds covenant-like
+- Banker trusts the footnote and moves on
+
+### Failures to catch
+- Page is wrong (clause lives on p. 47)
+- No `clause_id` / section pointer
+- Quoted sentence **does not appear** in the retrieved source
+
+> [!WARNING]
+> A confident wrong citation is worse than no citation—it short-circuits verification.
+
+---
+
+<!-- layout: 3-column -->
+# Demand This from Vendors and Evals
+
+### Faithfulness
+- Spot-check: every cited claim in the source
+- Score: unsupported / contradicted / grounded
+- Gate releases on citation quality, not fluency
+
+### Wrong-deal leakage
+- Red-team: user on Deal A asks about Deal B
+- Expect refuse or empty—never fluent bleed
+- ACL filters must run **before** generation
+
+### Thin retrieval
+- Few or low-relevance hits → **refuse**, do not invent
+- Surface “insufficient sources” to the banker
+- Escalation path when the corpus is silent
+
+---
+
 <!-- layout: navigation -->
 # Chapter 4
 
@@ -121,6 +171,34 @@ Advanced AI Deep-Dive: Rothschild and Co
 - **Authority**: draft vs. final vs. superseded
 - **Structure**: titles, sections, tables preserved
 - **Access labels**: who is allowed to retrieve it?
+
+---
+
+<!-- layout: 2-column -->
+# Worked Failure: Conflicting Memos
+
+### What was indexed
+- Deal Alpha: draft IC memo (v0.3) — leverage “up to 5.5x”
+- Deal Alpha: final IC memo (v1.0) — leverage “capped at 4.0x”
+- Both chunks ranked high; no authority filter
+
+### What the agent returned
+- Answer cited “the IC memo” at 5.5x
+- Banker used draft figure in a client update
+- Root cause: missing **draft vs final** metadata + no refuse on conflict
+
+> [!IMPORTANT]
+> Index authority labels. Prefer final-only retrieval; if drafts remain, surface conflicts—never silently pick the fluent wrong number.
+
+---
+
+<!-- layout: stacked -->
+# Draft vs Final: Operational Rules
+
+- Tag every chunk: `authority = draft | final | superseded`
+- Default filter for client-facing workflows: **final only**
+- If both survive retrieval: list both figures and escalate—do not merge
+- Superseded docs stay for audit history, not for generation
 
 ---
 
@@ -221,6 +299,21 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+<!-- layout: 2-column -->
+# Happy Path vs Unhappy Paths
+
+### Happy path
+- Strong retrieval + live tool fields
+- Citations verify in seconds
+- Human approves distribution
+
+### Unhappy paths (design these)
+- **Weak RAG** → refuse / “insufficient sources”; do not invent covenants
+- **Tool / MCP error** → escalate to human; no silent fallback to recall
+- Conflicting docs → surface both; block client-ready send
+
+---
+
 # Trust Boundaries on That Flow
 
 | Hop | Control to name explicitly |
@@ -281,25 +374,29 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 1 of 3
 
-**When is RAG usually the right pattern?**
+**A coverage banker needs three answers. Which pattern fits each best?**
 
-- A. Whenever you want faster inference with no corpus
-- B. When answers must reflect proprietary/recent documents and support citations
-- C. When you need to permanently bake secrets into model weights
-- D. When fine-tuning has already solved access control
+1. Live CRM “last contact date” for a named contact
+2. Covenant language from the executed credit agreement corpus
+3. Tone and section order matching the firm’s IC memo style
+
+- A. RAG for all three—indexes beat live systems and style guides
+- B. Tools/API for (1); RAG for (2); lighter prompt or template/skill for (3)
+- C. Fine-tune the base model on CRM exports for (1)–(3)
+- D. Consumer chat with pasted screenshots for all three
 
 ---
 
 # Quiz 1 — Answer
 
-**When is RAG usually the right pattern?**
+**A coverage banker needs three answers. Which pattern fits each best?**
 
-**Correct: B.** When answers must reflect proprietary/recent documents and support citations
+**Correct: B.** Tools/API for (1); RAG for (2); lighter prompt or template/skill for (3)
 
-- RAG retrieves approved slices, then generates with source pointers
-- Fine-tuning is slow/risky for fact updates and does not replace permissions
-- Live system fields often still need tools/APIs
-- No corpus means fix data foundations first
+- Live system fields need tools/APIs—not a stale memo index
+- Proprietary document facts with citations → RAG
+- Pure style/format → skill, template, or light prompting (not a fact corpus)
+- Fine-tuning and consumer paste paths fail on freshness, ACL, and audit
 
 ---
 

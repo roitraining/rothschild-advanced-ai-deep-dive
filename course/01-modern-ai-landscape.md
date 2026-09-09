@@ -49,6 +49,29 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+<!-- layout: 3-column -->
+# Capability Types (Roles, Not Brands)
+
+### Chat / generate
+- Drafts, Q and A, rewrite
+- Needs grounding for facts
+- Default productivity surface
+
+### Embeddings / multimodal / reason
+- Search and similarity
+- Docs, tables, images as input
+- Extra compute for hard steps
+
+### Agents
+- Goal + tools + loop
+- Permission to act
+- Blast radius is the product
+
+> [!TIP]
+> Buy the **capability** you need. Brand names change; these roles do not.
+
+---
+
 # Landscape Map (Roles, Not Brands)
 
 | Role | What you buy | Watch-outs |
@@ -57,6 +80,24 @@ Advanced AI Deep-Dive: Rothschild and Co
 | Open-weight / self-host | Data-path control | You own ops; uneven catch-up |
 | Enterprise surfaces | Tenant grounding and ACL | Draft vs send; SKU opacity |
 | Agent platforms | Tools, memory, HITL, evals | Autonomy without allow-lists |
+
+---
+
+<!-- layout: 2-column -->
+# Buy Decision: Named Workflows
+
+### CIM triage (read-mostly)
+- Prefer **enterprise surface** or Frontier API + RAG
+- Need citations, ACL, draft-not-send
+- Agent platform is overkill until tools are required
+
+### Dossier agent (multi-step)
+- Prefer **agent platform** with allow-lists and HITL
+- Tools for news, filings, CRM—not chat alone
+- Frontier API as the brain; platform owns the loop
+
+> [!IMPORTANT]
+> Match the **workflow shape** to the buy: triage ≠ autonomous dossier.
 
 ---
 
@@ -159,10 +200,11 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Hype Patterns to Spot
 
-- **"Our model understands your firm"** — usually retrieval + prompts, not magic memory
-- **"Fully autonomous banking AI"** — missing failure modes and approval design
-- **"Trained on all market data"** — ask provenance, freshness, and licenses
-- **"Guaranteed accuracy"** — probabilistic systems need grounding and review
+- **"Understands your firm"** / **"trained on all market data"** — ask corpus, ACL, provenance
+- **"Fully autonomous"** / **"guaranteed accuracy"** — ask gates, failure modes, cite-or-refuse
+
+> [!TIP]
+> Use the teardown table next—same claims, inspected by stack layer.
 
 ---
 
@@ -200,6 +242,28 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+<!-- layout: stacked -->
+# Face-Off Rubric (What You Will Score)
+
+- **Task fit** — Does it actually do CIM triage / dossier steps you care about?
+- **Grounding / citations** — Sources present, or fluent invention under missing docs?
+- **Data path** — Where do prompts, uploads, and logs live?
+- **Latency / cost** — Usable in a live deal rhythm, or demo-only depth?
+- **Refusal behavior** — Does it abstain when evidence is thin?
+
+![Face-off scoring checklist](images/ch01-face-off-rubric.svg)
+
+---
+
+# Bridge to Chapter 2
+
+- Vendor claims collapse under **tokens**, **context packing**, and **grounding**
+- You will stress-test: what fits the window, what was retrieved, what was invented
+- Lab scores the surface; Ch2 explains *why* fluent wrong answers happen
+- Next: transformers, embeddings, and cite-or-refuse under budget pressure
+
+---
+
 # Lab 1: Model Face-Off
 
 **Time:** 25 minutes
@@ -219,27 +283,28 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 1 of 3
 
-**In the generative AI stack, where do APIs, MCP, RAG, skills, and guardrails typically live?**
+**A vendor demos a polished deal copilot that drafts dossier sections from a sample CIM. Where should diligence start?**
 
-- A. Foundation (identity and network only)
-- B. Model layer
-- C. Orchestration and tools
-- D. Applications and agents only
+- A. Accept the UI—application quality proves the architecture
+- B. Ask only which frontier model brand is behind the chat box
+- C. Name the stack layers in play—especially data retrieved, tools allowed, and controls
+- D. Skip diligence if the demo used open-weight models
 
 ---
 
 # Quiz 1 — Answer
 
-**In the generative AI stack, where do APIs, MCP, RAG, skills, and guardrails typically live?**
+**A vendor demos a polished deal copilot that drafts dossier sections from a sample CIM. Where should diligence start?**
 
-**Correct: C.** Orchestration and tools
+**Correct: C.** Name the stack layers in play—especially data retrieved, tools allowed, and controls
 
-- Orchestration is where enterprise data and controls attach to the model
-- Applications are what users see; models are one capability choice among many
-- Foundation covers identity, network, audit, and trust boundaries
-- Diligence must reach below the demo UI into this layer
+- Demos live at the application layer; risk often sits in data, tools, and gates
+- Model brand is one decision—not a substitute for corpus, ACL, and refusal behavior
+- Use the face-off rubric: task fit, citations, data path, latency/cost, refusal
+- Open vs closed does not waive diligence
 
 ---
+
 
 # Quiz 2 of 3
 

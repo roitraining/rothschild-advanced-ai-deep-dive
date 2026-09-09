@@ -58,6 +58,29 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+<!-- layout: 3-column -->
+# Custom API vs MCP vs Host Plugin
+
+### Custom API (direct)
+- Tight control for one agent runtime
+- Best when CRM/DMS contracts are firm-owned
+- You own clients, auth, and versioning
+
+### MCP server
+- Portable tools/resources across hosts
+- Wins when multiple copilots need the same CRM/DMS surface
+- Still needs IAM at the service layer
+
+### Host plugin
+- Fastest for one vendor surface
+- Fine for productivity SKUs
+- Watch lock-in and opaque permissions
+
+> [!TIP]
+> Same CRM data, three packaging choices—pick for **reuse and control**, not fashion.
+
+---
+
 # Multi-Step Trace: Preliminary Dossier
 
 | Step | Tool / action | Result into context |
@@ -70,6 +93,18 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 > [!IMPORTANT]
 > If any step lacks an allow-listed tool, the agent should stop—not improvise with prose.
+
+---
+
+# Teachable Moment: Tool-Enabled Exfiltration
+
+- Attacker (or poisoned doc) tricks the model into **calling** `send_email` or a broad CRM read
+- The model “helps”—the blast radius is your allow-list, not the prose tone
+- Narrow tools + HITL on send/write beat clever prompts alone
+- Log every tool call: name, actor, resource, outcome
+
+> [!CAUTION]
+> Exfiltration often looks like a successful agent turn. Design tools as if the model will be tricked.
 
 ---
 
@@ -111,26 +146,26 @@ Advanced AI Deep-Dive: Rothschild and Co
 ---
 
 <!-- layout: 2-column -->
-# Integration Patterns
+# Finance-Concrete API Patterns
 
-### Synchronous
-- Request/response in the agent turn
-- Good for lookups and validation
-- Watch latency budgets
+### Sync lookup (watch latency)
+- Covenant field or CRM owner in the agent turn
+- Market-data spikes can **kill the turn**—budget timeouts
+- Prefer cached/approved snapshots when live feed is slow
 
-### Asynchronous
-- Queue jobs, poll or webhook
-- Good for long research packs
-- Needs status UX and timeouts
+### Async research pack
+- Long dossier packs: queue job, poll or webhook
+- Needs **status UX** (“gathering filings…”) and timeouts
+- Do not block the banker on a 10-minute silent wait
 
 ---
 
 # API Design for Agents
 
 - Prefer **narrow, intention-revealing** endpoints over god-queries
-- Return machine-readable fields + human labels
-- Include stable IDs for citations (`doc_id`, `clause_id`)
+- Return machine-readable fields + human labels; stable IDs for citations
 - Fail with clear errors the model can recover from—or escalate
+- Separate read paths (research) from write/send paths (HITL)
 
 ---
 
@@ -294,6 +329,38 @@ escalate_to: coverage banker
 
 ---
 
+<!-- layout: 2-column -->
+# Bad Skill Anti-Example
+
+### Vague and unsafe
+- Trigger: “help with deals” (always on)
+- Tools: whatever the host exposes
+- No forbidden list, no non-goals
+- Done when: “looks good”
+
+### What breaks
+- Loads on every chat; over-privileged
+- Silent CRM writes or external send
+- No escalate path when sources are thin
+- Lab blueprints fail review for this shape
+
+> [!WARNING]
+> A skill without **forbidden** and **non_goals** is a privilege leak with a friendly name.
+
+---
+
+# Lab Bridge: Fill the Blueprint Skeleton
+
+- Treat the lab like a **mini skill**: tools, forbidden, done_when, escalate
+- Name inputs/outputs and non-goals before you debate model brands
+- If a step needs a side effect, it needs an allow-listed tool—or it is out of scope
+- Peer-review each other’s blueprints for vague triggers and missing gates
+
+> [!TIP]
+> Copy the preliminary-dossier skeleton shape—swap in your team’s workflow.
+
+---
+
 # Lab 3: Blueprinting a Custom Agent
 
 **Time:** 30 minutes
@@ -363,30 +430,30 @@ escalate_to: coverage banker
 # Quiz 3 of 3 — Discussion
 
 ### Prompt
-Blueprint an agent that drafts a preliminary dossier using CRM fields and a document store.
+A peer team’s blueprint allows `crm_read_all`, `crm_write`, and `send_email`, with trigger “assist on any deal question” and no forbidden list.
 
 ### Discuss
-- Which capabilities should be tools/APIs vs packaged as a skill?
-- How should live database access be mediated (what must the agent *not* get)?
-- Where do human approval gates belong before anything is shared?
+- What over-privilege and exfiltration paths do you see?
+- How would you rewrite tools, forbidden, done_when, and escalate?
+- Where must HITL sit before anything leaves the firm?
 
 ---
 
 <!-- layout: 2-column -->
 # Quiz 3 — Discussion Points
 
-**Blueprint an agent that drafts a preliminary dossier using CRM fields and a document store.**
+**A peer team’s over-privileged “assist on any deal” blueprint.**
 
 ### Strong Answers Mention
-- Skills guide procedure; tools execute side effects
-- Agent → service layer → DB; no raw production SQL superpowers
-- Least privilege, redaction, audit of tool calls
-- Approve before client-visible distribution
+- Broad CRM read + write + send is classic tool-enabled exfiltration
+- Narrow intention-revealing tools; separate read vs write/send
+- Add forbidden, non_goals, cite-or-refuse done_when, escalate_to
+- HITL before external send and before CRM writes
 
 ### Watch For
-- God-query tools with write access “for convenience”
-- Skills without non-goals or escalation paths
-- Assuming MCP alone makes the design secure
+- “MCP / host plugin will fix permissions” without IAM
+- Vague triggers that load the skill on every chat
+- Cloning the lab dossier scenario without critiquing privilege
 
 ---
 

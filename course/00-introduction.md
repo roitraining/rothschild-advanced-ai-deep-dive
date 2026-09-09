@@ -19,25 +19,40 @@
 
 ---
 
+# Our Running Example
+
+- We will keep returning to one Rothschild-shaped workflow: a **Debt Advisory preliminary dossier**
+- Same job, rising sophistication across the course
+  - Ch1–2: what the stack and model can and cannot do
+  - Ch3–4: tools, MCP, RAG, and controls
+  - Ch5–8: prompting, research, multimodal, agents
+  - Ch9–10: buy decisions and your scenarios
+- You leave able to **teardown a vendor pitch on stack layers** and blueprint a safer agent
+
+---
+
 # Course Objectives
 
 - **Build the advanced AI knowledge and vocabulary needed to engage confidently with technical teams and vendors**
+
+**Day 1 — Foundation**
 - Map the modern AI landscape: key players, model types, and the shift toward agentic systems
 - Explain how large language models work: transformers, tokens, context windows, and reasoning
 - Understand how AI connects to enterprise systems via APIs, custom tools, RAG, and MCP
 - Manage data platforms for generative AI: RAG, quality, privacy, and end-to-end workflows
 - Apply advanced prompting techniques firsthand with enterprise AI tools
 - Apply advanced AI use cases for research, analysis, and vibe coding in finance
+
+**Day 2 — Agents, multimodal, and buying**
 - Explain multimodal AI and how speech, vision, and video apply in finance
 - Describe how AI agents are set up, configured, and orchestrated with custom skills
 - Identify emerging AI trends and ask the right technical questions of vendors
 
 ---
 
-<!-- layout: navigation -->
 # Agenda
 
-- **Chapter 1: The Modern AI Landscape**
+- Chapter 1: The Modern AI Landscape
 - Chapter 2: Under the Hood – How Models Actually Work
 - Chapter 3: Connecting Agentic Systems to Enterprise Tools and Data
 - Chapter 4: Managing a Data Platform for Generative AI Workflows
@@ -50,24 +65,26 @@
 
 ---
 
-<!-- layout: 2-column -->
-# How the 1.5 Days Run
+# How the 1.5 Days Run (Clock)
 
-### Day 1
-- Landscape through enterprise tools and use cases
-- Labs emphasize blueprints and critique
-- Build shared vocabulary for vendor talks
+| Block | Chapters | Focus |
+| :--- | :--- | :--- |
+| Day 1 AM | 1–2 | Landscape + how models work |
+| Day 1 midday | 3–4 | Tools, MCP, RAG, data controls |
+| Day 1 PM | 5–6 | Enterprise tools + use cases (**must-run labs**) |
+| Day 2 AM | 7–8 | Multimodal + agent orchestration |
+| Day 2 midday | 9 | Vendors, scorecards, stack choice |
+| Day 2 close | 10 | Office hours on your scenarios |
 
-### Day 2
-- Multimodal and agent orchestration
-- Stack choices and scorecards
-- Office hours on your scenarios
+> [!TIP]
+> If time slips on Day 2, protect Ch8 failure modes / HITL, Lab 9, and office hours—cut Ch7 depth first.
 
 ---
 
 # How We'll Work
 
 - **Advanced deep-dive** — not beginner Copilot tip sheets
+- Success: teardown a vendor pitch and blueprint a safer dossier agent
 - Labs are blueprints and disciplined experiments, not production builds
 - Quizzes are discussion fuel; answers follow each question
 - No invented client data — use mocks or public examples
