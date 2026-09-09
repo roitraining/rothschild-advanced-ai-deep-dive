@@ -1,6 +1,8 @@
-# Advanced AI Deep-Dive: Rothschild & Co
+# Advanced AI Deep-Dive: Rothschild and Co
 
 1.5-day onsite course materials for the HTML Slides Viewer.
+
+**Branch:** `version-2` — regenerated from the updated Course Generator skill for comparison with `main`.
 
 ## Course files
 
@@ -24,14 +26,16 @@ Shared visuals are in `course/images/`. Lab stubs link to `course/labs/` (lab bo
 
 ## View in slides viewer
 
-- [00 — Introduction](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F00-introduction.md#slide-1)
-- [01 — The Modern AI Landscape](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F01-modern-ai-landscape.md#slide-1)
-- [02 — Under the Hood – How Models Actually Work](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F02-how-models-work.md#slide-1)
-- [03 — Connecting Agentic Systems to Enterprise Tools and Data](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F03-connecting-agentic-systems.md#slide-1)
-- [04 — Managing a Data Platform for Generative AI Workflows](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F04-managing-data-platform.md#slide-1)
-- [05 — Hands-On with Enterprise AI Tools](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F05-enterprise-ai-tools.md#slide-1)
-- [06 — Advanced AI Use Cases](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F06-advanced-ai-use-cases.md#slide-1)
-- [07 — Multi-Modal AI](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F07-multi-modal-ai.md#slide-1)
-- [08 — Agentic AI – Setup and Orchestration](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F08-agentic-ai-setup.md#slide-1)
-- [09 — The Road Ahead – Trends, Vendors, and Tools](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F09-road-ahead.md#slide-1)
-- [10 — Instructor Office Hours and Questions and Answers](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F10-office-hours.md#slide-1)
+- [00 — Introduction](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fversion-2%2Fcourse%2F00-introduction.md#slide-1)
+- [01 — The Modern AI Landscape](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fversion-2%2Fcourse%2F01-modern-ai-landscape.md#slide-1)
+- [02 — Under the Hood – How Models Actually Work](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fversion-2%2Fcourse%2F02-how-models-work.md#slide-1)
+- [03 — Connecting Agentic Systems to Enterprise Tools and Data](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fversion-2%2Fcourse%2F03-connecting-agentic-systems.md#slide-1)
+- [04 — Managing a Data Platform for Generative AI Workflows](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fversion-2%2Fcourse%2F04-managing-data-platform.md#slide-1)
+- [05 — Hands-On with Enterprise AI Tools](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fversion-2%2Fcourse%2F05-enterprise-ai-tools.md#slide-1)
+- [06 — Advanced AI Use Cases](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fversion-2%2Fcourse%2F06-advanced-ai-use-cases.md#slide-1)
+- [07 — Multi-Modal AI](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fversion-2%2Fcourse%2F07-multi-modal-ai.md#slide-1)
+- [08 — Agentic AI – Setup and Orchestration](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fversion-2%2Fcourse%2F08-agentic-ai-setup.md#slide-1)
+- [09 — The Road Ahead – Trends, Vendors, and Tools](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fversion-2%2Fcourse%2F09-road-ahead.md#slide-1)
+- [10 — Instructor Office Hours and Questions and Answers](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fversion-2%2Fcourse%2F10-office-hours.md#slide-1)
+
+Note: viewer links point at the `version-2` branch once pushed. Until then, open local Markdown in the slides viewer.

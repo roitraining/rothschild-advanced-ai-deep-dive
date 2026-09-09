@@ -1,8 +1,8 @@
-<!-- course-title: Advanced AI Deep-Dive: Rothschild & Co -->
+<!-- course-title: Advanced AI Deep-Dive: Rothschild and Co -->
 <!-- layout: title -->
 ![ROI Logo](images/roi-logo-with-name.png)
 
-Advanced AI Deep-Dive: Rothschild & Co
+Advanced AI Deep-Dive: Rothschild and Co
 
 # Chapter 6: Advanced AI Use Cases
 
@@ -26,26 +26,15 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
-<!-- layout: stacked -->
 # Research Agent Pattern
 
 - Break the question into **sources, angles, and deliverable**
-- Separate collection from synthesis (reduce mixed-up citations)
-- Prefer primary sources: filings, transcripts, reputable data
-- Maintain a running “claims vs. evidence” table
+- Separate collection from synthesis to reduce mixed-up citations
+- Prefer primary sources: filings, transcripts, reputable data vendors
+- Maintain a running **claims vs evidence** table until sign-off
 
----
-
-# Claims vs Evidence (Filled Example)
-
-| Claim | Evidence | Source | Status |
-| :--- | :--- | :--- | :--- |
-| Margin compression in EU | “Gross margin −180 bps YoY” | FY24 10-K p.42 | Supported |
-| “Leading share in APAC” | Vendor blog only | Competitor site | Unsupported |
-| Refinancing wall 2027 | Maturity table sum | Bond prospectus | Supported |
-
-> [!TIP]
-> Lab and live research should leave this table behind—not only a narrative.
+> [!IMPORTANT]
+> AI accelerates mapping and drafting. Source trust and client framing stay human.
 
 ---
 
@@ -66,16 +55,43 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
-<!-- layout: stacked -->
-# Anti-Patterns in AI Research
+# Claims vs Evidence (Filled Example)
 
-- Single-prompt “write a full industry report”
-- Accepting vendor blogs as peer to filings
-- No distinction between **retrieved** and **recalled** facts
-- Skipping contradiction checks across sources
+| Claim | Evidence | Status |
+| :--- | :--- | :--- |
+| Peer X gained share in EU mid-market | Peer 10-K, p. 42 segment revenue YoY | Verified |
+| Peer Y "dominates" restructuring fees | Trade press ranking; no fee disclosure | Weak — reframe |
+| Market consolidating via bolt-ons | 3 announced deals in window; deal DB count | Partial — size TBD |
+
+> [!TIP]
+> Force every material claim into a row before it reaches a client slide.
+
+---
+
+<!-- layout: 2-column -->
+# Contradiction Drill
+
+### What went wrong
+- Same metric in presentation vs 10-Q footnote
+- Model merged both into one fluent paragraph
+- Conflict never surfaced to the reader
+
+### Bankable fix
+- Collection pass lists both figures
+- Synthesis names the conflict explicitly
+- Output: "Sources disagree on X; we use Y because…"
 
 > [!WARNING]
 > Speed without source discipline creates elegant misinformation.
+
+---
+
+# Anti-Patterns in AI Research
+
+- Single-prompt "write a full industry report"
+- Treating vendor blogs as peers to filings
+- No distinction between **retrieved** and **recalled** facts
+- Skipping contradiction checks across sources
 
 ---
 
@@ -88,32 +104,35 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
-<!-- layout: 2-column -->
-# Analysis Copilot vs. Analytics Platform
+# Analysis Copilot vs Analytics Platform
 
-### Copilot strengths
-- Shape questions
-- Explain results
-- Draft commentary
-
-### System-of-record strengths
-- Authoritative aggregates
-- Governed metrics
-- Recomputable figures
+- LLMs excel at framing questions, explaining, and drafting commentary
+- Systems of record and BI remain authoritative for aggregates
+- Pattern: export or query → verify → narrate with AI
+- Ask the model to show steps; recompute critical figures yourself
 
 ---
 
+<!-- layout: 3-column -->
 # LLM-as-Analyst Hazards
 
-| Hazard | What it looks like | Rule |
-| :--- | :--- | :--- |
-| Unit errors | $m vs $bn swapped in prose | Recompute critical figures |
-| Join mistakes | Wrong entity mapped to ticker | Validate keys before charting |
-| Invented YoY | Smooth narrative, no series | Require the series or refuse |
-| Chart theater | Pretty plot, bad filter | Show filter + n + date range |
+### Units
+- Thousands vs millions
+- Local currency vs USD
+- Period mismatches
 
-> [!WARNING]
-> If you cannot recompute it, you do not have an insight—you have a story.
+### Joins
+- Wrong entity keys
+- Partial portfolio extracts
+- Silent row drops
+
+### Invented math
+- Fluent YoY with no series
+- Chart titles as "facts"
+- **Recompute or it did not happen**
+
+> [!CAUTION]
+> Chat over a CSV is not an audit trail. Prefer sandboxed analysis with logged steps.
 
 ---
 
@@ -126,7 +145,22 @@ Advanced AI Deep-Dive: Rothschild & Co
 5. Draft insight bullets with explicit caveats
 
 > [!TIP]
-> Have the model propose hypotheses, then require statistical or SQL evidence.
+> Have the model propose hypotheses, then require SQL or spreadsheet evidence.
+
+---
+
+<!-- layout: 2-column -->
+# Sandbox vs Freeform Chat
+
+### Prefer
+- Code interpreter / sandbox with logged transforms
+- Explicit schema and unit assumptions
+- Export of intermediate tables
+
+### Avoid
+- Pasting confidential portfolios into consumer chat
+- Accepting chart titles as verified metrics
+- One mega-prompt that "analyzes everything"
 
 ---
 
@@ -141,27 +175,10 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 # What Vibe Coding Is
 
-- Iterative natural-language development of small apps/visuals
+- Iterative natural-language building of small apps and visuals
 - Ideal for **internal prototypes**, demos, and exploration
 - Not a bypass of engineering standards for production systems
 - Works best with clear acceptance checks each iteration
-
----
-
-<!-- layout: 2-column -->
-# Prototype vs Production Gates
-
-### Prototype OK
-- Mock or scrubbed data
-- Local / disposable hosting
-- Single-user demo
-- Pin a version for the meeting
-
-### Production requires
-- AuthN/Z and tenancy
-- Data residency & logging
-- Change control / owners
-- Eval + monitoring
 
 ---
 
@@ -173,50 +190,64 @@ Advanced AI Deep-Dive: Rothschild & Co
 - Pin versions when sharing with stakeholders
 - Separate mock data from anything confidential
 
-<!-- TODO IMAGE: Screenshot of an AI coding assistant generating a portfolio dashboard -->
+<!-- TODO IMAGE: Screenshot of an AI coding assistant generating a portfolio dashboard with mock metrics -->
 ![Vibe coding dashboard placeholder](images/ch06-vibe-coding-dashboard-screenshot.svg)
 
 ---
 
 <!-- layout: 2-column -->
-# Pitch Deck Acceleration
+# Prototype vs Production Gates
 
-### Method
-- Turn verified metrics into a 5-slide spine
-- Keep one source table of truth
-- Separate speaker notes from slide text
+### Prototype path
+- Mock or anonymized data
+- Local or personal tenant
+- Demo audience only
+- Version pinned for the meeting
 
-### 5-slide spine
-- Situation / ask
-- Portfolio snapshot
-- Drivers & trends
-- Risks & sensitivities
-- Recommended next steps
+### Production path
+- AuthN / AuthZ and audit
+- Data residency and retention
+- Change control and owners
+- Eval and monitoring hooks
 
 ---
 
 <!-- layout: 2-column -->
-# Bankable Language vs AI Hype
+# Bankable Language vs Hype
 
-### Weak AI draft
-- “Revolutionary outperformance”
-- “Guaranteed alpha potential”
-- “The data clearly proves…”
+### Hype (reject)
+- "AI proves the sector is pivoting"
+- "Guaranteed alpha from this screen"
+- "The model understands our book"
 
-### Bankable rewrite
-- “+210 bps vs benchmark (net)”
-- “Sample: n=42, 2019–2025”
-- “Driver: multiple expansion; risk: liquidity”
+### Bankable (prefer)
+- "Based on verified filings through [date]…"
+- "Hypothesis: … Evidence: … Caveat: …"
+- "Draft for banker review — not client-ready"
 
 ---
 
-# Lab Bridge: Prompt → Pitch
+# Pitch Deck Acceleration
 
-1. Lock the **metrics table** before any slide prose
-2. Generate dashboard from mock data only (Lab rule)
-3. Draft 5-slide spine from verified rows
-4. Run a critique pass: “attack unsupported claims”
-5. Human owns narrative, brand, and final numbers
+| Slide | Purpose |
+| :--- | :--- |
+| 1 | Situation / ask |
+| 2 | Portfolio snapshot |
+| 3 | Drivers and trends |
+| 4 | Risks and sensitivities |
+| 5 | Recommended next steps |
+
+- Use AI only on **verified** metrics; one source table of truth
+- Speaker notes separate from slide text; brand review still required
+
+---
+
+# Lab Bridge: From Prompt to Pitch
+
+- Use a **mock** portfolio only — no live client books
+- Dashboard first, then compress into the 5-slide spine
+- Every slide number must trace to your evidence table
+- Instructor checks: mock data, recompute rule, bankable wording
 
 ---
 
@@ -243,7 +274,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 - A. Separating collection from synthesis and keeping a claims-vs-evidence table
 - B. Preferring filings and transcripts as primary sources
-- C. Single-prompt “write a full industry report” with no source discipline
+- C. Single-prompt "write a full industry report" with no source discipline
 - D. Using AI to draft slide outlines after evidence is gathered
 
 ---
@@ -252,7 +283,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 **What is the strongest anti-pattern in AI-assisted market research?**
 
-**Correct: C.** Single-prompt “write a full industry report” with no source discipline
+**Correct: C.** Single-prompt "write a full industry report" with no source discipline
 
 - Speed without source discipline creates elegant misinformation
 - Distinguish retrieved facts from model recall; check contradictions
@@ -263,7 +294,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 # Quiz 2 of 3
 
-**How should “vibe coding” be positioned for portfolio dashboards and prototypes?**
+**How should "vibe coding" be positioned for portfolio dashboards and prototypes?**
 
 - A. A bypass of engineering standards for production systems
 - B. Iterative natural-language building of internal prototypes with acceptance checks each loop
@@ -274,11 +305,11 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 # Quiz 2 — Answer
 
-**How should “vibe coding” be positioned for portfolio dashboards and prototypes?**
+**How should "vibe coding" be positioned for portfolio dashboards and prototypes?**
 
 **Correct: B.** Iterative natural-language building of internal prototypes with acceptance checks each loop
 
-- Ideal for demos and exploration—not a waiver for production controls
+- Ideal for demos and exploration — not a waiver for production controls
 - Separate mock data from confidential data; pin versions when sharing
 - Pitch decks still need a single source table of truth for numbers
 - Generate → run → critique → refine
@@ -294,7 +325,7 @@ You will turn a mock portfolio into a dashboard and a 5-slide pitch spine with A
 ### Discuss
 - Which steps must stay tied to systems of record or recomputation?
 - What belongs on each of the five slides vs in speaker notes?
-- Where do humans own narrative and brand—even if AI drafts fast?
+- Where do humans own narrative and brand — even if AI drafts fast?
 
 ---
 
@@ -307,7 +338,7 @@ You will turn a mock portfolio into a dashboard and a 5-slide pitch spine with A
 - Export/query → verify → narrate; recompute critical figures
 - Spine: situation/ask, snapshot, drivers, risks, next steps
 - One metrics table of truth; design/brand review still required
-- AI proposes hypotheses; demand evidence
+- Prototype vs production gates before any live data
 
 ### Watch For
 - Letting the model invent portfolio numbers
@@ -318,4 +349,4 @@ You will turn a mock portfolio into a dashboard and a 5-slide pitch spine with A
 
 # Questions and Answers
 
-![Questions and Answers](images/qa.png)
+Questions?

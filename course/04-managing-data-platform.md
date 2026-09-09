@@ -1,8 +1,8 @@
-<!-- course-title: Advanced AI Deep-Dive: Rothschild & Co -->
+<!-- course-title: Advanced AI Deep-Dive: Rothschild and Co -->
 <!-- layout: title -->
 ![ROI Logo](images/roi-logo-with-name.png)
 
-Advanced AI Deep-Dive: Rothschild & Co
+Advanced AI Deep-Dive: Rothschild and Co
 
 # Chapter 4: Managing a Data Platform for Generative AI Workflows
 
@@ -172,7 +172,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ### Protection
 - DLP / redaction
-- Encryption in transit & at rest
+- Encryption in transit and at rest
 - Secret scanning
 
 ### Assurance
@@ -360,4 +360,4 @@ You must make a proprietary dataset available to an internal research agent.
 
 # Questions and Answers
 
-![Questions and Answers](images/qa.png)
+Questions?

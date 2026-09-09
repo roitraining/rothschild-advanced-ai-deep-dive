@@ -1,8 +1,8 @@
-<!-- course-title: Advanced AI Deep-Dive: Rothschild & Co -->
+<!-- course-title: Advanced AI Deep-Dive: Rothschild and Co -->
 <!-- layout: title -->
 ![ROI Logo](images/roi-logo-with-name.png)
 
-Advanced AI Deep-Dive: Rothschild & Co
+Advanced AI Deep-Dive: Rothschild and Co
 
 # Chapter 7: Multi-Modal AI
 
@@ -33,7 +33,6 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
-<!-- layout: stacked -->
 # Core Idea
 
 - Multiple input types map into a shared representation space
@@ -43,30 +42,32 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# Native vs Composed (Earnings-Call Path)
+
+| Dimension | Native multimodal | Composed (ASR → LLM → …) |
+| :--- | :--- | :--- |
+| Joint reasoning | Stronger cross-modal in one pass | Weaker unless you stitch carefully |
+| Control points | Fewer intermediate audits | Clear gates after each stage |
+| Latency / cost | Often higher per call | Tunable per stage; ASR can be cheaper |
+| Privacy | Full media to one vendor | Can isolate ASR or keep audio on-prem |
+
+> [!NOTE]
+> Choose for control and audit needs — not only demo elegance.
+
+---
+
 <!-- layout: 2-column -->
 # Architecture Choices
 
 ### Native multimodal
 - One model accepts mixed inputs
 - Strong joint reasoning
-- Vendor capability varies
+- Vendor capability varies by task
 
 ### Composed pipeline
 - Best-of-breed per step
 - Clearer control points
 - More integration work
-
----
-
-# Native vs Composed on an Earnings Call
-
-| Dimension | Native multimodal | Composed (ASR → LLM → TTS) |
-| :--- | :--- | :--- |
-| Control points | Fewer, opaque | Explicit per stage |
-| Swap components | Harder | Easy (better ASR later) |
-| Privacy review | One vendor surface | Multiple processors |
-| Latency / cost | Often simpler bill | Sum of stages |
-| Citation UX | Vendor-dependent | You own timestamps |
 
 ---
 
@@ -80,70 +81,45 @@ Advanced AI Deep-Dive: Rothschild & Co
 ---
 
 <!-- layout: 3-column -->
-# Modalities in Finance
+# Speech, Vision, Video in Finance
 
 ### Speech
-- Earnings calls
-- Diarization matters
-- Sentiment ≠ strategy
+- Earnings calls, investor days
+- ASR quality drives everything
+- Diarization: who said what
+- Sentiment = signal, not proof
 
 ### Vision
-- Charts and tables
-- Scanned PDFs
-- Verify key figures
+- Charts from decks and filings
+- Tables from scanned PDFs
+- Competitive imagery sets
+- Verify numbers in source text
 
 ### Video
-- Delivery beyond text
-- Chunk long runtime
-- Watch retention rights
+- Emphasis beyond transcript
+- Slide vs speech alignment
+- Chunk long runtimes
+- Retain deliberately
 
 ---
 
 <!-- layout: 3-column -->
-# Failure Cases by Modality
+# Modality Failure Cases
 
-### Speech fail
-- Analyst attributed as CEO
-- Bad ASR on ticker/numbers
-- Sentiment ≠ guidance change
+### Speech
+- Bad ASR on accents/tickers
+- Diarization swap (CEO ↔ analyst)
+- Sentiment treated as strategy
 
-### Vision fail
-- OCR reads 3.0x as 8.0x
-- Chart axis mis-scaled
-- Table columns shifted
+### Vision
+- OCR "1.8" → "18" on leverage
+- Axis/unit misread
+- Table merge mistakes
 
-### Video fail
-- Slide says X; speech says Y
-- Long call, lost middle
-- Rights/retention ignored
-
----
-
-# The Real Analytic Prize: Misalignment
-
-- Slide claims “stable margins”; CEO hedges verbally for two minutes
-- Model should **surface the delta**, not average it into one vibe score
-- Output: claim ledger rows with timestamp + slide reference + filing cross-check
-- Human judges whether it is noise, messaging, or a real shift
-
----
-
-# Rights, Privacy, and Retention
-
-- Multimodal artifacts often include personal data and third-party content
-- Confirm recording rights, retention, and sharing policy before analysis
-
-> [!CAUTION]
-> Multimodal artifacts can contain personal data and third-party copyrighted content—confirm rights and retention.
-
----
-
-# Hard Rules: What Not to Upload
-
-- Client-confidential recordings without clearance
-- Unlicensed third-party video/audio
-- Personal data not needed for the analytic goal
-- Anything your retention policy cannot store
+### Video
+- Slide says X, CEO says Y missed
+- Selective clip bias
+- Retention / rights risk
 
 ---
 
@@ -153,6 +129,18 @@ Advanced AI Deep-Dive: Rothschild & Co
 - How Multimodal Architectures Work
 - Speech, Vision, and Video Models in Finance
 - **Synthesizing Multi-Modal Market Intelligence**
+
+---
+
+# Misalignment Is the Analytic Prize
+
+- Slide says X; CEO says Y — that delta is often the insight
+- Do not collapse modalities into one sentiment score
+- Treat alignment checks as a first-class output
+- Separate **observation** from **inference** in the brief
+
+> [!IMPORTANT]
+> Sentiment theater is cheap. Claim-level alignment with filings is bankable.
 
 ---
 
@@ -166,17 +154,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 5. Synthesize: themes, deltas, risks, quotes
 6. Produce text brief + optional audio summary
 
----
-
-# Earnings Call Autopsy — Outputs
-
-| Artifact | Purpose |
-| :--- | :--- |
-| Theme map | Strategy shifts vs. prior call |
-| Sentiment track | Tone by segment (with caveats) |
-| Claim ledger | Claim → quote → timestamp |
-| Risk flags | Guidance language, hedges |
-| Exec podcast | TTS summary for commute review |
+![Multimodal architecture](images/ch07-multimodal.svg)
 
 ---
 
@@ -184,27 +162,43 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 | Field | Example |
 | :--- | :--- |
-| Claim | “No change to leverage target” |
-| Quote | “We remain comfortable with our stated range” |
-| Timestamp | 00:24:12 (CEO) |
-| Slide ref | Deck p.7 “Leverage outlook” |
-| Filing cross-check | Matches Q2 release leverage range |
-| Status | Supported — monitor hedges in the call questions and answers |
+| Claim | "Net leverage will stay below 3.0x through FY" |
+| Quote | "…comfortable below three turns…" |
+| Timestamp | 00:42:18 (CEO) |
+| Filing cross-check | Q2 release: net leverage 2.7x; no formal guidance |
+| Status | Soft language — do not treat as hard guidance |
+
+---
+
+# Earnings Call Autopsy — Outputs
+
+| Artifact | Purpose |
+| :--- | :--- |
+| Theme map | Strategy shifts vs prior call |
+| Alignment deltas | Slide vs speech conflicts |
+| Claim ledger | Claim → quote → timestamp → filing check |
+| Risk flags | Guidance language, hedges |
+| Exec podcast | TTS summary for commute review (gated) |
 
 ---
 
 <!-- layout: 2-column -->
-# Quality Bars
+# Hard Rules and Quality Bars
 
-### Evidence
-- Timestamped citations
-- Cross-check guidance figures
-- Claim ledger before narrative
+### What not to upload
+- Client recordings without rights/retention approval
+- Unlicensed or paywalled audio/video
+- Deal-room materials into consumer apps
+- PII-rich media without Legal clearance
 
-### Judgment
-- Observation ≠ inference
-- Human sign-off required
-- Client-ready only after review
+### Quality bars
+- Timestamped citations for quotable claims
+- Observation vs inference separated
+- Cross-check guidance with the release
+- Human sign-off before client use
+
+> [!CAUTION]
+> Confirm rights and retention before ingest.
 
 ---
 
@@ -243,7 +237,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 **Correct: B.** Multiple input types map into a shared representation for joint reasoning (native or composed pipelines)
 
 - Native multimodal vs composed (e.g., ASR → LLM → TTS) are both valid
-- Latency, cost, and privacy differ by modality
+- Latency, cost, and privacy differ by modality and architecture choice
 - Transcripts and citations still matter for verifiable claims
 - Rights and retention must be confirmed for audio/video artifacts
 
@@ -266,10 +260,10 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 **Correct: B.** Timestamped citations, observation vs inference separation, and cross-check of guidance figures
 
-- Prosody/sentiment are signals—not proof of strategy
+- Prosody/sentiment are signals — not proof of strategy
 - Claim ledgers and human sign-off precede client or investment use
-- Align transcript to slides/exhibits; ground with related filings
-- Retention and copyright/rights still apply
+- Alignment deltas (slide vs speech) are often the real analytic prize
+- Retention and rights still apply
 
 ---
 
@@ -280,7 +274,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 Design an earnings-call autopsy for a coverage team.
 
 ### Discuss
-- Native multimodal vs composed pipeline—what would you choose and why?
+- Native multimodal vs composed pipeline — what would you choose and why?
 - Which outputs (theme map, claim ledger, podcast) need the strictest gates?
 - What personal-data or rights issues must Legal/Compliance clear first?
 
@@ -295,15 +289,15 @@ Design an earnings-call autopsy for a coverage team.
 - Composed pipelines offer clearer control points; native may simplify joint reasoning
 - Claim ledger and client-facing podcast need strict review; internal theme maps less so
 - Confirm recording rights, retention, and sharing before ingest
-- Cross-check guidance with the published release
+- Cross-check guidance with the published release; chase misalignment deltas
 
 ### Watch For
 - Equating tone shifts with certain strategic pivots
 - Skipping timestamps/citations
-- Storing sensitive media without a retention policy
+- Uploading client or unlicensed media without clearance
 
 ---
 
 # Questions and Answers
 
-![Questions and Answers](images/qa.png)
+Questions?

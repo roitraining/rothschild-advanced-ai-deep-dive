@@ -1,8 +1,8 @@
-<!-- course-title: Advanced AI Deep-Dive: Rothschild & Co -->
+<!-- course-title: Advanced AI Deep-Dive: Rothschild and Co -->
 <!-- layout: title -->
 ![ROI Logo](images/roi-logo-with-name.png)
 
-Advanced AI Deep-Dive: Rothschild & Co
+Advanced AI Deep-Dive: Rothschild and Co
 
 # Chapter 2: Under the Hood – How Models Actually Work
 
@@ -365,4 +365,4 @@ You asked a model for leverage capacity and it answered confidently with no sour
 
 # Questions and Answers
 
-![Questions and Answers](images/qa.png)
+Questions?

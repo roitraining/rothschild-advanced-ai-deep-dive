@@ -1,65 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
   <defs>
-    <filter id="elev1" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#202124" flood-opacity="0.16"/>
-    </filter>
     <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
       <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
     </filter>
     <style type="text/css"><![CDATA[
-      .title { font-family: Roboto, 'Google Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #202124; }
-      .sub { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 400; fill: #5F6368; }
-      .h2 { font-family: Roboto, 'Google Sans', Arial, sans-serif; font-size: 21px; font-weight: 700; fill: #202124; }
-      .h3 { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 700; fill: #202124; }
-      .body { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #5F6368; }
-      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #202124; }
-      .label { font-family: Roboto, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #5F6368; letter-spacing: 1.2px; }
-      .chip { font-family: Roboto, Arial, sans-serif; font-size: 14px; font-weight: 600; }
-      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+      .title { font-family: Roboto, Arial, sans-serif; font-size: 32px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 16px; fill: #5F6368; }
+      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #202124; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFF; }
       .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #202124; }
-      .on-dark { fill: #FFFFFF; }
+      .on-dark { fill: #FFF; }
     ]]></style>
   </defs>
   <rect width="1200" height="675" fill="#F8F9FA"/>
-  <text x="48" y="48" class="title">Multi-Agent (A2A) — Deal Sourcing</text>
-  <text x="48" y="78" class="sub">Specialists + orchestrator, with human approval before outreach</text>
-
-  <rect x="340" y="105" width="520" height="100" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
-  <rect x="340" y="105" width="520" height="100" rx="20" fill="#4285F4"/>
-  <text x="600" y="150" text-anchor="middle" class="h2 on-dark" font-size="24">Orchestrator Agent</text>
-  <text x="600" y="180" text-anchor="middle" class="body on-dark">Routes work · enforces policy · owns stop conditions</text>
-
-  <line x1="600" y1="205" x2="600" y2="248" stroke="#4285F4" stroke-width="3.5"/>
-  <line x1="190" y1="248" x2="1010" y2="248" stroke="#4285F4" stroke-width="3.5"/>
-  <line x1="190" y1="248" x2="190" y2="275" stroke="#4285F4" stroke-width="3.5"/>
-  <line x1="600" y1="248" x2="600" y2="275" stroke="#4285F4" stroke-width="3.5"/>
-  <line x1="1010" y1="248" x2="1010" y2="275" stroke="#4285F4" stroke-width="3.5"/>
-
-  <rect x="48" y="275" width="285" height="210" rx="20" fill="#E6F4EA" filter="url(#elev2)"/>
-  <circle cx="90" cy="320" r="22" fill="#34A853"/>
-  <text x="90" y="326" text-anchor="middle" class="num">1</text>
-  <text x="128" y="327" class="h3">News Monitor</text>
-  <text x="80" y="385" class="body-ink" font-size="16">Global feeds to flags</text>
-  <text x="80" y="420" class="body-ink" font-size="16">MCP news tools</text>
-
-  <rect x="458" y="275" width="285" height="210" rx="20" fill="#FEF7E0" filter="url(#elev2)"/>
-  <circle cx="500" cy="320" r="22" fill="#FBBC04"/>
-  <text x="500" y="326" text-anchor="middle" class="num-dark">2</text>
-  <text x="538" y="327" class="h3">Restructuring Scout</text>
-  <text x="490" y="385" class="body-ink" font-size="16">Score opportunity</text>
-  <text x="490" y="420" class="body-ink" font-size="16">Filings + RAG</text>
-
-  <rect x="867" y="275" width="285" height="210" rx="20" fill="#FCE8E6" filter="url(#elev2)"/>
-  <circle cx="909" cy="320" r="22" fill="#EA4335"/>
-  <text x="909" y="326" text-anchor="middle" class="num">3</text>
-  <text x="947" y="327" class="h3">Dossier Compiler</text>
-  <text x="899" y="385" class="body-ink" font-size="16">Draft for Debt Advisory</text>
-  <text x="899" y="420" class="body-ink" font-size="16">Citations attached</text>
-
-  <rect x="48" y="520" width="1104" height="110" rx="20" fill="#FFFFFF" filter="url(#elev1)"/>
-  <rect x="48" y="520" width="10" height="110" fill="#4285F4"/>
-  <text x="90" y="570" class="h3">Shared MCP tools · human approval before client outreach · clear ownership per hop</text>
-  <text x="90" y="605" class="body">Handoffs use explicit artifacts (schemas) and a shared trace ID</text>
-
+<text x="48" y="48" class="title">Multi-Agent Deal Sourcing</text>
+<rect x="360" y="100" width="480" height="90" rx="16" fill="#4285F4" filter="url(#elev2)"/>
+<text x="600" y="155" text-anchor="middle" class="h2 on-dark">Orchestrator Agent</text>
+<line x1="600" y1="190" x2="600" y2="250" stroke="#4285F4" stroke-width="3"/>
+<line x1="190" y1="250" x2="1010" y2="250" stroke="#4285F4" stroke-width="3"/>
+<rect x="48" y="270" width="300" height="200" rx="16" fill="#E6F4EA" filter="url(#elev2)"/><circle cx="90" cy="315" r="20" fill="#34A853"/><text x="90" y="321" text-anchor="middle" class="num">1</text><text x="120" y="322" class="h2">News Monitor</text>
+<rect x="450" y="270" width="300" height="200" rx="16" fill="#FEF7E0" filter="url(#elev2)"/><circle cx="492" cy="315" r="20" fill="#FBBC04"/><text x="492" y="321" text-anchor="middle" class="num-dark">2</text><text x="522" y="322" class="h2">Restructuring Scout</text>
+<rect x="852" y="270" width="300" height="200" rx="16" fill="#FCE8E6" filter="url(#elev2)"/><circle cx="894" cy="315" r="20" fill="#EA4335"/><text x="894" y="321" text-anchor="middle" class="num">3</text><text x="924" y="322" class="h2">Dossier Compiler</text>
+<rect x="48" y="520" width="1104" height="110" rx="16" fill="#FFFFFF" filter="url(#elev2)"/><text x="80" y="585" class="body-ink">Shared MCP tools · human approval before outreach · clear ownership per hop</text>
 </svg>

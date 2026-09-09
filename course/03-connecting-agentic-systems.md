@@ -1,8 +1,8 @@
-<!-- course-title: Advanced AI Deep-Dive: Rothschild & Co -->
+<!-- course-title: Advanced AI Deep-Dive: Rothschild and Co -->
 <!-- layout: title -->
 ![ROI Logo](images/roi-logo-with-name.png)
 
-Advanced AI Deep-Dive: Rothschild & Co
+Advanced AI Deep-Dive: Rothschild and Co
 
 # Chapter 3: Connecting Agentic Systems to Enterprise Tools and Data
 
@@ -180,7 +180,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 # MCP Gives You / Does Not Give You
 
 ### Gives you
-- Portable discovery of tools & resources
+- Portable discovery of tools and resources
 - Capability definitions near the data service
 - Less one-off plugin sprawl per host app
 
@@ -392,4 +392,4 @@ Blueprint an agent that drafts a preliminary dossier using CRM fields and a docu
 
 # Questions and Answers
 
-![Questions and Answers](images/qa.png)
+Questions?

@@ -1,10 +1,10 @@
-<!-- course-title: Advanced AI Deep-Dive: Rothschild & Co -->
+<!-- course-title: Advanced AI Deep-Dive: Rothschild and Co -->
 <!-- layout: title -->
 ![ROI Logo](images/roi-logo-with-name.png)
 
 # Advanced AI Deep-Dive
 
-## Concepts, Architectures, and Agentic Systems for Rothschild & Co
+## Concepts, Architectures, and Agentic Systems for Rothschild and Co
 
 ---
 
@@ -15,9 +15,8 @@
   - Name
   - Background
   - Contact info
-- Let’s get started!
+- Let's get started!
 
-![Welcome](images/welcome.png)
 ---
 
 # Course Objectives
@@ -55,49 +54,43 @@
 # How the 1.5 Days Run
 
 ### Day 1
-- Landscape → models → tools/MCP
-- Data platform + RAG/security
-- Enterprise tools + advanced use cases
-- Labs emphasize blueprints & critique
+- Landscape through enterprise tools and use cases
+- Labs emphasize blueprints and critique
+- Build shared vocabulary for vendor talks
 
 ### Day 2
-- Multimodal + agent orchestration
-- Vendors, stack choices, scorecards
-- Office hours: your scenarios
-- Leave with specs you can reuse
+- Multimodal and agent orchestration
+- Stack choices and scorecards
+- Office hours on your scenarios
 
 ---
 
-# How We’ll Work
+# How We'll Work
 
-- **Advanced deep-dive** — not beginner Copilot 101
-- Labs are **blueprints and disciplined experiments**, not production builds
+- **Advanced deep-dive** — not beginner Copilot tip sheets
+- Labs are blueprints and disciplined experiments, not production builds
 - Quizzes are discussion fuel; answers follow each question
-- No invented client data—use mocks / public examples in exercises
-- Challenge vendors with stack layers: model / data / tools / controls
+- No invented client data — use mocks or public examples
+- Challenge claims with stack layers: model / data / tools / controls
 
 ---
 
 # Who Should Attend
 
-- Bankers, advisors, and specialists who work with AI vendors and technical teams
-- Deal, research, and operations leaders evaluating agentic workflows
-- Practitioners who already use copilots and need **deeper technical fluency**
-- Anyone expected to challenge architecture, data, and security claims with confidence
+- Bankers and advisors who work with AI vendors and technical teams
+- Leaders evaluating agentic workflows for deal, research, or ops
+- Practitioners who already use copilots and need deeper fluency
+- Anyone expected to challenge architecture and security claims
 
 > [!NOTE]
-> If you only want tip-and-trick prompting, this course will feel dense on purpose.
-
-![Who Should Attend](images/who-should-attend.png)
-
+> If you only want prompting tricks, this course will feel dense on purpose.
 
 ---
 
+<!-- layout: stacked -->
 # Prerequisites
 
-- Comfortable using an enterprise AI assistant or copilot in daily work
-- Familiarity with core finance workflows (research, deals, portfolio, or client communication)
-- No coding required—technical concepts are taught for informed decision-makers
-- Willingness to experiment with prompts, blueprints, and vendor evaluation criteria
-
-![Prerequisites](images/prerequisites.png)
+- Comfortable using an enterprise AI assistant in daily work
+- Familiar with core finance workflows (research, deals, portfolio, or clients)
+- No coding required — concepts are taught for informed decision-makers
+- Willingness to experiment with prompts, blueprints, and vendor criteria

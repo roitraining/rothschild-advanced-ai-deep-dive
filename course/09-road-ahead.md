@@ -1,8 +1,8 @@
-<!-- course-title: Advanced AI Deep-Dive: Rothschild & Co -->
+<!-- course-title: Advanced AI Deep-Dive: Rothschild and Co -->
 <!-- layout: title -->
 ![ROI Logo](images/roi-logo-with-name.png)
 
-Advanced AI Deep-Dive: Rothschild & Co
+Advanced AI Deep-Dive: Rothschild and Co
 
 # Chapter 9: The Road Ahead – Trends, Vendors, and Tools
 
@@ -20,37 +20,25 @@ Advanced AI Deep-Dive: Rothschild & Co
 <!-- layout: navigation -->
 # Chapter 9
 
-- **What’s Next in AI**
+- **What's Next in AI**
 - The Technical Vocabulary Cheat Sheet
 - Evaluating AI Vendors and Products
 
 ---
 
-<!-- layout: stacked -->
-# What’s Next (Practical Horizon)
+# Decision-Relevant Shifts
 
-- Stronger **reasoning** and longer, cheaper context
-- **Computer-using** and deeper tool ecosystems
-- **MCP-like** standards for enterprise context portability
-- Multimodal becoming default in productivity suites
-- Tighter **governance** features as table stakes
-
----
-
-# Decision-Relevant Shifts (Next 12–24 Months)
-
-| Shift | Why it changes your buying |
+| Shift | Why it matters for Rothschild |
 | :--- | :--- |
-| Computer-use / deeper tools | Agents can click and act—blast radius rises |
-| Long-context economics | More “stuff in prompt” ≠ better tenancy design |
-| Open-weight revival | Sensitive workloads may leave pure API paths |
-| Governed agent platforms | HITL, audit, eval become product features |
-| MCP-like portability | Fewer one-off plugins; still need IAM |
+| Computer-using / deep tool agents | Higher blast radius; need allow-lists and HITL |
+| Long-context economics | More docs in-prompt — still not a substitute for ACL-aware RAG |
+| On-prem / open-weight revival | Stronger data-path control; you own ops and evals |
+| Governed agent platforms | Audit, identity, and policy become buying criteria |
 
 ---
 
 <!-- layout: 2-column -->
-# Signals vs. Noise
+# Signals vs Noise
 
 ### Watch
 - Eval transparency
@@ -60,8 +48,8 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ### Discount
 - Leaderboard-only claims
-- “Fully autonomous” banking
-- Vague “proprietary brain”
+- "Fully autonomous" banking
+- Vague "proprietary brain"
 - One-demo architecture
 
 ---
@@ -69,63 +57,58 @@ Advanced AI Deep-Dive: Rothschild & Co
 <!-- layout: navigation -->
 # Chapter 9
 
-- What’s Next in AI
+- What's Next in AI
 - **The Technical Vocabulary Cheat Sheet**
 - Evaluating AI Vendors and Products
 
 ---
 
-# Vocabulary You Can Deploy Tomorrow
+<!-- layout: 2-column -->
+# Vocabulary Cheat Sheet
 
-| Term | One-line meaning |
-| :--- | :--- |
-| Token | Model’s text unit; drives limits & cost |
-| Context window | Working memory for one run |
-| Embedding | Meaning vector for search/RAG |
-| Inference | Running the model on a prompt |
-| Fine-tune | Specialize weights; not live truth |
-| RAG | Retrieve firm data, then generate |
-| Tool / function call | Structured action the runtime executes |
-| MCP | Standard for tools/resources to hosts |
-| Skill | Packaged procedure for an agent |
-| HITL | Human approval in the loop |
-| Test-time compute | Extra inference effort for harder tasks |
-| Hallucination | Fluent output without reliable grounding |
+### Must-fluent
+- Token, context window, embedding
+- RAG, tool/function call, MCP
+- HITL, hallucination
+
+### Nice-to-know
+- Inference, fine-tune, skill
+- Test-time compute, A2A
+- Trajectory eval
 
 ---
 
-<!-- layout: 2-column -->
-# Must-Fluent vs Nice-to-Know
+# Must-Fluent Definitions
 
-### Must-fluent Monday
-- Token, context, RAG, tool call
-- MCP, skill, HITL, hallucination
-- Grounding vs training cutoff
-
-### Nice-to-know
-- LoRA / SFT flavors
-- Rerankers / hybrid search
-- Test-time compute dials
-- A2A protocol branding
+| Term | One-line meaning |
+| :--- | :--- |
+| Token | Model text unit; drives limits and cost |
+| Context window | Working memory for one run |
+| Embedding | Meaning vector for search / RAG |
+| RAG | Retrieve firm data, then generate |
+| Tool / function call | Structured action the runtime executes |
+| MCP | Standard for tools/resources to hosts |
+| HITL | Human approval in the loop |
+| Hallucination | Fluent output without reliable grounding |
 
 ---
 
 # Phrases That Change Vendor Meetings
 
-- “Show me the **tool permission model** and audit log.”
-- “How is **ACL-aware retrieval** enforced across deal rooms?”
-- “What happens on **low-confidence** retrieval?”
-- “Which parts are **model, orchestration, and data platform**?”
+- "Show me the **tool permission model** and audit log."
+- "How is **ACL-aware retrieval** enforced across deal rooms?"
+- "What happens on **low-confidence** retrieval?"
+- "Which parts are **model, orchestration, and data platform**?"
 
 > [!TIP]
-> Ask for an architecture diagram with trust boundaries—not only a feature list.
+> Ask for an architecture diagram with trust boundaries — not only a feature list.
 
 ---
 
 <!-- layout: navigation -->
 # Chapter 9
 
-- What’s Next in AI
+- What's Next in AI
 - The Technical Vocabulary Cheat Sheet
 - **Evaluating AI Vendors and Products**
 
@@ -144,19 +127,20 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
-# Partial Scorecard Example (Dossier Drafting)
+# Partial Scorecard: Copilot vs Cursor
 
-| Criterion | Copilot-class surface | IDE / agent runtime (e.g. Cursor) |
+**Workflow:** Draft an internal deal dossier from approved sources
+
+| Criterion | Microsoft Copilot (enterprise) | Cursor |
 | :--- | :--- | :--- |
-| Task fit | Strong on docs/email | Strong on skills + tools |
-| Grounding | Tenant search / files | Explicit RAG/MCP you wire |
-| Agency | Often draft-first | Higher autonomy if configured |
-| Security | Enterprise tenant controls | Depends on your allow-lists |
-| Operability | IT-managed | Team-owned evals/versioning |
-| Economics | Seat-led | Seat + tokens + infra |
+| Task fit | Strong in Office / M365 surface | Strong for code + repo context |
+| Grounding | Tenant Graph / ACL-aware when configured | Repo + connected docs; firm ACL varies |
+| Agency | Copilot Studio / agents — check gates | Agent mode in IDE — local blast radius |
+| Security | Enterprise tenant controls | Org policy + what you connect |
+| Fit call | Prefer for banker document workflows | Prefer for prototype / vibe-coding loops |
 
-> [!TIP]
-> Fill this for *one workflow*—not for “AI in general.”
+> [!NOTE]
+> Scores are illustrative — re-run on *your* prompts and policy constraints.
 
 ---
 
@@ -180,57 +164,48 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
-<!-- layout: stacked -->
+<!-- layout: 2-column -->
+# Anti-Portfolio and TCO
+
+### Will not buy this year
+- Ungated "fully autonomous" client send
+- Consumer multimodal for deal-room media
+- Leaderboard wins with no audit story
+- Duplicate copilots that fragment identity
+
+### TCO lines to count
+- Seats / licenses
+- Tokens × volume × retries
+- Retrieval infra + ACL sync
+- Human review time + evals ops
+
+> [!IMPORTANT]
+> A strong stack recommendation includes an explicit **no** list.
+
+---
+
 # Build-Your-Stack Logic
 
 1. Rank workflows by value and risk
 2. Choose autonomy level you can supervise
-3. Separate productivity suite vs. sensitive agent runtimes
+3. Separate productivity suite vs sensitive agent runtimes
 4. Demand MCP/API strategy for systems of record
 5. Pilot with eval harness + human gates
-6. Decide buy/build per layer—not as one monolith
+6. Decide buy/build **per layer** — not as one monolith
 
 ---
 
-<!-- layout: 2-column -->
-# Anti-Portfolio (What We Will Not Buy)
-
-### Good “not this year” examples
-- Fully autonomous client outreach
-- Unbounded production write tools
-- Mystery “proprietary brain” with no evals
-- One-demo architecture replacements
-
-### Why write an anti-portfolio
-- Stops maximalist shopping
-- Aligns risk and IT early
-- Makes Lab 9 recommendations sharper
-
----
-
-# TCO Sketch (Finance-Friendly)
-
-| Cost leg | Questions |
-| :--- | :--- |
-| Seats / SKUs | Who needs which surface? |
-| Tokens / inference | Volume × reasoning mode |
-| Retrieval infra | Indexing, storage, rerank |
-| Integration | APIs, MCP servers, IAM |
-| Human review | Minutes per artifact × volume |
-| Incident / compliance | Logging, DLP, audit prep |
-
-> [!IMPORTANT]
-> Cheap tokens with expensive review (or expensive incidents) is not cheap.
-
----
-
+<!-- layout: stacked -->
 # After This Course
 
-- Reuse the vocabulary cheat sheet in vendor meetings
-- Convert one workflow into a skill + tool allow-list draft
-- Stand up a tiny eval set for your top prompts
-- Schedule the human gates before the autonomy
-- Name an owner for each pilot
+- [ ] Name your top 3 workflows by value × risk
+- [ ] Map each to model / data / tools / controls
+- [ ] Draft one agent or RAG one-pager (non-goals included)
+- [ ] Fill a vendor scorecard on a live RFP or renewal
+- [ ] Write an anti-portfolio for the next 12 months
+- [ ] Bring one concrete question to office hours
+
+![ROI Logo](images/roi-logo-with-name.png)
 
 ---
 
@@ -253,20 +228,20 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 # Quiz 1 of 3
 
-**Which diligence question best pressure-tests an AI vendor’s enterprise readiness?**
+**Which diligence question best pressure-tests an AI vendor's enterprise readiness?**
 
-- A. “Are you on the leaderboard this month?”
-- B. “Show the tool permission model, ACL-aware retrieval, and audit logs”
-- C. “Can you promise fully autonomous banking with zero errors?”
-- D. “Do you have a proprietary brain we cannot inspect?”
+- A. "Are you on the leaderboard this month?"
+- B. "Show the tool permission model, ACL-aware retrieval, and audit logs"
+- C. "Can you promise fully autonomous banking with zero errors?"
+- D. "Do you have a proprietary brain we cannot inspect?"
 
 ---
 
 # Quiz 1 — Answer
 
-**Which diligence question best pressure-tests an AI vendor’s enterprise readiness?**
+**Which diligence question best pressure-tests an AI vendor's enterprise readiness?**
 
-**Correct: B.** “Show the tool permission model, ACL-aware retrieval, and audit logs”
+**Correct: B.** "Show the tool permission model, ACL-aware retrieval, and audit logs"
 
 - Scorecard: task fit, grounding, agency, security, operability, economics
 - Prefer architecture with trust boundaries over feature lists
@@ -293,9 +268,9 @@ Advanced AI Deep-Dive: Rothschild & Co
 **Correct: B.** Retrieve firm data, then generate grounded answers
 
 - Pair with tokens, embeddings, context window, MCP, skills, HITL in vendor conversations
-- Inference is running the model; fine-tune specializes weights—not live truth
+- Inference is running the model; fine-tune specializes weights — not live truth
 - Hallucination = fluent output without reliable grounding
-- Use the shared vocabulary to keep meetings precise
+- Must-fluent terms keep meetings precise; nice-to-know terms deepen diligence
 
 ---
 
@@ -303,33 +278,34 @@ Advanced AI Deep-Dive: Rothschild & Co
 # Quiz 3 of 3 — Discussion
 
 ### Prompt
-Run a build-your-stack challenge: model providers vs work surfaces (e.g., OpenAI/Anthropic/Google; Copilot/Claude Code/Cursor).
+Run a build-your-stack challenge for your team (model providers vs work surfaces such as Copilot and Cursor).
 
 ### Discuss
-- Which workflows are high-value vs high-risk for your team?
-- Where would you invest first—and what autonomy level can you supervise?
-- How will you pilot with evals and human gates before scaling?
+- Which workflows are high-value vs high-risk?
+- What belongs in the anti-portfolio this year?
+- How will you pilot with evals, HITL, and a TCO sketch before scaling?
 
 ---
 
 <!-- layout: 2-column -->
 # Quiz 3 — Discussion Points
 
-**Run a build-your-stack challenge: model providers vs work surfaces (e.g., OpenAI/Anthropic/Google; Copilot/Claude Code/Cursor).**
+**Run a build-your-stack challenge for your team (model providers vs work surfaces such as Copilot and Cursor).**
 
 ### Strong Answers Mention
 - Rank workflows by value/risk; separate productivity vs sensitive runtimes
-- Demand MCP/API strategy for systems of record
-- Pilot with eval harness + gates; decide buy/build per layer
-- Defend with criteria from the course—not brand preference alone
+- Demand MCP/API strategy for systems of record; scorecard in action
+- Anti-portfolio: no ungated autonomous client send; no consumer multimodal for deal rooms
+- Pilot with eval harness + gates; count seats, tokens, retrieval, and review time
 
 ### Watch For
 - One-demo architecture decisions
-- “Fully autonomous” without operability/security evidence
+- "Fully autonomous" without operability/security evidence
 - Ignoring total cost at expected volume
+- Maximalist buy lists with no explicit nos
 
 ---
 
 # Questions and Answers
 
-![Questions and Answers](images/qa.png)
+Questions?

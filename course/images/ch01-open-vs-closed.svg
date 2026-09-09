@@ -1,68 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
   <defs>
-    <filter id="elev1" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#202124" flood-opacity="0.16"/>
-    </filter>
     <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
       <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
     </filter>
     <style type="text/css"><![CDATA[
-      .title { font-family: Roboto, 'Google Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #202124; }
-      .sub { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 400; fill: #5F6368; }
-      .h2 { font-family: Roboto, 'Google Sans', Arial, sans-serif; font-size: 21px; font-weight: 700; fill: #202124; }
-      .h3 { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 700; fill: #202124; }
-      .body { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #5F6368; }
-      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #202124; }
-      .label { font-family: Roboto, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #5F6368; letter-spacing: 1.2px; }
-      .chip { font-family: Roboto, Arial, sans-serif; font-size: 14px; font-weight: 600; }
-      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+      .title { font-family: Roboto, Arial, sans-serif; font-size: 32px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 16px; fill: #5F6368; }
+      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #202124; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFF; }
       .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #202124; }
-      .on-dark { fill: #FFFFFF; }
+      .on-dark { fill: #FFF; }
     ]]></style>
   </defs>
   <rect width="1200" height="675" fill="#F8F9FA"/>
-  <text x="48" y="48" class="title">Open-Weight vs Closed Models</text>
-  <text x="48" y="78" class="sub">Same job family — different control, ops, and capability tradeoffs</text>
-
-  <rect x="48" y="108" width="528" height="520" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
-  <rect x="48" y="108" width="528" height="88" rx="20" fill="#34A853"/>
-  <rect x="48" y="176" width="528" height="20" fill="#34A853"/>
-  <circle cx="100" cy="152" r="26" fill="#FFFFFF" fill-opacity="0.2"/>
-  <g transform="translate(89,141)" fill="none" stroke="#FFFFFF" stroke-width="2">
-    <path d="M11 2 L19 6 v5 c0 5-3.5 8-8 9 -4.5-1-8-4-8-9V6z"/>
-    <path d="M8 11 l2.5 2.5 L15 9" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <text x="144" y="160" class="h2 on-dark" font-size="26">Open-Weight</text>
-  <text x="80" y="230" class="label" fill="#34A853">YOU CONTROL</text>
-  <text x="80" y="270" class="body-ink" font-size="17">Weights downloadable / self-hostable</text>
-  <text x="80" y="308" class="body-ink" font-size="17">Stronger control over the data path</text>
-  <text x="80" y="346" class="body-ink" font-size="17">You own ops, patches, and GPUs</text>
-  <text x="80" y="384" class="body-ink" font-size="17">License terms still constrain use</text>
-  <text x="80" y="422" class="body-ink" font-size="17">Often lags frontier capability</text>
-  <rect x="80" y="460" width="464" height="140" rx="16" fill="#E6F4EA"/>
-  <text x="104" y="510" class="h3" fill="#34A853">Finance fit</text>
-  <text x="104" y="545" class="body-ink">Sensitive workloads, air-gapped</text>
-  <text x="104" y="572" class="body-ink">environments, strict data residency</text>
-
-  <circle cx="600" cy="370" r="28" fill="#FFFFFF" filter="url(#elev1)"/>
-  <text x="600" y="377" text-anchor="middle" class="chip" fill="#5F6368">VS</text>
-
-  <rect x="624" y="108" width="528" height="520" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
-  <rect x="624" y="108" width="528" height="88" rx="20" fill="#4285F4"/>
-  <rect x="624" y="176" width="528" height="20" fill="#4285F4"/>
-  <circle cx="676" cy="152" r="26" fill="#FFFFFF" fill-opacity="0.2"/>
-  <g transform="translate(664,142)">
-    <path d="M7 16h11a4 4 0 0 0 .3-8 5.5 5.5 0 0 0-10.6-1.5A3.5 3.5 0 0 0 7 16z" fill="#FFFFFF"/></g>
-  <text x="720" y="160" class="h2 on-dark" font-size="26">Closed / API</text>
-  <text x="656" y="230" class="label" fill="#4285F4">VENDOR RUNS</text>
-  <text x="656" y="270" class="body-ink" font-size="17">Accessed via vendor API or UI</text>
-  <text x="656" y="308" class="body-ink" font-size="17">Fastest capability cadence</text>
-  <text x="656" y="346" class="body-ink" font-size="17">Vendor handles scale and safety</text>
-  <text x="656" y="384" class="body-ink" font-size="17">Contract + DPA governs data</text>
-  <text x="656" y="422" class="body-ink" font-size="17">Less visibility into internals</text>
-  <rect x="656" y="460" width="464" height="140" rx="16" fill="#E8F0FE"/>
-  <text x="680" y="510" class="h3" fill="#4285F4">Finance fit</text>
-  <text x="680" y="545" class="body-ink">General productivity, research,</text>
-  <text x="680" y="572" class="body-ink">and approved enterprise copilots</text>
-
+<text x="48" y="48" class="title">Open-Weight vs Closed Models</text>
+<rect x="48" y="100" width="520" height="500" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+<rect x="48" y="100" width="520" height="72" rx="16" fill="#34A853"/>
+<rect x="48" y="140" width="520" height="32" fill="#34A853"/>
+<text x="308" y="148" text-anchor="middle" class="h2 on-dark">Open-Weight</text>
+<text x="80" y="230" class="body-ink">Weights downloadable / self-hostable</text>
+<text x="80" y="270" class="body-ink">Stronger control of the data path</text>
+<text x="80" y="310" class="body-ink">You own ops, patches, and GPUs</text>
+<text x="80" y="350" class="body-ink">Licenses still constrain use</text>
+<rect x="80" y="420" width="456" height="140" rx="12" fill="#E6F4EA"/>
+<text x="104" y="480" class="h2" fill="#34A853">Finance fit</text>
+<text x="104" y="520" class="body-ink">Sensitive or residency-bound workloads</text>
+<rect x="632" y="100" width="520" height="500" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+<rect x="632" y="100" width="520" height="72" rx="16" fill="#4285F4"/>
+<rect x="632" y="140" width="520" height="32" fill="#4285F4"/>
+<text x="892" y="148" text-anchor="middle" class="h2 on-dark">Closed / API</text>
+<text x="664" y="230" class="body-ink">Accessed via vendor API or UI</text>
+<text x="664" y="270" class="body-ink">Fastest capability cadence</text>
+<text x="664" y="310" class="body-ink">Vendor handles scale and safety</text>
+<text x="664" y="350" class="body-ink">Contract and DPA govern data</text>
+<rect x="664" y="420" width="456" height="140" rx="12" fill="#E8F0FE"/>
+<text x="688" y="480" class="h2" fill="#4285F4">Finance fit</text>
+<text x="688" y="520" class="body-ink">Productivity and approved copilots</text>
 </svg>

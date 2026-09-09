@@ -1,69 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
   <defs>
-    <filter id="elev1" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#202124" flood-opacity="0.16"/>
-    </filter>
     <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
       <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
     </filter>
     <style type="text/css"><![CDATA[
-      .title { font-family: Roboto, 'Google Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #202124; }
-      .sub { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 400; fill: #5F6368; }
-      .h2 { font-family: Roboto, 'Google Sans', Arial, sans-serif; font-size: 21px; font-weight: 700; fill: #202124; }
-      .h3 { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 700; fill: #202124; }
-      .body { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #5F6368; }
-      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #202124; }
-      .label { font-family: Roboto, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #5F6368; letter-spacing: 1.2px; }
-      .chip { font-family: Roboto, Arial, sans-serif; font-size: 14px; font-weight: 600; }
-      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+      .title { font-family: Roboto, Arial, sans-serif; font-size: 32px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 16px; fill: #5F6368; }
+      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #202124; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFF; }
       .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #202124; }
-      .on-dark { fill: #FFFFFF; }
+      .on-dark { fill: #FFF; }
     ]]></style>
   </defs>
   <rect width="1200" height="675" fill="#F8F9FA"/>
-  <text x="48" y="48" class="title">From Text to Tokens to Embeddings</text>
-  <text x="48" y="78" class="sub">How language becomes something a model can compute over</text>
-
-  <rect x="48" y="110" width="320" height="200" rx="20" fill="#E8F0FE" filter="url(#elev2)"/>
-  <circle cx="88" cy="155" r="22" fill="#4285F4"/>
-  <text x="88" y="161" text-anchor="middle" class="num">1</text>
-  <text x="128" y="162" class="h2">Input text</text>
-  <rect x="80" y="200" width="256" height="72" rx="16" fill="#FFFFFF"/>
-  <text x="208" y="244" text-anchor="middle" class="h3">"EBITDA margin"</text>
-
-  <line x1="384" y1="210" x2="416" y2="210" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
-  <polygon points="428,210 412,202 412,218" fill="#4285F4"/>
-
-  <rect x="440" y="110" width="320" height="200" rx="20" fill="#FEF7E0" filter="url(#elev2)"/>
-  <circle cx="480" cy="155" r="22" fill="#FBBC04"/>
-  <text x="480" y="161" text-anchor="middle" class="num-dark">2</text>
-  <text x="520" y="162" class="h2">Tokens</text>
-  <rect x="472" y="190" width="256" height="90" rx="16" fill="#FFFFFF"/>
-  <text x="600" y="228" text-anchor="middle" class="h3" font-size="15">["EBIT", "DA", " margin"]</text>
-  <text x="600" y="258" text-anchor="middle" class="body">Atomic units the model reads</text>
-
-  <line x1="776" y1="210" x2="808" y2="210" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
-  <polygon points="820,210 804,202 804,218" fill="#4285F4"/>
-
-  <rect x="832" y="110" width="320" height="200" rx="20" fill="#E6F4EA" filter="url(#elev2)"/>
-  <circle cx="872" cy="155" r="22" fill="#34A853"/>
-  <text x="872" y="161" text-anchor="middle" class="num">3</text>
-  <text x="912" y="162" class="h2">Embeddings</text>
-  <rect x="864" y="190" width="256" height="90" rx="16" fill="#FFFFFF"/>
-  <text x="992" y="228" text-anchor="middle" class="h3" font-size="16">Dense vectors of meaning</text>
-  <text x="992" y="258" text-anchor="middle" class="body">Search, RAG, clustering</text>
-
-  <rect x="48" y="350" width="1104" height="280" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
-  <rect x="48" y="350" width="1104" height="10" fill="#EA4335"/>
-  <text x="80" y="400" class="h2">Why bankers should care</text>
-  <circle cx="92" cy="445" r="9" fill="#4285F4"/>
-  <text x="116" y="451" class="body-ink" font-size="17">Token limits = how much of a CIM / 10-K fits in one pass</text>
-  <circle cx="92" cy="490" r="9" fill="#34A853"/>
-  <text x="116" y="496" class="body-ink" font-size="17">Embeddings = how the system finds "similar" covenants or comps</text>
-  <circle cx="92" cy="535" r="9" fill="#FBBC04"/>
-  <text x="116" y="541" class="body-ink" font-size="17">Transformers attend across tokens — great for language, not a spreadsheet engine</text>
-  <circle cx="92" cy="580" r="9" fill="#EA4335"/>
-  <text x="116" y="586" class="body-ink" font-size="17">Wrong chunking / retrieval leads to confident but ungrounded answers</text>
-
+<text x="48" y="48" class="title">Text to Tokens to Embeddings</text>
+<rect x="48" y="120" width="300" height="180" rx="16" fill="#E8F0FE" filter="url(#elev2)"/><circle cx="88" cy="165" r="20" fill="#4285F4"/><text x="88" y="171" text-anchor="middle" class="num">1</text><text x="120" y="172" class="h2">Input text</text>
+<rect x="80" y="200" width="236" height="60" rx="12" fill="#FFFFFF"/><text x="198" y="238" text-anchor="middle" class="body-ink">"EBITDA margin"</text>
+<line x1="368" y1="210" x2="408" y2="210" stroke="#4285F4" stroke-width="3"/><polygon points="420,210 406,203 406,217" fill="#4285F4"/>
+<rect x="440" y="120" width="300" height="180" rx="16" fill="#FEF7E0" filter="url(#elev2)"/><circle cx="480" cy="165" r="20" fill="#FBBC04"/><text x="480" y="171" text-anchor="middle" class="num-dark">2</text><text x="512" y="172" class="h2">Tokens</text>
+<text x="590" y="240" text-anchor="middle" class="body-ink">Atomic units the model reads</text>
+<line x1="760" y1="210" x2="800" y2="210" stroke="#4285F4" stroke-width="3"/><polygon points="812,210 798,203 798,217" fill="#4285F4"/>
+<rect x="832" y="120" width="320" height="180" rx="16" fill="#E6F4EA" filter="url(#elev2)"/><circle cx="872" cy="165" r="20" fill="#34A853"/><text x="872" y="171" text-anchor="middle" class="num">3</text><text x="904" y="172" class="h2">Embeddings</text>
+<text x="992" y="240" text-anchor="middle" class="body-ink">Vectors for search and RAG</text>
+<rect x="48" y="350" width="1104" height="260" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+<rect x="48" y="350" width="1104" height="8" fill="#EA4335"/>
+<text x="80" y="400" class="h2">Why bankers should care</text>
+<text x="80" y="450" class="body-ink">Token limits decide how much of a CIM fits in one pass</text>
+<text x="80" y="495" class="body-ink">Embeddings power "similar covenant" retrieval</text>
+<text x="80" y="540" class="body-ink">Wrong retrieval yields fluent answers about the wrong document</text>
 </svg>

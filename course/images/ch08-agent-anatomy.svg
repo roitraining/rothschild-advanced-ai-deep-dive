@@ -1,68 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
   <defs>
-    <filter id="elev1" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#202124" flood-opacity="0.16"/>
-    </filter>
     <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
       <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
     </filter>
     <style type="text/css"><![CDATA[
-      .title { font-family: Roboto, 'Google Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #202124; }
-      .sub { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 400; fill: #5F6368; }
-      .h2 { font-family: Roboto, 'Google Sans', Arial, sans-serif; font-size: 21px; font-weight: 700; fill: #202124; }
-      .h3 { font-family: Roboto, Arial, sans-serif; font-size: 17px; font-weight: 700; fill: #202124; }
-      .body { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #5F6368; }
-      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 400; fill: #202124; }
-      .label { font-family: Roboto, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #5F6368; letter-spacing: 1.2px; }
-      .chip { font-family: Roboto, Arial, sans-serif; font-size: 14px; font-weight: 600; }
-      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+      .title { font-family: Roboto, Arial, sans-serif; font-size: 32px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 16px; fill: #5F6368; }
+      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #202124; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFF; }
       .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #202124; }
-      .on-dark { fill: #FFFFFF; }
+      .on-dark { fill: #FFF; }
     ]]></style>
   </defs>
   <rect width="1200" height="675" fill="#F8F9FA"/>
-  <text x="48" y="48" class="title">Anatomy of an Agent</text>
-  <text x="48" y="78" class="sub">Name all five parts — or the system will invent the missing ones</text>
-
-  <rect x="280" y="105" width="640" height="95" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
-  <rect x="280" y="105" width="12" height="95" fill="#4285F4"/>
-  <text x="320" y="145" class="label" fill="#4285F4">POLICY</text>
-  <text x="320" y="178" class="h2">Goal / Instructions / Guardrails</text>
-
-  <line x1="600" y1="200" x2="600" y2="223" stroke="#4285F4" stroke-width="3.5" stroke-linecap="round"/>
-  <polygon points="600,235 592,219 608,219" fill="#4285F4"/>
-
-  <rect x="280" y="235" width="640" height="110" rx="20" fill="#E8F0FE" filter="url(#elev2)"/>
-  <circle cx="340" cy="290" r="28" fill="#4285F4"/>
-  <g transform="translate(329,279)" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round">
-    <path d="M4 11a7 7 0 0 1 12-4"/><polyline points="14,3 16,7 12,8"/>
-    <path d="M18 11a7 7 0 0 1-12 4"/><polyline points="8,19 6,15 10,14"/></g>
-  <text x="390" y="282" class="h2">Reasoning loop</text>
-  <text x="390" y="314" class="body-ink">plan  →  act  →  observe  →  update</text>
-
-  <rect x="48" y="390" width="350" height="240" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
-  <rect x="48" y="390" width="350" height="64" rx="20" fill="#34A853"/>
-  <rect x="48" y="434" width="350" height="20" fill="#34A853"/>
-  <text x="223" y="430" text-anchor="middle" class="h2 on-dark">Memory</text>
-  <text x="80" y="500" class="body-ink" font-size="17">Session context</text>
-  <text x="80" y="540" class="body-ink" font-size="17">Long-term prefs / prior deals</text>
-  <text x="80" y="580" class="body-ink" font-size="17">What persists across runs</text>
-
-  <rect x="425" y="390" width="350" height="240" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
-  <rect x="425" y="390" width="350" height="64" rx="20" fill="#FBBC04"/>
-  <rect x="425" y="434" width="350" height="20" fill="#FBBC04"/>
-  <text x="600" y="430" text-anchor="middle" class="h2" fill="#202124">Tools &amp; Skills</text>
-  <text x="457" y="500" class="body-ink" font-size="17">APIs and MCP actions</text>
-  <text x="457" y="540" class="body-ink" font-size="17">RAG retrieval</text>
-  <text x="457" y="580" class="body-ink" font-size="17">Custom procedures</text>
-
-  <rect x="802" y="390" width="350" height="240" rx="20" fill="#FFFFFF" filter="url(#elev2)"/>
-  <rect x="802" y="390" width="350" height="64" rx="20" fill="#EA4335"/>
-  <rect x="802" y="434" width="350" height="20" fill="#EA4335"/>
-  <text x="977" y="430" text-anchor="middle" class="h2 on-dark">Guardrails</text>
-  <text x="834" y="500" class="body-ink" font-size="17">AuthZ and allow-lists</text>
-  <text x="834" y="540" class="body-ink" font-size="17">Human-in-the-loop</text>
-  <text x="834" y="580" class="body-ink" font-size="17">Eval and logging</text>
-
+<text x="48" y="48" class="title">Anatomy of an Agent</text>
+<rect x="300" y="110" width="600" height="90" rx="16" fill="#FFFFFF" filter="url(#elev2)"/><text x="320" y="165" class="h2">Goal / Instructions / Policy</text>
+<rect x="300" y="230" width="600" height="100" rx="16" fill="#E8F0FE" filter="url(#elev2)"/><text x="320" y="275" class="h2">Reasoning loop</text><text x="320" y="305" class="body-ink">plan → act → observe → update</text>
+<rect x="48" y="380" width="340" height="230" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+<rect x="48" y="380" width="340" height="56" rx="16" fill="#34A853"/>
+<rect x="48" y="408" width="340" height="28" fill="#34A853"/>
+<text x="218" y="416" text-anchor="middle" class="h2 on-dark">Memory</text>
+<text x="80" y="490" class="body-ink">Session vs durable</text>
+<rect x="430" y="380" width="340" height="230" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+<rect x="430" y="380" width="340" height="56" rx="16" fill="#FBBC04"/>
+<rect x="430" y="408" width="340" height="28" fill="#FBBC04"/>
+<text x="600" y="416" text-anchor="middle" class="h2">Tools and Skills</text>
+<text x="462" y="490" class="body-ink">APIs, MCP, RAG, procedures</text>
+<rect x="812" y="380" width="340" height="230" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+<rect x="812" y="380" width="340" height="56" rx="16" fill="#EA4335"/>
+<rect x="812" y="408" width="340" height="28" fill="#EA4335"/>
+<text x="982" y="416" text-anchor="middle" class="h2 on-dark">Guardrails</text>
+<text x="844" y="490" class="body-ink">AuthZ, HITL, evals, logs</text>
 </svg>

@@ -1,8 +1,8 @@
-<!-- course-title: Advanced AI Deep-Dive: Rothschild & Co -->
+<!-- course-title: Advanced AI Deep-Dive: Rothschild and Co -->
 <!-- layout: title -->
 ![ROI Logo](images/roi-logo-with-name.png)
 
-Advanced AI Deep-Dive: Rothschild & Co
+Advanced AI Deep-Dive: Rothschild and Co
 
 # Chapter 5: Hands-On with Enterprise AI Tools
 
@@ -203,7 +203,7 @@ Do not invent figures. If unknown, write "Not in source".
 - Agenda drafts
 
 ### Verify always
-- Figures & covenants
+- Figures and covenants
 - Legal language
 - Client emails
 
@@ -336,4 +336,4 @@ Walk through a 5-minute deal briefing workflow in Copilot (report → risks → 
 
 # Questions and Answers
 
-![Questions and Answers](images/qa.png)
+Questions?

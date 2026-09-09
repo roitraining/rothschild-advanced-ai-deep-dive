@@ -1,8 +1,8 @@
-<!-- course-title: Advanced AI Deep-Dive: Rothschild & Co -->
+<!-- course-title: Advanced AI Deep-Dive: Rothschild and Co -->
 <!-- layout: title -->
 ![ROI Logo](images/roi-logo-with-name.png)
 
-Advanced AI Deep-Dive: Rothschild & Co
+Advanced AI Deep-Dive: Rothschild and Co
 
 # Chapter 10: Instructor Office Hours and Questions and Answers
 
@@ -20,12 +20,11 @@ Advanced AI Deep-Dive: Rothschild & Co
 # Chapter 10
 
 - **Open Forum**
-- Question Shapes & Intake
+- Question Shapes and Intake
 - Triage Live
 
 ---
 
-<!-- layout: stacked -->
 # How Office Hours Work
 
 - Open queue: deal, research, ops, risk, and vendor questions welcome
@@ -48,7 +47,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 # Chapter 10
 
 - Open Forum
-- **Question Shapes & Intake**
+- **Question Shapes and Intake**
 - Triage Live
 
 ---
@@ -57,12 +56,14 @@ Advanced AI Deep-Dive: Rothschild & Co
 # Good Question Shapes
 
 ### Strong
-- “We have X data and Y risk—what architecture fits?”
-- “How would you gate tool Y before client send?”
+- "We have X data and Y risk — what architecture fits?"
+- "How would you gate tool Y before client send?"
+- "Where does this claim fail: model, data, or controls?"
 
 ### Weaker
-- “Is AI good for banking?”
-- “Which model is best forever?”
+- "Is AI good for banking?"
+- "Which model is best forever?"
+- "Can we automate everything next quarter?"
 
 ---
 
@@ -82,7 +83,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 # Chapter 10
 
 - Open Forum
-- Question Shapes & Intake
+- Question Shapes and Intake
 - **Triage Live**
 
 ---
@@ -109,7 +110,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 # Popular Deep-Dive Themes
 
-- MCP vs. custom APIs for internal systems
+- MCP vs custom APIs for internal systems
 - RAG design for deal rooms and research corpora
 - Multi-agent blueprints for coverage teams
 - Eval strategies for hallucination and policy breaches
@@ -117,6 +118,14 @@ Advanced AI Deep-Dive: Rothschild & Co
 
 ---
 
+# What You Learned
+
+- Brought work-specific questions into a structured open forum
+- Mapped questions to model / data / tools / controls
+- Left with clearer next steps on concepts and potential projects
+
+---
+
 # Questions and Answers
 
-![Questions and Answers](images/qa.png)
+Questions?
