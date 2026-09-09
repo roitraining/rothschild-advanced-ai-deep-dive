@@ -330,6 +330,22 @@ Do not invent figures. If unknown, write "Not in source".
 
 ---
 
+# Lab Bridge: Pause and Name the Layer
+
+Run Lab 5 as a timed briefing—but after each step, say aloud:
+
+| Pause after… | Name the layer |
+| :--- | :--- |
+| Attach / open report | Grounding scope + ACL |
+| Extract / rank risks | Prompt contract + inference |
+| Draft email | Draft vs send; human edit |
+| Any figure in the brief | Recompute or cite—never vibe |
+
+> [!TIP]
+> If you cannot name the layer, you are not ready to trust the feature in production.
+
+---
+
 # Lab 5: The 5-Minute Deal Briefing
 
 **Time:** 25 minutes

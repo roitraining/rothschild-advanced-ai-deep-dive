@@ -14,7 +14,7 @@
   </defs>
   <rect width="1200" height="675" fill="#F8F9FA"/>
   <text x="48" y="48" class="title">Face-Off Rubric</text>
-  <text x="48" y="76" class="sub">Score demos on these five criterianot brand names</text>
+  <text x="48" y="76" class="sub">Score demos on these five criteria — not brand names</text>
   <rect x="48" y="110" width="340" height="150" rx="16" fill="#E8F0FE" filter="url(#elev2)"/>
   <circle cx="88" cy="150" r="18" fill="#4285F4"/><text x="88" y="156" text-anchor="middle" class="num">1</text>
   <text x="120" y="148" class="h2">Task fit</text>
@@ -23,7 +23,7 @@
   <rect x="430" y="110" width="340" height="150" rx="16" fill="#E6F4EA" filter="url(#elev2)"/>
   <circle cx="470" cy="150" r="18" fill="#34A853"/><text x="470" y="156" text-anchor="middle" class="num">2</text>
   <text x="502" y="148" class="h2">Grounding / citations</text>
-  <text x="502" y="176" class="body">Sources presentor fluent</text>
+  <text x="502" y="176" class="body">Sources present — or fluent</text>
   <text x="502" y="196" class="body">invention?</text>
   <rect x="812" y="110" width="340" height="150" rx="16" fill="#FEF7E0" filter="url(#elev2)"/>
   <circle cx="852" cy="150" r="18" fill="#FBBC04"/><text x="852" y="156" text-anchor="middle" class="num" style="fill:#202124">3</text>

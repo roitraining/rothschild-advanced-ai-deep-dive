@@ -33,7 +33,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Research Agent Pattern (IB)
 
-- Break the question into **sources, angles, and deliverable** (coverage note, M&A teaser, restructuring update)
+- Break the question into **sources, angles, and deliverable** (coverage note, MA teaser, restructuring update)
 - Separate **collection** from **synthesis** to reduce mixed-up citations
 - Prefer IB primary sources: filings, earnings transcripts, deal announcements, approved vendor feeds
 - Maintain a running **claims vs evidence** table until sign-off
@@ -64,7 +64,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 <!-- layout: 2-column -->
 # IB Primary Sources by Desk
 
-### Coverage / M&A
+### Coverage / MA
 - 10-K / 10-Q / 20-F; proxy / circular
 - Earnings transcripts; investor decks
 - Announced deal terms; press from parties
@@ -275,7 +275,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ### Prefer (bankable)
 - "Based on verified filings through 30 Jun: Peer X EU mid-market rev +8% YoY (10-K p.42)"
-- "Hypothesis: share gain. Evidence: segment table. Caveat: FX and M&A mix not isolated"
+- "Hypothesis: share gain. Evidence: segment table. Caveat: FX and deal mix not isolated"
 - "Draft for banker review — not client-ready"
 
 ---
@@ -292,6 +292,20 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 - Use AI only on **verified** metrics; one source table of truth
 - Speaker notes separate from slide text; brand review still required
+
+---
+
+# Start Your Vendor Question Bank
+
+Carry these forward into Ch8–9 (add your own):
+
+- Where does collection happen — approved RAG/MCP, or the chat box alone?
+- Can every client-facing number be recomputed or cited to a primary source?
+- What is blocked until a human signs (outreach, send, trade, client deck)?
+- Show me the audit trail for a rejected claim that looked fluent
+
+> [!TIP]
+> Ch8 expands this bank for agents; Ch9 scores vendors against it.
 
 ---
 

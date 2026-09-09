@@ -128,7 +128,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 | Slide claim (deck) | Transcript (who / time) | Filing check | Status |
 | :--- | :--- | :--- | :--- |
 | “Net leverage below 3.0x through FY” | CEO 00:42:18: “comfortable below three turns” | Q2 release: 2.7x; no formal guidance | Soft language — not hard guidance |
-| “Europe +12% organic” | CFO 00:18:05 cites reported growth | 10-Q: reported includes FX and M&A | Reframe — not organic |
+| “Europe +12% organic” | CFO 00:18:05 cites reported growth | 10-Q: reported includes FX and deals | Reframe — not organic |
 | Chart: margin expansion | No verbal mention | Footnote: one-time credit | Flag slide–speech–filing gap |
 
 ---
@@ -174,6 +174,14 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Observation vs inference separated
 - Cross-check guidance with the release
 - Human sign-off before client use
+
+---
+
+# Add to the Vendor Question Bank
+
+- Rights and retention for media before ingest — show the policy
+- How do you enforce claim → source → check → human gate on transcripts?
+- Can the system refuse a fluent claim that fails filing cross-check?
 
 ---
 

@@ -25,21 +25,45 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+# Facilitator Run-of-Show
+
+| Block | Timebox | What happens |
+| :--- | :--- | :--- |
+| Intake | 5–8 min | Capture scenarios on the persistent intake slide |
+| Triage | 5 min | Rank by risk × urgency; park the rest |
+| Deep-dives | bulk of block | Map each to Model / Data / Tools / Controls |
+| Parking lot | ongoing | Owner + next step for anything that leaves unfinished |
+| Close | 5 min | Exit checks + confirm follow-ups that leave the room |
+
+> [!TIP]
+> Prefer fewer deep scenarios over a long shallow queue.
+
+---
+
 # How Office Hours Work
 
 - Open queue: deal, research, ops, risk, and vendor questions welcome
 - Prefer **concrete scenarios** over abstract debates
 - We map every question to: **Model / Data / Tools / Controls**
-- Parking lot for items that need follow-up materials
+- Parking lot for items that need follow-up materials — with a named owner
 
 ---
 
-# Bring These If You Can
+# Persistent Intake (Write Before / During Day)
 
-- A workflow you want to accelerate or govern
-- A vendor claim you need to pressure-test
-- A data source you hope to expose to an agent
-- Constraints: residency, confidentiality, tooling already licensed
+Keep one row ready all day — fill it early so office hours are not cold-start.
+
+| Field | Your note |
+| :--- | :--- |
+| Workflow | |
+| Data involved | |
+| Risk if wrong | |
+| Constraint (residency / tool / policy) | |
+| Decision needed | |
+| Killer question for vendor / eng | |
+
+> [!IMPORTANT]
+> Blank intake = slower triage. Capture something — even a half-formed claim to teardown.
 
 ---
 
@@ -67,15 +91,18 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-# Optional Intake (30 Seconds)
+# Seeded Fallback Scenarios
 
-| Field | Your note |
+If the room brings nothing, facilitate from these (Debt Advisory dossier spine):
+
+| Scenario | Focus |
 | :--- | :--- |
-| Workflow | |
-| Data involved | |
-| Risk if wrong | |
-| Constraint (residency / tool / policy) | |
-| Decision needed | |
+| **Dossier agent overreach** | Agent drafts *and* wants to email clients — non-goals, HITL, tool allow-list |
+| **RAG wrong-deal** | Retrieved chunks from Mandate B into Mandate A brief — ACL, cite-or-refuse, memory |
+| **Vendor pitch teardown** | "Fully autonomous dossier" claim through scorecard + claim → source → check → human gate |
+
+> [!NOTE]
+> Use fallbacks after a real intake pass — not instead of asking for participant scenarios.
 
 ---
 
@@ -118,11 +145,31 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-# What You Learned
+# Parking Lot: Ownership
 
-- Brought work-specific questions into a structured open forum
-- Mapped questions to model / data / tools / controls
-- Left with clearer next steps on concepts and potential projects
+Nothing useful leaves as "we should talk later" without a name.
+
+| Item | Owner (in room) | What leaves the room |
+| :--- | :--- | :--- |
+| Architecture sketch | | One-pager or follow-up email |
+| Vendor diligence | | Scorecard + 3 killer questions |
+| Policy / residency | | Named contact + next meeting |
+| Eval / HITL design | | Gate list for the workflow |
+
+> [!WARNING]
+> Unowned parking-lot items die after class. Assign before you close.
+
+---
+
+# Exit Checks
+
+Can you leave able to do these — not just "having heard" them?
+
+- [ ] **Teardown a pitch** — map a claim to model / data / tools / controls and demand evidence
+- [ ] **Blueprint a safer agent** — non-goals, MCP/RAG callbacks, HITL gates before tools sprawl
+- [ ] **Ask residency / HITL questions** — where data sits, who approves irreversible or client-visible acts
+- [ ] **Run claim → source → check → human gate** on multimodal or agent outputs
+- [ ] **Own one follow-up** from the parking lot (or know who does)
 
 ---
 

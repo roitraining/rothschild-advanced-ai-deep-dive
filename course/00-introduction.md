@@ -31,6 +31,22 @@
 
 ---
 
+# Day 2 Evidence Spine
+
+For multimodal outputs and agent buying (Ch7–10), keep one chain visible:
+
+**claim → source → check → human gate**
+
+- **Claim** — what assertion enters a dossier, pitch, or buy decision
+- **Source** — which doc, chunk, tool result, or transcript backs it
+- **Check** — verification of freshness, ACL, and fit
+- **Human gate** — who may release, buy, or act
+
+> [!TIP]
+> Day 1 builds the stack vocabulary; Day 2 applies this spine to agents, multimodal, and vendors.
+
+---
+
 # Course Objectives
 
 - **Build the advanced AI knowledge and vocabulary needed to engage confidently with technical teams and vendors**
@@ -77,7 +93,7 @@
 | Day 2 close | 10 | Office hours on your scenarios |
 
 > [!TIP]
-> If time slips on Day 2, protect Ch8 failure modes / HITL, Lab 9, and office hours—cut Ch7 depth first.
+> If time slips on Day 2, protect Ch8 failure modes / HITL, Lab 9, and office hours — cut Ch7 depth and deep multi-agent variants first.
 
 ---
 

@@ -26,6 +26,24 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+# Day 2 Evidence Spine
+
+For multimodal outputs and agent buying decisions, keep one chain visible:
+
+**claim → source → check → human gate**
+
+| Step | Question |
+| :--- | :--- |
+| Claim | What assertion enters a dossier, pitch, or buy decision? |
+| Source | Which doc, chunk, tool result, or transcript backs it? |
+| Check | Did a human or eval verify freshness, ACL, and fit? |
+| Human gate | Who may release, buy, or act — and under what policy? |
+
+> [!IMPORTANT]
+> Fluent demos skip the spine. Bankable workflows do not.
+
+---
+
 # Decision-Relevant Shifts
 
 | Shift | Why it matters for Rothschild |
@@ -34,6 +52,26 @@ Advanced AI Deep-Dive: Rothschild and Co
 | Long-context economics | More docs in-prompt — still not a substitute for ACL-aware RAG |
 | On-prem / open-weight revival | Stronger data-path control; you own ops and evals |
 | Governed agent platforms | Audit, identity, and policy become buying criteria |
+
+---
+
+<!-- layout: 2-column -->
+# Computer-Use / Browser Agents: Blast Radius
+
+### What expands
+- Credentials in the session (SSO, saved logins, API keys)
+- Screens and pages the agent can see (PII, deal rooms)
+- Irreversible clicks: send, approve, wire, delete, publish
+- Audit gaps if actions are not logged like API tools
+
+### Hard requirements
+- Allow-list domains and actions; default deny
+- Separate identities — never personal banker SSO
+- HITL before irreversible or client-visible steps
+- Immutable audit of screens/actions or do not buy
+
+> [!CAUTION]
+> A browser agent with mailbox and CRM access is not "just another chat." Treat it as privileged ops.
 
 ---
 
@@ -63,33 +101,20 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-<!-- layout: 2-column -->
-# Vocabulary Cheat Sheet
+# Vendor-Talk Vocabulary (Keep Thin)
 
-### Must-fluent
-- Token, context window, embedding
-- RAG, tool/function call, MCP
-- HITL, hallucination
-
-### Nice-to-know
-- Inference, fine-tune, skill
-- Test-time compute, A2A
-- Trajectory eval
-
----
-
-# Must-Fluent Definitions
+Terms you need in diligence meetings — not a glossary dump.
 
 | Term | One-line meaning |
 | :--- | :--- |
-| Token | Model text unit; drives limits and cost |
-| Context window | Working memory for one run |
-| Embedding | Meaning vector for search / RAG |
-| RAG | Retrieve firm data, then generate |
-| Tool / function call | Structured action the runtime executes |
-| MCP | Standard for tools/resources to hosts |
-| HITL | Human approval in the loop |
+| Token / context window | Text unit and working memory; drives limits and cost |
+| Embedding / RAG | Meaning vectors + retrieve firm data, then generate |
+| Tool call / MCP | Structured actions; standard host↔tool wiring |
+| HITL | Human approval before high-risk acts |
 | Hallucination | Fluent output without reliable grounding |
+
+> [!NOTE]
+> Optional deeper terms (inference, fine-tune, test-time compute, A2A, trajectory eval) live in Ch2–8 — bring them only when the conversation needs them.
 
 ---
 
@@ -99,6 +124,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 - "How is **ACL-aware retrieval** enforced across deal rooms?"
 - "What happens on **low-confidence** retrieval?"
 - "Which parts are **model, orchestration, and data platform**?"
+- "Where is the **HITL gate** — and can operators bypass it?"
 
 > [!TIP]
 > Ask for an architecture diagram with trust boundaries — not only a feature list.
@@ -127,20 +153,20 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-# Partial Scorecard: Copilot vs Cursor
+# Scorecard: Two Offerings vs Dossier Workflow
 
-**Workflow:** Draft an internal deal dossier from approved sources
+**Workflow:** Draft an internal Debt Advisory dossier from approved sources — then banker gate before any wider share.
 
-| Criterion | Microsoft Copilot (enterprise) | Cursor |
+| Criterion | Offering A: Enterprise document copilot | Offering B: IDE / agent coding surface |
 | :--- | :--- | :--- |
-| Task fit | Strong in Office / M365 surface | Strong for code + repo context |
-| Grounding | Tenant Graph / ACL-aware when configured | Repo + connected docs; firm ACL varies |
-| Agency | Copilot Studio / agents — check gates | Agent mode in IDE — local blast radius |
-| Security | Enterprise tenant controls | Org policy + what you connect |
-| Fit call | Prefer for banker document workflows | Prefer for prototype / vibe-coding loops |
+| Task fit | Strong for banker docs and M365-shaped drafts | Strong for prototype / vibe-coding loops |
+| Grounding | Tenant Graph / ACL when configured — verify deal rooms | Repo + connected docs; firm ACL often weaker |
+| Agency | Studio/agents — demand HITL and step limits | Agent mode — local blast radius; gate exports |
+| Security | Enterprise tenant, residency, retention levers | Org policy + whatever you connect |
+| Fit call | Prefer for dossier drafting near banker workflow | Prefer for building internal tools — not client dossier path |
 
 > [!NOTE]
-> Scores are illustrative — re-run on *your* prompts and policy constraints.
+> Re-score on *your* prompts, corpora, and policy. Names matter less than dossier criteria.
 
 ---
 
@@ -195,17 +221,50 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+# Micro-Demo: Pitch Claim Through the Scorecard
+
+Facilitator walks **one** vendor pitch claim live (2–4 minutes) before Lab 9:
+
+1. Restate the claim in one sentence
+2. Map it to scorecard rows (task fit → economics)
+3. Force **claim → source → check → human gate**
+4. Decide: pilot, park, or anti-portfolio
+
+**Example claim to critique:** "Our agent drafts and sends client-ready dossiers with full autonomy."
+
+> [!TIP]
+> Participants should steal this ritual for every RFP and renewal.
+
+---
+
 <!-- layout: stacked -->
-# After This Course
+# After This Course → Office Hours Intake
+
+Carry these into **Chapter 10** (write on the intake slide before or during the day):
 
 - [ ] Name your top 3 workflows by value × risk
 - [ ] Map each to model / data / tools / controls
 - [ ] Draft one agent or RAG one-pager (non-goals included)
 - [ ] Fill a vendor scorecard on a live RFP or renewal
 - [ ] Write an anti-portfolio for the next 12 months
-- [ ] Bring one concrete question to office hours
+- [ ] Bring **one concrete scenario** to office hours (workflow, claim, or constraint)
 
 ![ROI Logo](images/roi-logo-with-name.png)
+
+---
+
+<!-- layout: 2-column -->
+# Day 2 Must-Run vs If-Time
+
+### Protect
+- Ch8 failure modes + HITL
+- Lab 9 scorecard / stack choice
+- Chapter 10 office hours intake
+
+### Cut first if short
+- Deep multi-agent / A2A variants
+- Extra vendor taxonomy slides
+- Nice-to-know vocabulary expansion
 
 ---
 
@@ -246,31 +305,31 @@ Advanced AI Deep-Dive: Rothschild and Co
 - Scorecard: task fit, grounding, agency, security, operability, economics
 - Prefer architecture with trust boundaries over feature lists
 - Leaderboards and vague autonomy claims are weak signals
-- Ask what happens on low-confidence retrieval
+- Ask what happens on low-confidence retrieval and where HITL sits
 
 ---
 
 # Quiz 2 of 3
 
-**In the technical vocabulary cheat sheet, what does RAG mean?**
+**A vendor demos a computer-use agent that opens the browser, reads a deal room, and can click "Send." For Debt Advisory dossiers, which scorecard weight should dominate your buy decision?**
 
-- A. Replace all governance with generation
-- B. Retrieve firm data, then generate grounded answers
-- C. Run agents without tools
-- D. Randomly assign GPU capacity
+- A. Leaderboard rank of the underlying model
+- B. Agency + security: allow-lists, identity separation, irreversible-click HITL, and audit of actions
+- C. How pretty the demo UI looks in the pitch deck
+- D. Whether the vendor says "fully autonomous" in marketing
 
 ---
 
 # Quiz 2 — Answer
 
-**In the technical vocabulary cheat sheet, what does RAG mean?**
+**A vendor demos a computer-use agent that opens the browser, reads a deal room, and can click "Send." For Debt Advisory dossiers, which scorecard weight should dominate your buy decision?**
 
-**Correct: B.** Retrieve firm data, then generate grounded answers
+**Correct: B.** Agency + security: allow-lists, identity separation, irreversible-click HITL, and audit of actions
 
-- Pair with tokens, embeddings, context window, MCP, skills, HITL in vendor conversations
-- Inference is running the model; fine-tune specializes weights — not live truth
-- Hallucination = fluent output without reliable grounding
-- Must-fluent terms keep meetings precise; nice-to-know terms deepen diligence
+- Computer-use expands credentials, screens, and irreversible clicks
+- Task fit alone does not justify ungated send from a deal room
+- Prefer document copilots with banker gates for dossier share paths
+- Put ungated browser send on the anti-portfolio until controls exist
 
 ---
 
@@ -278,7 +337,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Quiz 3 of 3 — Discussion
 
 ### Prompt
-Run a build-your-stack challenge for your team (model providers vs work surfaces such as Copilot and Cursor).
+Run a build-your-stack challenge for your team (model providers vs work surfaces). Pair two offerings against the dossier workflow scorecard.
 
 ### Discuss
 - Which workflows are high-value vs high-risk?
@@ -290,7 +349,7 @@ Run a build-your-stack challenge for your team (model providers vs work surfaces
 <!-- layout: 2-column -->
 # Quiz 3 — Discussion Points
 
-**Run a build-your-stack challenge for your team (model providers vs work surfaces such as Copilot and Cursor).**
+**Run a build-your-stack challenge for your team (model providers vs work surfaces). Pair two offerings against the dossier workflow scorecard.**
 
 ### Strong Answers Mention
 - Rank workflows by value/risk; separate productivity vs sensitive runtimes

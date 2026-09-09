@@ -355,6 +355,20 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+# Lab Bridge: Secure Data Strategy Blueprint
+
+Before you design, force these into the one-pager:
+
+- **Sources** — which corpora and systems are in-scope for Debt Advisory dossiers?
+- **ACL / residency** — who may retrieve what; where do chunks and logs live?
+- **Cite-or-refuse** — thin retrieval → abstain; wrong-deal leakage is a fail
+- **Unhappy paths** — weak RAG refuse; tool/MCP error escalate (no silent recall)
+
+> [!IMPORTANT]
+> Lab 4 is a controls blueprint, not a shopping list of vector DBs.
+
+---
+
 # Lab 4: Designing a Secure Data Strategy
 
 **Time:** 30 minutes

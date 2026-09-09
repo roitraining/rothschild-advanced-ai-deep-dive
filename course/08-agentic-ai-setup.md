@@ -47,6 +47,26 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+<!-- layout: 2-column -->
+# Tools vs Skills
+
+### Tools = capabilities
+- APIs and actions the runtime can call
+- Often exposed via MCP / function calls
+- Examples: CRM read, filings search, calendar
+- Scope with allow-lists and schemas
+
+### Skills = packaged playbooks
+- Named procedures with triggers and steps
+- Explicit **non-goals** and stop conditions
+- Example: "Draft Debt Advisory dossier"
+- Version, eval, and roll back like code
+
+> [!TIP]
+> A tool is *what* the agent can touch. A skill is *how* it should work a job end-to-end.
+
+---
+
 <!-- layout: navigation -->
 # Chapter 8
 
@@ -77,7 +97,8 @@ Advanced AI Deep-Dive: Rothschild and Co
 | Mission | Monitor → flag restructuring signals → draft dossier |
 | Inputs | News MCP, filings RAG, CRM read tool |
 | Outputs | Structured dossier + source list |
-| Tools | Read-mostly; no send/trade |
+| Tools (via MCP) | Read-mostly MCP servers; no send/trade |
+| Facts (via RAG) | ACL-aware deal room + approved filings corpus |
 | Non-goals | No client outreach; no trading instructions |
 | Memory | Session only; no cross-deal durable notes |
 | Evals | Citation rate; tool-call correctness; false-flag rate |
@@ -85,6 +106,26 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 > [!IMPORTANT]
 > Write non-goals. Agents expand to fill ambiguity.
+
+---
+
+<!-- layout: 2-column -->
+# Spec Callbacks: MCP and RAG
+
+### Tools via MCP
+- Bind each allow-listed action to an MCP server / tool
+- Identity, scopes, and audit travel with the call
+- Prefer read tools first; gate writes and sends
+- Ask vendors: permission model + immutable logs
+
+### Facts via RAG
+- Material claims come from retrieved chunks — not memory fluff
+- Enforce ACL at retrieval time (deal room / mandate)
+- Cite-or-refuse on thin or conflicting sources
+- Ask vendors: freshness, filters, low-confidence path
+
+> [!NOTE]
+> Spec without MCP and RAG callbacks is abstract config — not an operable agent.
 
 ---
 
@@ -114,6 +155,23 @@ Advanced AI Deep-Dive: Rothschild and Co
 # Multi-Agent (A2A) Patterns
 
 ![Multi-agent deal sourcing](images/ch08-multi-agent.svg)
+
+---
+
+# Walkthrough: Debt Advisory Roles
+
+Map the diagram boxes to dossier jobs — same workflow, named ownership.
+
+| Diagram box | Dossier job | What it owns |
+| :--- | :--- | :--- |
+| News Monitor + Restructuring Scout | **Research** | Signals, sources, flags |
+| Dossier Compiler | **Draft** | Structured brief + citations |
+| Critic hop (add if multi-agent) | **Critic** | Challenge thin claims; cite-or-refuse |
+| Human approval bar | **Compliance HITL** | Banker gate before distribution |
+| Orchestrator | Routes stages; owns stop conditions | Trace IDs and handoff contracts |
+
+> [!TIP]
+> If you cannot name who owns research, draft, critic, and HITL, do not ship multi-agent yet.
 
 ---
 
@@ -243,6 +301,40 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
+<!-- layout: 2-column -->
+# Day 2 Pace and Vendor Questions
+
+### Must-run if time slips
+- Failure modes + HITL pairings
+- Lab 8 blueprint (non-goals first)
+- Cut deep multi-agent / A2A variants first
+
+### Killer vendor questions (bank)
+- Show tool permission model and audit log
+- How is ACL-aware retrieval enforced?
+- What happens on low-confidence retrieval?
+- Where are HITL gates — and can they be bypassed?
+- Max steps, spend, and kill switch — who owns them?
+
+> [!IMPORTANT]
+> Protect failure modes, HITL, and the lab. Fancy topology slides are optional.
+
+---
+
+# Lab Bridge: Spec Order Matters
+
+Before you list tools in Lab 8, lock the guardrails:
+
+1. **Non-goals** — what the agent must never do (outreach, trade, cross-deal memory)
+2. **HITL gates** — who approves what before distribution or write/send
+3. **Then** tools / MCP allow-list and RAG corpora
+4. Only then consider multi-agent splits
+
+> [!WARNING]
+> Tools-first specs drift into maximalist agents. Non-goals and gates first keep the blueprint bankable.
+
+---
+
 # Lab 8: Designing a Deal-Sourcing Agent
 
 **Time:** 30 minutes
@@ -262,49 +354,49 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 # Quiz 1 of 3
 
-**Which set best captures the anatomy of an agent?**
+**Your Debt Advisory dossier is one artifact, a small read-mostly tool set, and a simple audit story. When should you *not* go multi-agent?**
 
-- A. UI theme, font size, and color palette only
-- B. Goal/policy, reasoning loop, memory, tools/skills, and guardrails
-- C. A single prompt with no tools and no stop conditions
-- D. Unlimited credentials plus a larger context window
+- A. Never — multi-agent is always better for banking
+- B. Prefer single-agent until specialization or overload is proven
+- C. Immediately add a peer swarm for "flexibility"
+- D. Split only to avoid writing non-goals and HITL gates
 
 ---
 
 # Quiz 1 — Answer
 
-**Which set best captures the anatomy of an agent?**
+**Your Debt Advisory dossier is one artifact, a small read-mostly tool set, and a simple audit story. When should you *not* go multi-agent?**
 
-**Correct: B.** Goal/policy, reasoning loop, memory, tools/skills, and guardrails
+**Correct: B.** Prefer single-agent until specialization or overload is proven
 
-- Name all five parts or the system invents the missing ones
-- Configuration levers: model, decoding, allow-lists, knowledge, memory, step/spend limits
-- Write non-goals; agents expand to fill ambiguity
-- Guardrails include authZ, HITL, evals, and logging
+- Multi-agent needs handoff contracts, shared traces, and named owners per stage
+- Extra agents without proven overload add blast radius and audit cost
+- Research / draft / critic / HITL can be roles inside one loop first
+- Topology follows the job — not the vendor diagram
 
 ---
 
 # Quiz 2 of 3
 
-**For a multi-agent deal-sourcing system, which failure mode design is most important?**
+**A dossier agent starts looping on thin news, then mis-calls CRM with the wrong deal_id. Which failure mode do you fix *first* before expanding tools?**
 
-- A. Remove all human gates to maximize throughput
-- B. Ignore prompt injection because retrieval is internal
-- C. Plan for looping, tool misuse, injection, silent omission, and overconfidence — with HITL gates
-- D. Give every agent identical broad write permissions
+- A. Remove HITL so the loop can "finish faster"
+- B. Step budget / kill switch and tool schema validation — then reassess
+- C. Add durable cross-deal memory so it "remembers" the right id
+- D. Grant write/send tools so it can correct CRM itself
 
 ---
 
 # Quiz 2 — Answer
 
-**For a multi-agent deal-sourcing system, which failure mode design is most important?**
+**A dossier agent starts looping on thin news, then mis-calls CRM with the wrong deal_id. Which failure mode do you fix *first* before expanding tools?**
 
-**Correct: C.** Plan for looping, tool misuse, injection, silent omission, and overconfidence — with HITL gates
+**Correct: B.** Step budget / kill switch and tool schema validation — then reassess
 
-- Pair each failure with a control (step budget, allow-lists, filters, cite-or-refuse)
-- Supervisor topologies need handoff contracts and shared trace IDs
-- Dual control for client-visible outputs; no outreach without banker approval
-- Eval trajectories and tool calls — not only final dossiers
+- Pair failures with controls before adding capability
+- Looping without new info burns spend and hides bad trajectories
+- Wrong deal_id is allow-list + schema validation — not more memory
+- Expanding tools or skipping HITL amplifies the same failure
 
 ---
 
@@ -329,12 +421,12 @@ Design a system that monitors news, flags restructuring opportunities, and draft
 ### Strong Answers Mention
 - Start single-agent unless specialization is proven; supervisor + specialists if split
 - Explicit JSON/markdown handoffs; stop on low confidence/data quality
-- Read-mostly tools; no outreach/trading instructions as non-goals
+- Read-mostly tools via MCP; facts via RAG; no outreach/trading as non-goals
 - Dual control for client-visible outputs; full audit trail; session-scoped memory
 
 ### Watch For
 - Swarm designs with no audit story
-- Unbounded steps/spend
+- Tools list before non-goals and HITL
 - Durable memory leaking across deals
 - Polished dossiers with thin evidence and no gate
 
