@@ -116,7 +116,7 @@ Advanced AI Deep-Dive: Rothschild and Co
 ---
 
 <!-- layout: title-image -->
-# Open Weight vs Closed Models
+<!-- # Open Weight vs Closed Models -->
 
 ![Open vs closed models](images/ch01-open-vs-closed.svg)
 
@@ -177,7 +177,6 @@ Advanced AI Deep-Dive: Rothschild and Co
 | Agent | Monitor news → flag → draft client briefing | Approve gates |
 | Multi-agent | Specialists + orchestrator | Own policy and outcomes |
 
-![Spectrum of AI Autonomy in Finance](images/ch01-autonomy-spectrum.jpg)
 
 > [!TIP]
 > Buy for the autonomy you can supervise — not the autonomy in the pitch deck.
@@ -187,7 +186,6 @@ Advanced AI Deep-Dive: Rothschild and Co
 <!-- layout: 2-column -->
 # What to Automate First
 
-### Prioritization Rules
 - Prefer high-feedback, reversible work
   - Drafts, triage, structured extracts
 - Defer irreversible or novel judgment
@@ -212,9 +210,10 @@ Advanced AI Deep-Dive: Rothschild and Co
 <!-- layout: 2-column -->
 # Hype Patterns to Spot
 
-### Red-Flag Marketing Claims
-- **"Understands your firm"** / **"trained on all market data"** — ask corpus, ACL, provenance
-- **"Fully autonomous"** / **"guaranteed accuracy"** — ask gates, failure modes, cite-or-refuse
+- **"Understands your firm"** / **"trained on all market data"** 
+  — ask corpus, ACL, provenance
+- **"Fully autonomous"** / **"guaranteed accuracy"** 
+  — ask gates, failure modes, cite-or-refuse
 
 > [!TIP]
 > Use the teardown table next—same claims, inspected by stack layer.
