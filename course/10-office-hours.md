@@ -4,7 +4,7 @@
 
 Advanced AI Deep-Dive: Rothschild & Co
 
-# Chapter 10: Instructor Office Hours and Q&A
+# Chapter 10: Instructor Office Hours and Questions and Answers
 
 ---
 

@@ -18,7 +18,7 @@ All slides live under [`course/`](course/):
 | `07-multi-modal-ai.md` | Multi-Modal AI |
 | `08-agentic-ai-setup.md` | Agentic AI – Setup and Orchestration |
 | `09-road-ahead.md` | The Road Ahead – Trends, Vendors, and Tools |
-| `10-office-hours.md` | Instructor Office Hours and Q&A |
+| `10-office-hours.md` | Instructor Office Hours and Questions and Answers |
 
 Shared visuals are in `course/images/`. Lab stubs link to `course/labs/` (lab bodies authored separately).
 
@@ -34,4 +34,4 @@ Shared visuals are in `course/images/`. Lab stubs link to `course/labs/` (lab bo
 - [07 — Multi-Modal AI](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F07-multi-modal-ai.md#slide-1)
 - [08 — Agentic AI – Setup and Orchestration](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F08-agentic-ai-setup.md#slide-1)
 - [09 — The Road Ahead – Trends, Vendors, and Tools](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F09-road-ahead.md#slide-1)
-- [10 — Instructor Office Hours and Q&A](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F10-office-hours.md#slide-1)
+- [10 — Instructor Office Hours and Questions and Answers](https://roitraining.github.io/md-to-html-slides-viewer/?course=https%3A%2F%2Fgithub.com%2Froitraining%2Frothschild-advanced-ai-deep-dive%2Fblob%2Fmain%2Fcourse%2F10-office-hours.md#slide-1)

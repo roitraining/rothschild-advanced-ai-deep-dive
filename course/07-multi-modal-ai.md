@@ -189,7 +189,7 @@ Advanced AI Deep-Dive: Rothschild & Co
 | Timestamp | 00:24:12 (CEO) |
 | Slide ref | Deck p.7 “Leverage outlook” |
 | Filing cross-check | Matches Q2 release leverage range |
-| Status | Supported — monitor hedges in Q&A |
+| Status | Supported — monitor hedges in the call questions and answers |
 
 ---
 

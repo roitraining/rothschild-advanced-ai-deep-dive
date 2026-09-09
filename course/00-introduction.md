@@ -47,7 +47,7 @@
 - Chapter 7: Multi-Modal AI
 - Chapter 8: Agentic AI – Setup and Orchestration
 - Chapter 9: The Road Ahead – Trends, Vendors, and Tools
-- Chapter 10: Instructor Office Hours and Q and A
+- Chapter 10: Instructor Office Hours and Questions and Answers
 
 ---
 

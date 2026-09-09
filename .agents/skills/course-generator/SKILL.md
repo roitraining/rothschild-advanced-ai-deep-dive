@@ -1,17 +1,33 @@
 ---
 name: course-generator
 description: >
-  Designs, outlines, and writes ROI Training Markdown slide courses for the HTML
-  Slides Viewer—one file per chapter, intermediate professional audience, layouts,
-  alerts, and images. Use when creating courses, presentations, chapter outlines,
-  converting docs to slides, or choosing layout directives.
+  Authors high-quality ROI Training slide courses for instructor-led classrooms
+  (intermediate/advanced professionals), delivered as Markdown for the HTML
+  Slides Viewer (multi-file by default; short courses may be one file). Use when
+  creating or improving courses, presentations, chapter outlines, teaching
+  content, converting docs to slides, or choosing layout directives.
 ---
 
 # Course Generator Skill
 
-Write **intermediate professional training** decks that compile cleanly in the HTML Slides Viewer. Prefer scannable slides for an instructor-led classroom—not beginner textbooks pasted into Markdown.
+## Mission (primary)
 
-**Always read** [examples/layout-templates.md](examples/layout-templates.md) and copy those templates rather than inventing syntax.
+Your job is to write **great training courses**—decks an instructor can teach from
+and professionals can learn from. Optimize for clear objectives, accurate substance,
+concrete examples, and classroom pacing.
+
+Structure, house style, and viewer syntax **serve that mission**. They are not the
+mission. When house style and teaching quality conflict, **teaching quality wins**—
+without breaking viewer hard constraints.
+
+**Non-negotiable constraint:** Output must compile correctly in the **HTML Slides
+Viewer**. Invalid layout comments, missing `---`, or broken fences produce a broken
+class, not a stylistic preference.
+
+Prefer scannable instructor-led slides—not beginner textbooks pasted into Markdown.
+
+**Always read** [examples/layout-templates.md](examples/layout-templates.md) and copy
+those templates for viewer syntax rather than inventing directives.
 
 ---
 
@@ -23,20 +39,53 @@ Write **intermediate professional training** decks that compile cleanly in the H
 
 ---
 
-## 2. Design workflow
+## 2. Teaching craft (house style, not the mission)
+
+Write for an instructor at the front of the room: one clear point per slide, enough
+detail to teach, no filler.
+
+### What “good” looks like
+
+- Tangible objectives students can actually achieve
+- Right altitude for the stated audience (default: intermediate/advanced)
+- Concrete examples, contrasts, failure modes, and decision rules—not only definitions
+- Slides an instructor can talk from without reading paragraphs aloud
+- Professional tone: direct, concrete, minimal hype
+
+### Usual pattern (House style)
+
+- About **3–4 main bullets**; **first bullet is the thesis** of the slide
+- Supporting bullets develop that thesis (exemplify, warn, or operationalize)—not a new topic
+- Optional sub-bullets (**0–3**) for how / e.g. / watch-for
+- **Two bullet levels maximum**; deeper structure → table, **2-column** / **3-column**, or a new slide
+- Prefer **one-line, scannable** bullets
+
+### Use judgment
+
+- Prefer this pattern because it keeps decks consistent and teachable
+- Depart when another shape teaches better (worked example, comparison table, code snippet, diagram-led slide, quiz, title/nav/lab templates)
+- Do **not** sacrifice clarity, accuracy, or usefulness to “satisfy the bullet count”
+- Never invent deep outline trees (**3+ levels**) or walls of prose
+- Mix layouts; deepen selectively with examples and contrasts—not with more generic bullets
+- Include code samples in programming courses 
+
+---
+
+## 3. Design workflow
 
 1. List **tangible teaching objectives** (what students will know or be able to do).
 2. Organize into **chapters → sections** that build sequentially for the time budget.
 3. Present/confirm the outline with the user when practical.
-4. Write **multiple Markdown files** (never one mega-file for a full course)—see §3.
-5. Generate or placeholder **images** under `images/`—see §7.
-6. Run the **Validation checklist** (§10) before delivering.
+4. **Write strong teaching content** for each section (examples, contrasts, decisions)—see §2.
+5. Emit course Markdown—**multi-file by default**; a **short course may be one file**—see §4.
+6. Generate or placeholder **images** under `images/`—see §8.
+7. Run the **Validation checklist** (§10) before delivering—quality and viewer conformance.
 
 ---
 
-## 3. Multi-file course output (required)
+## 4. Course file layout (multi-file default)
 
-When asked for a **course**, emit separate files:
+**Default for multi-chapter / full-length courses:** emit separate files.
 
 | File | Contents |
 | :--- | :--- |
@@ -59,11 +108,20 @@ Use zero-padded indexes and short kebab-case slugs.
 
 - Put the **same** `<!-- course-title: NNN: Short Name -->` at the top of **every** file (viewer footer).
 - Each file is its own slide deck fragment: slides separated by a lone `---` line.
-- Do **not** collapse a multi-chapter course into a single Markdown file.
+- Do **not** collapse a **multi-chapter** course into a single Markdown file out of convenience.
+
+### Short-course exception
+
+A **short** course (roughly a single sitting / one thin chapter’s worth of teaching—often ~1–2 hours or less, or when the user asks for one deck) may live in **one Markdown file**.
+
+- Still use valid viewer syntax (`course-title`, `---`, layouts).
+- Still include the intro spine and teaching structure appropriate to the length.
+- Prefer a clear name such as `course.md` or `00-short-title.md`.
+- If the outline grows into multiple substantial chapters, split into the default multi-file layout.
 
 ---
 
-## 4. Timing heuristics (guidelines)
+## 5. Timing heuristics (guidelines)
 
 - ~**2–3 minutes** of lecture per content slide on average.
 - Section: ~**6–10** teaching slides.
@@ -73,7 +131,7 @@ Use zero-padded indexes and short kebab-case slugs.
 
 ---
 
-## 5. Required course structures
+## 6. Required course structures
 
 ### Introduction chapter (`00-introduction.md`), in order
 
@@ -93,13 +151,36 @@ Use zero-padded indexes and short kebab-case slugs.
    - **Section teaching slides** (~6–10 typical)
 4. **Activity / Hands-On Lab** — title, time estimate, link to lab instructions **only** (labs are authored by a different process)
 5. **What You Learned** — past tense of the Chapter Objectives (same ideas)
-6. **Q&A** — title `Q&A`; body `Questions?`
+6. **Chapter quizzes** — default; see below (omit only when appropriate)
+7. **Questions and Answers** — title `Questions and Answers`; body `Questions?` (last slide of the chapter)
+
+### Chapter quizzes (default for content chapters)
+
+**Where:** After **What You Learned**, immediately before **Questions and Answers**.
+
+**Who gets them:** Each **content** chapter by default. Do **not** add this block to the Introduction (`00-…`) or to a course-summary / office-hours / pure closing chapter.
+
+**When to omit:** The chapter is very short, or the user says they do not want quizzes. Otherwise include them.
+
+**Format (follow exactly):** 3 questions, each with an answer/discussion-points slide:
+
+1. **Quiz 1 of 3** — multiple choice (A–D)
+2. **Quiz 1 — Answer** — restate the question; `**Correct: X.** …`; short rationale bullets
+3. **Quiz 2 of 3** — multiple choice (A–D)
+4. **Quiz 2 — Answer** — same answer pattern as Quiz 1
+5. **Quiz 3 of 3 — Discussion** — `<!-- layout: 2-column -->` with `### Prompt` and `### Discuss`
+6. **Quiz 3 — Discussion Points** — `<!-- layout: 2-column -->` with `### Strong Answers Mention` and `### Watch For`
+
+**Quality bar:** Write good questions from **this chapter’s content**—application, decisions, and misconceptions, not trivia or gotchas. Distractors should be plausible. Discussion prompts should be usable in class for 2–4 minutes.
+
+Copy-paste patterns: [examples/layout-templates.md](examples/layout-templates.md) (quiz templates).
 
 ---
 
-## 6. Viewer Markdown correctness
+## 7. Viewer Markdown correctness (hard constraints)
 
-Slides only display correctly if they follow HTML Slides Viewer syntax.
+Slides only display correctly if they follow HTML Slides Viewer syntax. These rules
+are **gates**, not the creative goal.
 
 ### Structure
 
@@ -138,13 +219,11 @@ Use sparingly for teaching emphasis:
 ### Other syntax rules
 
 - Code fences **must** include a language tag (` ```python `, ` ```bash `, ` ```hcl `, etc.)
-- Prefer a **table** or **3-column** layout instead of more than **two levels** of nested bullets
-- Keep slides scannable: short bullets; avoid walls of text; ~6 bullets / ~8 words per bullet when practical
-- Code teaching slides: small focused snippets (about 5–15 lines), not dumps
+- Avoid the **ampersand** (`&`) in visible slide text and titles (viewer/encoding issues). Write `and` instead—e.g. **Questions and Answers**, not `Q&A`.
 
 ---
 
-## 7. Images policy (required)
+## 8. Images policy (required)
 
 Visuals are part of course quality—not optional decoration.
 
@@ -175,42 +254,44 @@ Visuals are part of course quality—not optional decoration.
 
 ---
 
-## 8. Visual and layout quality bar
-
-- Mix layouts; bullets are the default, not the only tool
-- Use **2-column / 3-column** for comparisons and options
-- Include code samples in programming courses
-- Professional training tone: direct, concrete, minimal hype
-
----
-
 ## 9. Explicit non-goals
 
 - **Do not write lab exercise bodies**—only the lab stub slide (title, time, link)
 - **Do not invent instructor bio**—use Welcome placeholders
-- **Do not** put an entire multi-chapter course in one Markdown file
+- **Do not** collapse a multi-chapter / full-length course into one file for convenience (short single-deck courses are fine—see §4)
 - **Do not** leave a broken image link without a TODO when the file was not generated
 
 ---
 
 ## 10. Validation checklist
 
-Before delivering:
+Before delivering, verify **teaching quality** and **viewer conformance**.
 
-- [ ] One file for intro + one file per content chapter; naming follows `00-…`, `01-…`
-- [ ] Same `<!-- course-title: … -->` in every file
+### Teaching quality
+
+- [ ] Objectives are tangible and match the stated audience altitude
+- [ ] Content slides generally have a clear thesis (often the first bullet)
+- [ ] Chapters include concrete examples, contrasts, or decision rules—not definitions only
+- [ ] Detail level fits the topic: short when that’s enough; deeper when it teaches
+- [ ] Content-chapter quizzes (when present) test application of that chapter—not trivia
+- [ ] Timing/size roughly matches requested duration
+
+### Course spine and viewer conformance
+
+- [ ] File layout fits length: multi-file (`00-…`, `01-…`) for multi-chapter courses; one file OK for short single-deck courses
+- [ ] Same `<!-- course-title: … -->` in every file (or once at top if single-file)
 - [ ] Intro slide order: Title → Welcome → Course Objectives → Agenda → Who Should Attend → Prerequisites
 - [ ] Course Objectives = 1 overall + 1 per content chapter
-- [ ] Each chapter: Title → Objectives → (Nav → section slides)… → Lab stub → What You Learned → Q&A
+- [ ] Each content chapter: Title → Objectives → (Nav → section slides)… → Lab stub → What You Learned → Quizzes (default) → Questions and Answers last
 - [ ] Every section Navigation lists **all** sections with **exactly one** `**bold**` item
 - [ ] Lab stub has title, time estimate, and link only (no lab steps authored here)
-- [ ] What You Learned is past tense of Chapter Objectives; Q&A is minimal
+- [ ] What You Learned is past tense of Chapter Objectives; Questions and Answers slide is minimal
+- [ ] Content-chapter quizzes (unless omitted): 2 MCQs + 1 discussion, each with answer/points slides, grounded in chapter content; not on intro/summary closers
 - [ ] Layout directives are valid; comments are clean (not nested)
 - [ ] Alerts use correct `[!NOTE]|[!TIP]|[!WARNING]|[!IMPORTANT]|[!CAUTION]` syntax
 - [ ] Code fences have language tags
 - [ ] Images live under `images/` with relative links; TODOs present where assets were not generated
-- [ ] No more than 3 consecutive default content slides; tables/columns used instead of deep nesting
-- [ ] Timing/size roughly matches requested duration
+- [ ] No more than 3 consecutive default content slides; no 3+ levels of bullet nesting
 
 ---
 
