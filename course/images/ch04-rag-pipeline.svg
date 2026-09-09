@@ -4,31 +4,52 @@
     <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
       <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
     </filter>
-    <style type="text/css"><![CDATA[
-      .title { font-family: Roboto, Arial, sans-serif; font-size: 32px; font-weight: 700; fill: #202124; }
-      .sub { font-family: Roboto, Arial, sans-serif; font-size: 16px; fill: #5F6368; }
-      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
-      .body { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #5F6368; }
-      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #202124; }
-      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFF; }
-      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #202124; }
+            <style type="text/css"><![CDATA[
+      .title { font-family: Roboto, Arial, sans-serif; font-size: 38px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 22px; fill: #5F6368; }
+      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 26px; font-weight: 700; fill: #202124; }
+      .h2-sm { font-family: Roboto, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 20px; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 20px; fill: #202124; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #FFF; }
+      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
       .on-dark { fill: #FFF; }
     ]]></style>
   </defs>
   <rect width="1200" height="675" fill="#F8F9FA"/>
-<text x="48" y="48" class="title">RAG Pipeline</text>
-<rect x="48" y="120" width="240" height="150" rx="16" fill="#E8F0FE" filter="url(#elev2)"/><circle cx="88" cy="165" r="20" fill="#4285F4"/><text x="88" y="171" text-anchor="middle" class="num">1</text><text x="120" y="172" class="h2">Ingest</text><text x="168" y="220" text-anchor="middle" class="body-ink">Docs to chunks</text>
-<line x1="300" y1="195" x2="314" y2="195" stroke="#4285F4" stroke-width="3"/><polygon points="326,195 312,188 312,202" fill="#4285F4"/>
-<rect x="336" y="120" width="240" height="150" rx="16" fill="#FEF7E0" filter="url(#elev2)"/><circle cx="376" cy="165" r="20" fill="#FBBC04"/><text x="376" y="171" text-anchor="middle" class="num-dark">2</text><text x="408" y="172" class="h2">Embed</text><text x="456" y="220" text-anchor="middle" class="body-ink">Vectors + metadata</text>
-<line x1="588" y1="195" x2="602" y2="195" stroke="#4285F4" stroke-width="3"/><polygon points="614,195 600,188 600,202" fill="#4285F4"/>
-<rect x="624" y="120" width="240" height="150" rx="16" fill="#E6F4EA" filter="url(#elev2)"/><circle cx="664" cy="165" r="20" fill="#34A853"/><text x="664" y="171" text-anchor="middle" class="num">3</text><text x="696" y="172" class="h2">Retrieve</text><text x="744" y="220" text-anchor="middle" class="body-ink">Top-k relevant</text>
-<line x1="876" y1="195" x2="890" y2="195" stroke="#4285F4" stroke-width="3"/><polygon points="902,195 888,188 888,202" fill="#4285F4"/>
-<rect x="912" y="120" width="240" height="150" rx="16" fill="#FCE8E6" filter="url(#elev2)"/><circle cx="952" cy="165" r="20" fill="#EA4335"/><text x="952" y="171" text-anchor="middle" class="num">4</text><text x="984" y="172" class="h2">Generate</text><text x="1032" y="220" text-anchor="middle" class="body-ink">Answer + citations</text>
-<rect x="48" y="320" width="1104" height="300" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
-<rect x="48" y="320" width="1104" height="8" fill="#4285F4"/>
-<text x="80" y="375" class="h2">Finance example — loan memo Q and A</text>
-<rect x="80" y="400" width="1040" height="56" rx="12" fill="#E8F0FE"/>
-<text x="104" y="435" class="body-ink">Query: What debt limits apply if earnings fall 15%?</text>
-<text x="80" y="500" class="body-ink">Retrieve approved loan-agreement sections with deal metadata filters</text>
-<text x="80" y="545" class="body-ink">Generate with citations — fail closed if retrieval is weak</text>
+
+  <text x="48" y="48" class="title">RAG Pipeline</text>
+  <rect x="48" y="110" width="240" height="160" rx="16" fill="#E8F0FE" filter="url(#elev2)"/>
+  <circle cx="88" cy="155" r="22" fill="#4285F4"/><text x="88" y="162" text-anchor="middle" class="num">1</text>
+  <text x="122" y="162" class="h2">Ingest</text>
+  <text x="168" y="220" text-anchor="middle" class="body-ink">Docs to chunks</text>
+  <line x1="300" y1="190" x2="314" y2="190" stroke="#4285F4" stroke-width="3"/><polygon points="326,190 312,183 312,197" fill="#4285F4"/>
+
+  <rect x="336" y="110" width="240" height="160" rx="16" fill="#FEF7E0" filter="url(#elev2)"/>
+  <circle cx="376" cy="155" r="22" fill="#FBBC04"/><text x="376" y="162" text-anchor="middle" class="num-dark">2</text>
+  <text x="410" y="162" class="h2">Embed</text>
+  <text x="456" y="210" text-anchor="middle" class="body-ink">Vectors +</text>
+  <text x="456" y="238" text-anchor="middle" class="body-ink">metadata</text>
+  <line x1="588" y1="190" x2="602" y2="190" stroke="#4285F4" stroke-width="3"/><polygon points="614,190 600,183 600,197" fill="#4285F4"/>
+
+  <rect x="624" y="110" width="240" height="160" rx="16" fill="#E6F4EA" filter="url(#elev2)"/>
+  <circle cx="664" cy="155" r="22" fill="#34A853"/><text x="664" y="162" text-anchor="middle" class="num">3</text>
+  <text x="698" y="162" class="h2">Retrieve</text>
+  <text x="744" y="220" text-anchor="middle" class="body-ink">Top-k relevant</text>
+  <line x1="876" y1="190" x2="890" y2="190" stroke="#4285F4" stroke-width="3"/><polygon points="902,190 888,183 888,197" fill="#4285F4"/>
+
+  <rect x="912" y="110" width="240" height="160" rx="16" fill="#FCE8E6" filter="url(#elev2)"/>
+  <circle cx="952" cy="155" r="22" fill="#EA4335"/><text x="952" y="162" text-anchor="middle" class="num">4</text>
+  <text x="986" y="162" class="h2">Generate</text>
+  <text x="1032" y="210" text-anchor="middle" class="body-ink">Answer +</text>
+  <text x="1032" y="238" text-anchor="middle" class="body-ink">citations</text>
+
+  <rect x="48" y="310" width="1104" height="310" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+  <rect x="48" y="310" width="1104" height="10" fill="#4285F4"/>
+  <text x="80" y="370" class="h2">Finance example — loan memo Q and A</text>
+  <rect x="80" y="400" width="1040" height="70" rx="12" fill="#E8F0FE"/>
+  <text x="104" y="445" class="body-ink">Query: What debt limits apply if earnings fall 15%?</text>
+  <text x="80" y="520" class="body-ink">Retrieve approved loan-agreement sections with filters</text>
+  <text x="80" y="570" class="body-ink">Generate with citations — fail closed if retrieval is weak</text>
+
 </svg>

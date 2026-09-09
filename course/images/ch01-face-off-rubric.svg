@@ -4,45 +4,59 @@
     <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
       <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
     </filter>
-    <style type="text/css"><![CDATA[
-      .title { font-family: Roboto, Arial, sans-serif; font-size: 32px; font-weight: 700; fill: #202124; }
-      .sub { font-family: Roboto, Arial, sans-serif; font-size: 16px; fill: #5F6368; }
-      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 18px; font-weight: 700; fill: #202124; }
-      .body { font-family: Roboto, Arial, sans-serif; font-size: 14px; fill: #5F6368; }
-      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFF; }
+            <style type="text/css"><![CDATA[
+      .title { font-family: Roboto, Arial, sans-serif; font-size: 38px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 22px; fill: #5F6368; }
+      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 26px; font-weight: 700; fill: #202124; }
+      .h2-sm { font-family: Roboto, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 20px; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 20px; fill: #202124; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #FFF; }
+      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
+      .on-dark { fill: #FFF; }
     ]]></style>
   </defs>
   <rect width="1200" height="675" fill="#F8F9FA"/>
-  <text x="48" y="48" class="title">Face-Off Rubric</text>
-  <text x="48" y="76" class="sub">Score demos on these five criteria — not brand names</text>
-  <rect x="48" y="110" width="340" height="150" rx="16" fill="#E8F0FE" filter="url(#elev2)"/>
-  <circle cx="88" cy="150" r="18" fill="#4285F4"/><text x="88" y="156" text-anchor="middle" class="num">1</text>
-  <text x="120" y="148" class="h2">Task fit</text>
-  <text x="120" y="176" class="body">Does it do your deal-memo /</text>
-  <text x="120" y="196" class="body">briefing steps?</text>
-  <rect x="430" y="110" width="340" height="150" rx="16" fill="#E6F4EA" filter="url(#elev2)"/>
-  <circle cx="470" cy="150" r="18" fill="#34A853"/><text x="470" y="156" text-anchor="middle" class="num">2</text>
-  <text x="502" y="148" class="h2">Grounding / citations</text>
-  <text x="502" y="176" class="body">Sources present — or fluent</text>
-  <text x="502" y="196" class="body">invention?</text>
-  <rect x="812" y="110" width="340" height="150" rx="16" fill="#FEF7E0" filter="url(#elev2)"/>
-  <circle cx="852" cy="150" r="18" fill="#FBBC04"/><text x="852" y="156" text-anchor="middle" class="num" style="fill:#202124">3</text>
-  <text x="884" y="148" class="h2">Data path</text>
-  <text x="884" y="176" class="body">Where do prompts,</text>
-  <text x="884" y="196" class="body">uploads, and logs live?</text>
-  <rect x="230" y="300" width="340" height="150" rx="16" fill="#FCE8E6" filter="url(#elev2)"/>
-  <circle cx="270" cy="340" r="18" fill="#EA4335"/><text x="270" y="346" text-anchor="middle" class="num">4</text>
-  <text x="302" y="338" class="h2">Latency / cost</text>
-  <text x="302" y="366" class="body">Usable in deal rhythm,</text>
-  <text x="302" y="386" class="body">or demo-only depth?</text>
-  <rect x="630" y="300" width="340" height="150" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
-  <rect x="630" y="300" width="10" height="150" fill="#4285F4"/>
-  <circle cx="690" cy="340" r="18" fill="#4285F4"/><text x="690" y="346" text-anchor="middle" class="num">5</text>
-  <text x="722" y="338" class="h2">Refusal behavior</text>
-  <text x="722" y="366" class="body">Abstains when evidence</text>
-  <text x="722" y="386" class="body">is thin?</text>
-  <rect x="48" y="500" width="1104" height="120" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
-  <rect x="48" y="500" width="10" height="120" fill="#34A853"/>
+
+  <text x="48" y="52" class="title">Face-Off Rubric</text>
+  <text x="48" y="84" class="sub">Score demos on these five criteria — not brand names</text>
+
+  <rect x="48" y="110" width="340" height="170" rx="16" fill="#E8F0FE" filter="url(#elev2)"/>
+  <circle cx="88" cy="152" r="20" fill="#4285F4"/><text x="88" y="159" text-anchor="middle" class="num">1</text>
+  <text x="122" y="158" class="h2">Task fit</text>
+  <text x="122" y="198" class="body">Does it do your deal-memo</text>
+  <text x="122" y="226" class="body">and briefing steps?</text>
+
+  <rect x="430" y="110" width="340" height="170" rx="16" fill="#E6F4EA" filter="url(#elev2)"/>
+  <circle cx="470" cy="152" r="20" fill="#34A853"/><text x="470" y="159" text-anchor="middle" class="num">2</text>
+  <text x="504" y="158" class="h2">Grounding</text>
+  <text x="504" y="198" class="body">Sources present — or</text>
+  <text x="504" y="226" class="body">fluent invention?</text>
+
+  <rect x="812" y="110" width="340" height="170" rx="16" fill="#FEF7E0" filter="url(#elev2)"/>
+  <circle cx="852" cy="152" r="20" fill="#FBBC04"/><text x="852" y="159" text-anchor="middle" class="num-dark">3</text>
+  <text x="886" y="158" class="h2">Data path</text>
+  <text x="886" y="198" class="body">Where do prompts,</text>
+  <text x="886" y="226" class="body">uploads, and logs live?</text>
+
+  <rect x="230" y="300" width="340" height="170" rx="16" fill="#FCE8E6" filter="url(#elev2)"/>
+  <circle cx="270" cy="342" r="20" fill="#EA4335"/><text x="270" y="349" text-anchor="middle" class="num">4</text>
+  <text x="304" y="340" class="h2">Latency / cost</text>
+  <text x="304" y="388" class="body">Usable in deal</text>
+  <text x="304" y="418" class="body">rhythm, or demo-only?</text>
+
+  <rect x="630" y="300" width="340" height="170" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+  <rect x="630" y="300" width="10" height="170" fill="#4285F4"/>
+  <circle cx="690" cy="342" r="20" fill="#4285F4"/><text x="690" y="349" text-anchor="middle" class="num">5</text>
+  <text x="724" y="340" class="h2">Refusal</text>
+  <text x="724" y="372" class="h2">behavior</text>
+  <text x="724" y="412" class="body">Abstains when</text>
+  <text x="724" y="442" class="body">evidence is thin?</text>
+
+  <rect x="48" y="500" width="1104" height="140" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+  <rect x="48" y="500" width="10" height="140" fill="#34A853"/>
   <text x="80" y="550" class="h2">Lab tip</text>
-  <text x="80" y="580" class="body">Score each criterion independently. A strong UI with weak refusal or opaque data path fails diligence.</text>
+  <text x="80" y="590" class="body">Score each criterion independently. A strong UI with weak</text>
+  <text x="80" y="620" class="body">refusal or opaque data path fails diligence.</text>
+
 </svg>

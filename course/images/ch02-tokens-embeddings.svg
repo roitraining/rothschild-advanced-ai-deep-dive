@@ -4,31 +4,47 @@
     <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
       <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
     </filter>
-    <style type="text/css"><![CDATA[
-      .title { font-family: Roboto, Arial, sans-serif; font-size: 32px; font-weight: 700; fill: #202124; }
-      .sub { font-family: Roboto, Arial, sans-serif; font-size: 16px; fill: #5F6368; }
-      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
-      .body { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #5F6368; }
-      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #202124; }
-      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFF; }
-      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #202124; }
+            <style type="text/css"><![CDATA[
+      .title { font-family: Roboto, Arial, sans-serif; font-size: 38px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 22px; fill: #5F6368; }
+      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 26px; font-weight: 700; fill: #202124; }
+      .h2-sm { font-family: Roboto, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 20px; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 20px; fill: #202124; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #FFF; }
+      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
       .on-dark { fill: #FFF; }
     ]]></style>
   </defs>
   <rect width="1200" height="675" fill="#F8F9FA"/>
-<text x="48" y="48" class="title">Text to Tokens to Embeddings</text>
-<rect x="48" y="120" width="300" height="180" rx="16" fill="#E8F0FE" filter="url(#elev2)"/><circle cx="88" cy="165" r="20" fill="#4285F4"/><text x="88" y="171" text-anchor="middle" class="num">1</text><text x="120" y="172" class="h2">Input text</text>
-<rect x="80" y="200" width="236" height="60" rx="12" fill="#FFFFFF"/><text x="198" y="238" text-anchor="middle" class="body-ink">"profit margin"</text>
-<line x1="368" y1="210" x2="408" y2="210" stroke="#4285F4" stroke-width="3"/><polygon points="420,210 406,203 406,217" fill="#4285F4"/>
-<rect x="440" y="120" width="300" height="180" rx="16" fill="#FEF7E0" filter="url(#elev2)"/><circle cx="480" cy="165" r="20" fill="#FBBC04"/><text x="480" y="171" text-anchor="middle" class="num-dark">2</text><text x="512" y="172" class="h2">Tokens</text>
-<text x="590" y="240" text-anchor="middle" class="body-ink">Atomic units the model reads</text>
-<line x1="760" y1="210" x2="800" y2="210" stroke="#4285F4" stroke-width="3"/><polygon points="812,210 798,203 798,217" fill="#4285F4"/>
-<rect x="832" y="120" width="320" height="180" rx="16" fill="#E6F4EA" filter="url(#elev2)"/><circle cx="872" cy="165" r="20" fill="#34A853"/><text x="872" y="171" text-anchor="middle" class="num">3</text><text x="904" y="172" class="h2">Embeddings</text>
-<text x="992" y="240" text-anchor="middle" class="body-ink">Vectors for search and RAG</text>
-<rect x="48" y="350" width="1104" height="260" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
-<rect x="48" y="350" width="1104" height="8" fill="#EA4335"/>
-<text x="80" y="400" class="h2">Why advisors should care</text>
-<text x="80" y="450" class="body-ink">Token limits decide how much of a deal memo fits in one pass</text>
-<text x="80" y="495" class="body-ink">Embeddings power "similar loan condition" retrieval</text>
-<text x="80" y="540" class="body-ink">Wrong retrieval yields fluent answers about the wrong document</text>
+
+  <text x="48" y="48" class="title">Text to Tokens to Embeddings</text>
+  <rect x="48" y="110" width="300" height="200" rx="16" fill="#E8F0FE" filter="url(#elev2)"/>
+  <circle cx="88" cy="155" r="22" fill="#4285F4"/><text x="88" y="162" text-anchor="middle" class="num">1</text>
+  <text x="122" y="162" class="h2">Input text</text>
+  <rect x="76" y="195" width="244" height="70" rx="12" fill="#FFFFFF"/>
+  <text x="198" y="240" text-anchor="middle" class="body-ink">"profit margin"</text>
+  <line x1="368" y1="210" x2="408" y2="210" stroke="#4285F4" stroke-width="3"/><polygon points="420,210 406,203 406,217" fill="#4285F4"/>
+
+  <rect x="440" y="110" width="300" height="200" rx="16" fill="#FEF7E0" filter="url(#elev2)"/>
+  <circle cx="480" cy="155" r="22" fill="#FBBC04"/><text x="480" y="162" text-anchor="middle" class="num-dark">2</text>
+  <text x="514" y="162" class="h2">Tokens</text>
+  <text x="590" y="220" text-anchor="middle" class="body-ink">Units the model</text>
+  <text x="590" y="250" text-anchor="middle" class="body-ink">actually reads</text>
+  <line x1="760" y1="210" x2="800" y2="210" stroke="#4285F4" stroke-width="3"/><polygon points="812,210 798,203 798,217" fill="#4285F4"/>
+
+  <rect x="832" y="110" width="320" height="200" rx="16" fill="#E6F4EA" filter="url(#elev2)"/>
+  <circle cx="872" cy="155" r="22" fill="#34A853"/><text x="872" y="162" text-anchor="middle" class="num">3</text>
+  <text x="906" y="162" class="h2">Embeddings</text>
+  <text x="992" y="220" text-anchor="middle" class="body-ink">Vectors for search</text>
+  <text x="992" y="250" text-anchor="middle" class="body-ink">and RAG</text>
+
+  <rect x="48" y="350" width="1104" height="270" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+  <rect x="48" y="350" width="1104" height="10" fill="#EA4335"/>
+  <text x="80" y="410" class="h2">Why advisors should care</text>
+  <text x="80" y="455" class="body-ink">Token limits decide how much of a deal memo</text>
+  <text x="80" y="490" class="body-ink">fits in one pass</text>
+  <text x="80" y="535" class="body-ink">Embeddings power "similar loan condition" retrieval</text>
+  <text x="80" y="580" class="body-ink">Wrong retrieval → fluent answers about the wrong doc</text>
+
 </svg>

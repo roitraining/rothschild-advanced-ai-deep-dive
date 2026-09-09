@@ -4,32 +4,45 @@
     <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
       <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
     </filter>
-    <style type="text/css"><![CDATA[
-      .title { font-family: Roboto, Arial, sans-serif; font-size: 32px; font-weight: 700; fill: #202124; }
-      .sub { font-family: Roboto, Arial, sans-serif; font-size: 16px; fill: #5F6368; }
-      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
-      .body { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #5F6368; }
-      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #202124; }
-      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFF; }
-      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #202124; }
+            <style type="text/css"><![CDATA[
+      .title { font-family: Roboto, Arial, sans-serif; font-size: 38px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 22px; fill: #5F6368; }
+      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 26px; font-weight: 700; fill: #202124; }
+      .h2-sm { font-family: Roboto, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 20px; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 20px; fill: #202124; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #FFF; }
+      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
       .on-dark { fill: #FFF; }
     ]]></style>
   </defs>
   <rect width="1200" height="675" fill="#F8F9FA"/>
-<text x="48" y="48" class="title">MCP: Model Context Protocol</text>
-<rect x="48" y="130" width="280" height="200" rx="16" fill="#FFFFFF" filter="url(#elev2)"/><text x="188" y="220" text-anchor="middle" class="h2">AI Host</text><text x="188" y="255" text-anchor="middle" class="body">Copilot, Cursor, custom</text>
-<line x1="344" y1="230" x2="388" y2="230" stroke="#4285F4" stroke-width="3"/><polygon points="400,230 386,223 386,237" fill="#4285F4"/>
-<rect x="410" y="110" width="340" height="240" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
-<rect x="410" y="110" width="340" height="64" rx="16" fill="#4285F4"/>
-<rect x="410" y="142" width="340" height="32" fill="#4285F4"/>
-<text x="580" y="150" text-anchor="middle" class="h2 on-dark">MCP Server</text>
-<text x="580" y="230" text-anchor="middle" class="body-ink">Tools, resources, prompts</text>
-<line x1="766" y1="230" x2="810" y2="230" stroke="#4285F4" stroke-width="3"/><polygon points="822,230 808,223 808,237" fill="#4285F4"/>
-<rect x="832" y="120" width="320" height="70" rx="16" fill="#E6F4EA" filter="url(#elev2)"/><text x="992" y="162" text-anchor="middle" class="h2">CRM / Deal DB</text>
-<rect x="832" y="210" width="320" height="70" rx="16" fill="#FEF7E0" filter="url(#elev2)"/><text x="992" y="252" text-anchor="middle" class="h2">Document store</text>
-<rect x="832" y="300" width="320" height="70" rx="16" fill="#FCE8E6" filter="url(#elev2)"/><text x="992" y="342" text-anchor="middle" class="h2">Market data API</text>
-<rect x="48" y="400" width="1104" height="220" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
-<text x="80" y="460" class="h2">Enterprise value</text>
-<text x="80" y="510" class="body-ink">One protocol instead of one-off plugins per host app</text>
-<text x="80" y="555" class="body-ink">Permissions stay with the data service — MCP is not IAM</text>
+
+  <text x="48" y="48" class="title">MCP: Model Context Protocol</text>
+  <rect x="48" y="120" width="280" height="220" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+  <text x="188" y="210" text-anchor="middle" class="h2">AI Host</text>
+  <text x="188" y="250" text-anchor="middle" class="body">Copilot, Cursor,</text>
+  <text x="188" y="280" text-anchor="middle" class="body">or custom app</text>
+  <line x1="344" y1="230" x2="388" y2="230" stroke="#4285F4" stroke-width="3"/><polygon points="400,230 386,223 386,237" fill="#4285F4"/>
+
+  <rect x="410" y="100" width="340" height="260" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+  <rect x="410" y="100" width="340" height="70" rx="16" fill="#4285F4"/>
+  <rect x="410" y="138" width="340" height="32" fill="#4285F4"/>
+  <text x="580" y="148" text-anchor="middle" class="h2 on-dark">MCP Server</text>
+  <text x="580" y="230" text-anchor="middle" class="body-ink">Tools, resources,</text>
+  <text x="580" y="262" text-anchor="middle" class="body-ink">and prompts</text>
+  <line x1="766" y1="230" x2="810" y2="230" stroke="#4285F4" stroke-width="3"/><polygon points="822,230 808,223 808,237" fill="#4285F4"/>
+
+  <rect x="832" y="110" width="320" height="72" rx="16" fill="#E6F4EA" filter="url(#elev2)"/>
+  <text x="992" y="156" text-anchor="middle" class="h2-sm">CRM / Deal DB</text>
+  <rect x="832" y="204" width="320" height="72" rx="16" fill="#FEF7E0" filter="url(#elev2)"/>
+  <text x="992" y="250" text-anchor="middle" class="h2-sm">Document store</text>
+  <rect x="832" y="298" width="320" height="72" rx="16" fill="#FCE8E6" filter="url(#elev2)"/>
+  <text x="992" y="344" text-anchor="middle" class="h2-sm">Market data API</text>
+
+  <rect x="48" y="400" width="1104" height="220" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+  <text x="80" y="465" class="h2">Enterprise value</text>
+  <text x="80" y="520" class="body-ink">One protocol instead of one-off plugins per host app</text>
+  <text x="80" y="570" class="body-ink">Permissions stay with the data service — MCP is not IAM</text>
+
 </svg>

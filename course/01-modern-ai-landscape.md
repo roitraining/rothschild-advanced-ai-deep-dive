@@ -254,14 +254,6 @@ Advanced AI Deep-Dive: Rothschild and Co
 
 ---
 
-# Bridge to Chapter 2
-
-- Vendor claims collapse under **tokens**, **context packing**, and **grounding**
-- You will stress-test: what fits the window, what was retrieved, what was invented
-- Lab scores the surface; Ch2 explains *why* fluent wrong answers happen
-- Next: transformers, embeddings, and cite-or-refuse under budget pressure
-
----
 
 # Lab 1: Model Face-Off
 

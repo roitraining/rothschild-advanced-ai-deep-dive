@@ -4,17 +4,61 @@
     <filter id="elev2" x="-40%" y="-40%" width="180%" height="180%">
       <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#202124" flood-opacity="0.18"/>
     </filter>
-    <style type="text/css"><![CDATA[
-      .title { font-family: Roboto, Arial, sans-serif; font-size: 32px; font-weight: 700; fill: #202124; }
-      .sub { font-family: Roboto, Arial, sans-serif; font-size: 16px; fill: #5F6368; }
-      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
-      .body { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #5F6368; }
-      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 15px; fill: #202124; }
-      .num { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #FFF; }
-      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #202124; }
+            <style type="text/css"><![CDATA[
+      .title { font-family: Roboto, Arial, sans-serif; font-size: 38px; font-weight: 700; fill: #202124; }
+      .sub { font-family: Roboto, Arial, sans-serif; font-size: 22px; fill: #5F6368; }
+      .h2 { font-family: Roboto, Arial, sans-serif; font-size: 26px; font-weight: 700; fill: #202124; }
+      .h2-sm { font-family: Roboto, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #202124; }
+      .body { font-family: Roboto, Arial, sans-serif; font-size: 20px; fill: #5F6368; }
+      .body-ink { font-family: Roboto, Arial, sans-serif; font-size: 20px; fill: #202124; }
+      .num { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #FFF; }
+      .num-dark { font-family: Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #202124; }
       .on-dark { fill: #FFF; }
     ]]></style>
   </defs>
   <rect width="1200" height="675" fill="#F8F9FA"/>
-<text x="48" y="48" class="title">End-to-End Generative Workflow</text><text x="48" y="76" class="sub">Controls wrap every hop</text><rect x="48" y="120" width="196" height="160" rx="16" fill="#E8F0FE" filter="url(#elev2)"/><circle cx="146" cy="165" r="20" fill="#4285F4"/><text x="146" y="171" text-anchor="middle" class="num">1</text><text x="146" y="220" text-anchor="middle" class="h2" font-size="16">User goal</text><text x="146" y="248" text-anchor="middle" class="body">Deal briefing</text><rect x="274" y="120" width="196" height="160" rx="16" fill="#FEF7E0" filter="url(#elev2)"/><circle cx="372" cy="165" r="20" fill="#FBBC04"/><text x="372" y="171" text-anchor="middle" class="num-dark">2</text><text x="372" y="220" text-anchor="middle" class="h2" font-size="16">Agent + Skills</text><text x="372" y="248" text-anchor="middle" class="body">Procedure + policy</text><rect x="500" y="120" width="196" height="160" rx="16" fill="#E6F4EA" filter="url(#elev2)"/><circle cx="598" cy="165" r="20" fill="#34A853"/><text x="598" y="171" text-anchor="middle" class="num">3</text><text x="598" y="220" text-anchor="middle" class="h2" font-size="16">Tools / MCP</text><text x="598" y="248" text-anchor="middle" class="body">Approved actions</text><rect x="726" y="120" width="196" height="160" rx="16" fill="#FCE8E6" filter="url(#elev2)"/><circle cx="824" cy="165" r="20" fill="#EA4335"/><text x="824" y="171" text-anchor="middle" class="num">4</text><text x="824" y="220" text-anchor="middle" class="h2" font-size="16">RAG / Live</text><text x="824" y="248" text-anchor="middle" class="body">Grounded facts</text><rect x="952" y="120" width="196" height="160" rx="16" fill="#D2E3FC" filter="url(#elev2)"/><circle cx="1050" cy="165" r="20" fill="#4285F4"/><text x="1050" y="171" text-anchor="middle" class="num">5</text><text x="1050" y="220" text-anchor="middle" class="h2" font-size="16">Verified out</text><text x="1050" y="248" text-anchor="middle" class="body">Human-ready</text><line x1="244" y1="200" x2="262" y2="200" stroke="#4285F4" stroke-width="3"/><polygon points="274,200 260,193 260,207" fill="#4285F4"/><line x1="470" y1="200" x2="488" y2="200" stroke="#4285F4" stroke-width="3"/><polygon points="500,200 486,193 486,207" fill="#4285F4"/><line x1="696" y1="200" x2="714" y2="200" stroke="#4285F4" stroke-width="3"/><polygon points="726,200 712,193 712,207" fill="#4285F4"/><line x1="922" y1="200" x2="940" y2="200" stroke="#4285F4" stroke-width="3"/><polygon points="952,200 938,193 938,207" fill="#4285F4"/><rect x="48" y="340" width="1104" height="280" rx="16" fill="#FFFFFF" filter="url(#elev2)"/><text x="80" y="400" class="h2">Identity · least privilege · DLP · audit · human gates</text><text x="80" y="460" class="body-ink">LLM reasons; tools act; RAG grounds; MCP standardizes access</text><text x="80" y="510" class="body-ink">Humans own client-visible risk</text>
+
+  <text x="48" y="48" class="title">End-to-End Generative Workflow</text>
+  <text x="48" y="80" class="sub">Controls wrap every hop</text>
+
+  <rect x="48" y="115" width="196" height="175" rx="16" fill="#E8F0FE" filter="url(#elev2)"/>
+  <circle cx="146" cy="160" r="22" fill="#4285F4"/><text x="146" y="167" text-anchor="middle" class="num">1</text>
+  <text x="146" y="220" text-anchor="middle" class="h2-sm">User goal</text>
+  <text x="146" y="255" text-anchor="middle" class="body">Deal briefing</text>
+
+  <rect x="274" y="115" width="196" height="175" rx="16" fill="#FEF7E0" filter="url(#elev2)"/>
+  <circle cx="372" cy="160" r="22" fill="#FBBC04"/><text x="372" y="167" text-anchor="middle" class="num-dark">2</text>
+  <text x="372" y="208" text-anchor="middle" class="h2-sm">Agent +</text>
+  <text x="372" y="236" text-anchor="middle" class="h2-sm">Skills</text>
+  <text x="372" y="270" text-anchor="middle" class="body">Procedure +</text>
+  <text x="372" y="296" text-anchor="middle" class="body">policy</text>
+
+  <rect x="500" y="115" width="196" height="175" rx="16" fill="#E6F4EA" filter="url(#elev2)"/>
+  <circle cx="598" cy="160" r="22" fill="#34A853"/><text x="598" y="167" text-anchor="middle" class="num">3</text>
+  <text x="598" y="220" text-anchor="middle" class="h2-sm">Tools / MCP</text>
+  <text x="598" y="250" text-anchor="middle" class="body">Approved</text>
+  <text x="598" y="280" text-anchor="middle" class="body">actions</text>
+
+  <rect x="726" y="115" width="196" height="175" rx="16" fill="#FCE8E6" filter="url(#elev2)"/>
+  <circle cx="824" cy="160" r="22" fill="#EA4335"/><text x="824" y="167" text-anchor="middle" class="num">4</text>
+  <text x="824" y="220" text-anchor="middle" class="h2-sm">RAG / Live</text>
+  <text x="824" y="255" text-anchor="middle" class="body">Grounded facts</text>
+
+  <rect x="952" y="115" width="196" height="175" rx="16" fill="#D2E3FC" filter="url(#elev2)"/>
+  <circle cx="1050" cy="160" r="22" fill="#4285F4"/><text x="1050" y="167" text-anchor="middle" class="num">5</text>
+  <text x="1050" y="220" text-anchor="middle" class="h2-sm">Verified out</text>
+  <text x="1050" y="255" text-anchor="middle" class="body">Human-ready</text>
+
+  <line x1="244" y1="200" x2="262" y2="200" stroke="#4285F4" stroke-width="3"/><polygon points="274,200 260,193 260,207" fill="#4285F4"/>
+  <line x1="470" y1="200" x2="488" y2="200" stroke="#4285F4" stroke-width="3"/><polygon points="500,200 486,193 486,207" fill="#4285F4"/>
+  <line x1="696" y1="200" x2="714" y2="200" stroke="#4285F4" stroke-width="3"/><polygon points="726,200 712,193 712,207" fill="#4285F4"/>
+  <line x1="922" y1="200" x2="940" y2="200" stroke="#4285F4" stroke-width="3"/><polygon points="952,200 938,193 938,207" fill="#4285F4"/>
+
+  <rect x="48" y="340" width="1104" height="280" rx="16" fill="#FFFFFF" filter="url(#elev2)"/>
+  <text x="80" y="400" class="h2">Identity · least privilege · DLP · audit ·</text>
+  <text x="80" y="438" class="h2">human gates</text>
+  <text x="80" y="500" class="body-ink">LLM reasons; tools act; RAG grounds;</text>
+  <text x="80" y="538" class="body-ink">MCP standardizes access</text>
+  <text x="80" y="580" class="body-ink">Humans own client-visible risk</text>
+
 </svg>
